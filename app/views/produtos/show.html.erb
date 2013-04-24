@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @produto.nome %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @produto.descricao %>
+</p>
+
+<p>
+  <b>Unidade:</b>
+  <%= @produto.unidade %>
+</p>
+
+<p>
+  <b>Preco unitario:</b>
+  <%= @produto.preco_unitario %>
+</p>
+
+<p>
+  <b>Custo unitario:</b>
+  <%= @produto.custo_unitario %>
+</p>
+
+<p>
+  <b>Altura:</b>
+  <%= @produto.altura %>
+</p>
+
+<p>
+  <b>Comprimento:</b>
+  <%= @produto.comprimento %>
+</p>
+
+
+<%= link_to 'Edit', edit_produto_path(@produto) %> |
+<%= link_to 'Back', produtos_path %>

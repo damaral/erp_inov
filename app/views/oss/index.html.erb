@@ -1,0 +1,39 @@
+<h1>Listing oss</h1>
+
+<table>
+  <tr>
+    <th>Data entrega</th>
+    <th>Observacao</th>
+    <th>Desconto</th>
+    <th>Valor restante</th>
+    <th>Valor total</th>
+    <th>Arquivo</th>
+    <th>Estado</th>
+    <th>Prioridade</th>
+    <th>Esta pago</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @oss.each do |os| %>
+  <tr>
+    <td><%= os.data_entrega %></td>
+    <td><%= os.observacao %></td>
+    <td><%= os.desconto %></td>
+    <td><%= os.valor_restante %></td>
+    <td><%= os.valor_total %></td>
+    <td><%= os.arquivo %></td>
+    <td><%= os.estado %></td>
+    <td><%= os.prioridade %></td>
+    <td><%= os.esta_pago %></td>
+    <td><%= link_to 'Show', os %></td>
+    <td><%= link_to 'Edit', edit_os_path(os) %></td>
+    <td><%= link_to 'Destroy', os, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Os', new_os_path %>

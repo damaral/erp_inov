@@ -1,0 +1,19 @@
+<%= simple_form_for(@os) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :data_entrega %>
+    <%= f.input :observacao %>
+    <%= f.input :desconto %>
+    <%= f.input :valor_restante %>
+    <%= f.input :valor_total %>
+    <%= f.input :arquivo %>
+    <%= f.input :estado %>
+    <%= f.input :prioridade %>
+    <%= f.input :esta_pago %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

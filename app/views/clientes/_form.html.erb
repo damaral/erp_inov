@@ -1,0 +1,26 @@
+<%= simple_form_for(@cliente, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome, :label => "Nome: " %>
+    <%= f.input :sobrenome, :label => "Sobrenome: " %>
+    <%= f.input :apelido, :label => "Apelido: " %>
+    <%= f.association :empresa, :label_method => :nome, :label => "Empresa: " %>
+    <%= f.input :endereco, :label => "Endereço: " %>
+    <%= f.input :bairro, :label => "Bairro: " %>
+    <%= f.input :complemento, :label => "Complemento: " %>
+    <%= f.input :cep, :label => "CEP: " %>
+    <%= f.input :cidade, :label => "Cidade: " %>
+    <%= f.input :estado, :label => "Estado: " %>
+    <%= f.input :telefone, :label => "Telefone: " %>
+    <%= f.input :celular, :label => "Celular: " %>
+    <%= f.input :email, :label => "E-mail: " %>
+    <%= f.input :cpf, :label => "CPF: " %>
+    <%= f.input :rg, :label => "RG: " %>
+    <%= f.input :observacao, :label => "Observação: " %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

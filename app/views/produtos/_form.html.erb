@@ -1,0 +1,17 @@
+<%= simple_form_for(@produto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :descricao %>
+    <%= f.input :unidade, :collection => Produto::UNIDADES %>
+    <%= f.input :preco_unitario %>
+    <%= f.input :custo_unitario %>
+    <%= f.input :altura %>
+    <%= f.input :comprimento %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

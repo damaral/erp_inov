@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Valor:</b>
+  <%= @pagamento.valor %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @pagamento.tipo %>
+</p>
+
+<p>
+  <b>Forma de pagamento:</b>
+  <%= @pagamento.forma_de_pagamento %>
+</p>
+
+
+<%= link_to 'Edit', edit_pagamento_path(@pagamento) %> |
+<%= link_to 'Back', pagamentos_path %>

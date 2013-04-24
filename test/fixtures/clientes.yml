@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  data_nascimento: 2013-04-22
+  idade: 1
+
+two:
+  nome: MyString
+  data_nascimento: 2013-04-22
+  idade: 1

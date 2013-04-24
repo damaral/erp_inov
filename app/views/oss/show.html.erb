@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data entrega:</b>
+  <%= @os.data_entrega %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @os.observacao %>
+</p>
+
+<p>
+  <b>Desconto:</b>
+  <%= @os.desconto %>
+</p>
+
+<p>
+  <b>Valor restante:</b>
+  <%= @os.valor_restante %>
+</p>
+
+<p>
+  <b>Valor total:</b>
+  <%= @os.valor_total %>
+</p>
+
+<p>
+  <b>Arquivo:</b>
+  <%= @os.arquivo %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @os.estado %>
+</p>
+
+<p>
+  <b>Prioridade:</b>
+  <%= @os.prioridade %>
+</p>
+
+<p>
+  <b>Esta pago:</b>
+  <%= @os.esta_pago %>
+</p>
+
+
+<%= link_to 'Edit', edit_os_path(@os) %> |
+<%= link_to 'Back', oss_path %>

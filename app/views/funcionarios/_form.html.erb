@@ -1,0 +1,25 @@
+<%= simple_form_for(@funcionario) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :sobrenome %>
+    <%= f.input :endereco %>
+    <%= f.input :bairro %>
+    <%= f.input :complemento %>
+    <%= f.input :cep %>
+    <%= f.input :cidade %>
+    <%= f.input :estado %>
+    <%= f.input :telefone %>
+    <%= f.input :celular %>
+    <%= f.input :email %>
+    <%= f.input :rg %>
+    <%= f.input :cargo %>
+    <%= f.input :data_admissao %>
+    <%= f.input :data_demissao %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
