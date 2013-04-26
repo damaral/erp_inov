@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :nome %>
     <%= f.input :descricao %>
-    <%= f.input :unidade, :collection => Produto::UNIDADES %>
+    <%= f.input :unidade, :collection => Produto::UNIDADES, :prompt => "Selecione" %>
     <%= f.input :preco_unitario %>
     <%= f.input :custo_unitario %>
     <%= f.input :altura %>

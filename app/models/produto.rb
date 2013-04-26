@@ -3,6 +3,8 @@
 class Produto < ActiveRecord::Base
   attr_accessible :altura, :comprimento, :custo_unitario, :descricao, :nome, :preco_unitario, :unidade
 
+  has_many :itens
+
   PECA = "Peça"
   METRO_COMP = "Metro Comprimento"
   METRO_ALT = "Metro Altura"

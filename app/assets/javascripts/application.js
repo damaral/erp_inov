@@ -14,3 +14,35 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree
+
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy'
+  });
+
+  if($(".money").length != 0){
+    $(".money").val($(".money").val().replace(".", ","));
+    $(".money").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});
+  }
+
+  /*if($(".money").length != 0){
+    $(".money").val($(".money").val().replace(".", ","));
+    $(".money").maskMoney({showSymbol:true, symbol:"", decimal:".", thousands:","});
+  }*/
+});
+
+function remove_campo(link){
+  $(link).parent(".item").find(".hidden input").val("1");
+  $(link).parent(".item").hide();
+}
+
+var num_produtos = 0;
+
+function adiciona_campo(link){
+  formulario = '<div class="item">' + $(".item").first().html() + '</div>';
+  num_produtos += 1;
+  novo_atributo = 'os[itens_attributes]['+ num_produtos +']';
+  formulario = formulario.replace(/os\[itens_attributes\]\[0\]/g, novo_atributo);
+
+  $('.produtos').append(formulario);
+}

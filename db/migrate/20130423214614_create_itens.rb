@@ -7,7 +7,13 @@ class CreateItens < ActiveRecord::Migration
       t.float :altura
       t.float :comprimento
 
+      t.references :produto
+      t.references :os
+
       t.timestamps
     end
+
+    add_index :itens, :produto_id
+    add_index :itens, :os_id
   end
 end

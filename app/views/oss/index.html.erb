@@ -20,9 +20,9 @@
   <tr>
     <td><%= os.data_entrega %></td>
     <td><%= os.observacao %></td>
-    <td><%= os.desconto %></td>
-    <td><%= os.valor_restante %></td>
-    <td><%= os.valor_total %></td>
+    <td><%= number_to_currency os.desconto %></td>
+    <td><%= number_to_currency os.valor_restante %></td>
+    <td><%= number_to_currency os.valor_total %></td>
     <td><%= os.arquivo %></td>
     <td><%= os.estado %></td>
     <td><%= os.prioridade %></td>

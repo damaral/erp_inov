@@ -7,5 +7,7 @@ FactoryGirl.define do
     sub_total 1.5
     altura 1.5
     comprimento 1.5
+    produto
+    os
   end
 end

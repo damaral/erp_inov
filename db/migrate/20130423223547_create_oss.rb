@@ -11,7 +11,11 @@ class CreateOss < ActiveRecord::Migration
       t.integer :prioridade
       t.boolean :esta_pago
 
+      t.references :cliente
+
       t.timestamps
     end
+
+    add_index :oss, :cliente_id
   end
 end

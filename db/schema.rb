@@ -15,9 +15,14 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
 
   create_table "acoes", :force => true do |t|
     t.string   "acao"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "os_id"
+    t.integer  "funcionario_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "acoes", ["funcionario_id"], :name => "index_acoes_on_funcionario_id"
+  add_index "acoes", ["os_id"], :name => "index_acoes_on_os_id"
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"
@@ -84,9 +89,14 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.float    "sub_total"
     t.float    "altura"
     t.float    "comprimento"
+    t.integer  "produto_id"
+    t.integer  "os_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "itens", ["os_id"], :name => "index_itens_on_os_id"
+  add_index "itens", ["produto_id"], :name => "index_itens_on_produto_id"
 
   create_table "oss", :force => true do |t|
     t.date     "data_entrega"
@@ -98,17 +108,25 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.string   "estado"
     t.integer  "prioridade"
     t.boolean  "esta_pago"
+    t.integer  "cliente_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "oss", ["cliente_id"], :name => "index_oss_on_cliente_id"
 
   create_table "pagamentos", :force => true do |t|
     t.float    "valor"
     t.string   "tipo"
     t.string   "forma_de_pagamento"
+    t.integer  "cliente_id"
+    t.integer  "os_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  add_index "pagamentos", ["cliente_id"], :name => "index_pagamentos_on_cliente_id"
+  add_index "pagamentos", ["os_id"], :name => "index_pagamentos_on_os_id"
 
   create_table "produtos", :force => true do |t|
     t.string   "nome"

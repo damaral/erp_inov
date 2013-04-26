@@ -1,0 +1,9 @@
+<div class="item">
+  <%= p.association :produto, :label_method => :nome, :label => "Produto: " %>
+  <%= p.input :quantidade, :label => "Quantidade: ", :input_html => {:value => "1"} %>
+  <%= p.input :altura, :as => :string, :label => "Altura: " %>
+  <%= p.input :comprimento, :as => :string, :label => "Comprimento: " %>
+  <%= p.input :descricao, :label => "Descrição: " %>
+  <%= p.input :_destroy, :as => :hidden %>
+  <%= link_to_function "Remover", "remove_campo(this)" %>
+</div>

@@ -1,16 +1,23 @@
-<%= simple_form_for(@os) do |f| %>
+<%= simple_form_for(@os, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :data_entrega %>
-    <%= f.input :observacao %>
-    <%= f.input :desconto %>
-    <%= f.input :valor_restante %>
-    <%= f.input :valor_total %>
-    <%= f.input :arquivo %>
-    <%= f.input :estado %>
-    <%= f.input :prioridade %>
-    <%= f.input :esta_pago %>
+    <%= f.association :cliente, :label_method => :nome, :label => "Cliente: " %>
+    <%= f.input :data_entrega, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de Entrega: " %>
+    <%= f.input :observacao, :label => "Obeservação: " %>
+    <%= f.input :desconto, :as => :string, :label => "Desconto: ", :input_html => {:value => 0, :class => "money"} %>
+    <%= f.input :arquivo, :label => "Arquivo: " %>
+    <%= f.input :prioridade, :collection => Os::PRIORIDADES, :prompt => "Selecione", :label => "Prioridade: " %>
+    
+      <h4>Produtos</h4>
+      <hr>
+      <div class="produtos">
+        <%= link_to_function "Adicionar", "adiciona_campo(this)" %>
+        <%= f.simple_fields_for :itens do |builder| %>
+          <%= render :partial => 'form_itens', :locals => {:p => builder} %>
+        <% end %>
+      </div>
+    
   </div>
 
   <div class="form-actions">

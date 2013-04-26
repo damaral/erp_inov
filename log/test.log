@@ -1524,3 +1524,516 @@ Connecting to database specified by database.yml
   [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-24 03:31:53', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-24 03:31:53')
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (87.9ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:02:50', 'MyText', 1, 1.5, '2013-04-25 19:02:50')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (97.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:02:50', 'MyText', 1, 1.5, '2013-04-25 19:02:50')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (60.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:03:41', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:03:41')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (94.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:03:41', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:03:41')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (66.7ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:04:21', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:04:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (79.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:04:21', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:04:21')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (60.8ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:06', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:06')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (107.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:06', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:06')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (62.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:06', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (62.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:53', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:53')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (98.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:53', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:53')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (60.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:53', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:53')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (62.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:53', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:53')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (61.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:05:53', 'MyText', NULL, NULL, 1, 1.5, '2013-04-25 19:05:53')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (61.0ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:17')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:17', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 'MyText', 1, 1, 1, 1.5, '2013-04-25 19:07:17')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (66.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:17', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 'MyText', 2, 2, 1, 1.5, '2013-04-25 19:07:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (56.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:17')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:17', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 'MyText', 3, 3, 1, 1.5, '2013-04-25 19:07:17')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (54.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:17', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:17', 'MyText', 4, 4, 1, 1.5, '2013-04-25 19:07:17')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (42.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:18')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:18', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:18', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 'MyText', 5, 5, 1, 1.5, '2013-04-25 19:07:18')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (44.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:18')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:18', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:18', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 'MyText', 6, 6, 1, 1.5, '2013-04-25 19:07:18')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (55.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:07:18')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:07:18', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:07:18', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:07:18', 'MyText', 7, 7, 1, 1.5, '2013-04-25 19:07:18')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (39.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 8, 8, 1, 1.5, '2013-04-25 19:10:55')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (57.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 9, 9, 1, 1.5, '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (48.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 10, 10, 1, 1.5, '2013-04-25 19:10:55')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (32.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 11, 11, 1, 1.5, '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (30.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 12, 12, 1, 1.5, '2013-04-25 19:10:55')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (30.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:55', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:55', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:55', 'MyText', 13, 13, 1, 1.5, '2013-04-25 19:10:55')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (50.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:56', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:10:56')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:10:56', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:10:56', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:10:56', 'MyText', 14, 14, 1, 1.5, '2013-04-25 19:10:56')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (38.7ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:20')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:20', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:20', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 'MyText', 15, 15, 1, 1.5, '2013-04-25 19:11:20')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (65.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:20')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:20', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:20', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 'MyText', 16, 16, 1, 1.5, '2013-04-25 19:11:20')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (40.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:20')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:20', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:20', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 'MyText', 17, 17, 1, 1.5, '2013-04-25 19:11:20')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (40.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:20')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:20', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:20', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 'MyText', 18, 18, 1, 1.5, '2013-04-25 19:11:20')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (38.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:20')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:20', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:20', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:20', 'MyText', 19, 19, 1, 1.5, '2013-04-25 19:11:20')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (49.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:21', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:21')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:21', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:21', 1.5, 1.5)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:21', 'MyText', 20, 20, 1, 1.5, '2013-04-25 19:11:21')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (42.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:21', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:21', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:21', 1.5, 1.5)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:21', 'MyText', 21, 21, 1, 1.5, '2013-04-25 19:11:21')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (36.9ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:34', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:34')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:34', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:34', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:34', 'MyText', 22, 22, 1, 1.5, '2013-04-25 19:11:34')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (106.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 23, 23, 1, 1.5, '2013-04-25 19:11:35')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (36.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 24, 24, 1, 1.5, '2013-04-25 19:11:35')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (41.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 25, 25, 1, 1.5, '2013-04-25 19:11:35')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (54.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 26, 26, 1, 1.5, '2013-04-25 19:11:35')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (45.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 27, 27, 1, 1.5, '2013-04-25 19:11:35')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (41.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-04-25 19:11:35')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:11:35', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:11:35', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `sub_total`, `updated_at`) VALUES (1.5, 1.5, '2013-04-25 19:11:35', 'MyText', 28, 28, 1, 1.5, '2013-04-25 19:11:35')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (42.8ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:16:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:16:17', 1.5, 1.5)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (85.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:16:17', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:16:17', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (57.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:16:33', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:16:33', 1.5, 1.5)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (77.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:16:33', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:16:33', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (51.7ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:18:31', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:18:31', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (93.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:18:31', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:18:31', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (50.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:18:31', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:18:31', 1.5, 1.5)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (55.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:19:24', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:19:24', 1.5, 1.5)[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (101.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:19:24', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:19:24', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (103.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:19:24', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:19:24', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (64.6ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:22', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:22', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (87.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:22', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:22', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (91.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:23', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:23', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (68.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:23', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:23', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (65.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:37', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:37', 1.5, 1.5)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (87.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:37', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:37', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (38.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:37', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:37', 1.5, 1.5)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (36.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:37', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:37', 1.5, 1.5)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (46.3ms)[0m  ROLLBACK

@@ -12,17 +12,17 @@
 
 <p>
   <b>Desconto:</b>
-  <%= @os.desconto %>
+  <%= number_to_currency @os.desconto %>
 </p>
 
 <p>
   <b>Valor restante:</b>
-  <%= @os.valor_restante %>
+  <%= number_to_currency @os.valor_restante %>
 </p>
 
 <p>
   <b>Valor total:</b>
-  <%= @os.valor_total %>
+  <%= number_to_currency @os.valor_total %>
 </p>
 
 <p>
