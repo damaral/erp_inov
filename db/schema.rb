@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"
-    t.string   "sobrenome"
     t.string   "apelido"
     t.string   "endereco"
     t.string   "bairro"
@@ -86,9 +85,9 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
   create_table "itens", :force => true do |t|
     t.integer  "quantidade"
     t.text     "descricao"
-    t.float    "sub_total"
     t.float    "altura"
     t.float    "comprimento"
+    t.string   "tipo"
     t.integer  "produto_id"
     t.integer  "os_id"
     t.datetime "created_at",  :null => false
@@ -100,24 +99,22 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
 
   create_table "oss", :force => true do |t|
     t.date     "data_entrega"
+    t.date     "previsao_entrega"
     t.text     "observacao"
     t.float    "desconto"
-    t.float    "valor_restante"
-    t.float    "valor_total"
     t.string   "arquivo"
-    t.string   "estado"
-    t.integer  "prioridade"
+    t.integer  "estado"
+    t.string   "aprovado_por"
     t.boolean  "esta_pago"
     t.integer  "cliente_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "oss", ["cliente_id"], :name => "index_oss_on_cliente_id"
 
   create_table "pagamentos", :force => true do |t|
     t.float    "valor"
-    t.string   "tipo"
     t.string   "forma_de_pagamento"
     t.integer  "cliente_id"
     t.integer  "os_id"

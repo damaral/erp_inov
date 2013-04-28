@@ -1,16 +1,16 @@
-<h1>Listing produtos</h1>
+<h1>Produtos</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Nome</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
     <th>Unidade</th>
-    <th>Preco unitario</th>
-    <th>Custo unitario</th>
+    <th>Preco unitário</th>
+    <th>Custo unitário</th>
     <th>Altura</th>
     <th>Comprimento</th>
     <th></th>
-    <th></th>
+    <th>Ações</th>
     <th></th>
   </tr>
 
@@ -19,13 +19,28 @@
     <td><%= produto.nome %></td>
     <td><%= produto.descricao %></td>
     <td><%= produto.unidade %></td>
-    <td><%= produto.preco_unitario %></td>
-    <td><%= produto.custo_unitario %></td>
-    <td><%= produto.altura %></td>
-    <td><%= produto.comprimento %></td>
-    <td><%= link_to 'Show', produto %></td>
-    <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-    <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= number_to_currency produto.preco_unitario %></td>
+    <td><%= number_to_currency produto.custo_unitario %></td>
+    <td><%= produto.altura*100 unless produto.altura.nil?  %></td>
+    <td><%= produto.comprimento*100 unless produto.comprimento.nil? %></td>
+    <td class="botao-acao">
+        <%= link_to produto, :class => "btn btn-mini" do %>
+        <i class="icon-eye-open"></i>
+        <%= "Mostrar" %>
+        <% end %>
+    </td>
+    <td class="botao-acao">
+        <%= link_to edit_produto_path(produto), :class => "btn btn-info btn-mini" do %>
+        <i class="icon-pencil icon-white"></i>
+        <%= "Editar" %>
+        <% end %>
+    </td>
+    <td class="botao-acao">
+        <%= link_to produto, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este produto?' }, :class => "btn btn-danger btn-mini" do %>
+        <i class="icon-trash icon-white"></i>
+        <%= "Excluir" %>
+        <% end %>
+    </td>
   </tr>
 <% end %>
 </table>

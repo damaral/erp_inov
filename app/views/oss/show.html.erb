@@ -1,50 +1,143 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span12 thumbnail">
+  <div class="page-header">
+    <h3>Ordem de Serviço: <%= @os.id %></h3>
+  </div>
 
-<p>
-  <b>Data entrega:</b>
-  <%= @os.data_entrega %>
-</p>
+  <div class="row">
+    <p class="span6">
+      <b>Data de Criação:</b>
+      <%= @os.created_at.strftime('%d/%m/%Y') %>
+    </p>
 
-<p>
-  <b>Observacao:</b>
-  <%= @os.observacao %>
-</p>
+    <p class="span6">
+      <b>Previsão de entrega:</b>
+      <%= @os.previsao_entrega.strftime('%d/%m/%Y') %>
+    </p>
+  </div>
 
-<p>
-  <b>Desconto:</b>
-  <%= number_to_currency @os.desconto %>
-</p>
+  <div class="row">
+    <p class="span6">
+      <b>Estado:</b>
+      <%= Os::ESTADOS[@os.estado] %>
+    </p> 
+  </div>
 
-<p>
-  <b>Valor restante:</b>
-  <%= number_to_currency @os.valor_restante %>
-</p>
 
-<p>
-  <b>Valor total:</b>
-  <%= number_to_currency @os.valor_total %>
-</p>
+  <p>
+    <b>Arquivo:</b>
+    <%= @os.arquivo %>
+  </p>
 
-<p>
-  <b>Arquivo:</b>
-  <%= @os.arquivo %>
-</p>
 
-<p>
-  <b>Estado:</b>
-  <%= @os.estado %>
-</p>
+  <p>
+    <b>Observacao:</b>
+    <%= @os.observacao %>
+  </p>
 
-<p>
-  <b>Prioridade:</b>
-  <%= @os.prioridade %>
-</p>
+  <div class="row">
+    <div class="span12 cliente">
+      <p>
+        <b>Cliente:</b>
+        <%= @os.cliente.nome %>
+      </p>  
+      <p>
+        <b>E-mail:</b>
+        <%= @os.cliente.email %>
+      </p>
+    </div>
+    <div class="span6">
+       <p>
+        <b>Telfone:</b>
+        <%= @os.cliente.telefone %>
+      </p>
+    </div>
+    <div class="span5">
+       <p>
+        <b>Celular:</b>
+        <%= @os.cliente.celular %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <b>Esta pago:</b>
-  <%= @os.esta_pago %>
-</p>
 
+  <h4>Produtos</h4>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Quantidade</th>
+      <th>Produto</th>
+      <th>Altura</th>
+      <th>Comprimento</th>
+      <th>Descrição</th>
+      <th>Valor Unitário</th>
+      <th>Subtotal</th>
+    </tr>
+  <% total = 0 %>
+  <% @os.itens.each do |item| %>
+    <tr>
+      <td><%= item.quantidade %></td>
+      <td><%= item.produto.nome %></td>
+      <td><%= item.altura*100 %></td>
+      <td><%= item.comprimento*100 %></td>
+      <td><%= item.descricao %></td>
+      <td><%= number_to_currency item.produto.preco_unitario %></td>
+      <td><%= number_to_currency item.subtotal %></td>
+    </tr>
+    <% total += item.subtotal %>
+  <% end %>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><b>Total: </b></td>
+      <td><%= number_to_currency total %></td>
+    </tr>
+  </table>
+
+  <h4>Pagamentos</h4>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Data</th>
+      <th>Forma de Pagamento</th>
+      <th>Valor</th>
+    </tr>
+  <% total = 0 %>
+  <% @os.pagamentos.each do |pagamento| %>
+    <tr>
+      <td><%= pagamento.created_at.strftime('%d/%m/%Y') %></td>
+      <td><%= pagamento.forma_de_pagamento %></td>
+      <td><%= number_to_currency pagamento.valor %></td>
+      <% total += pagamento.valor %>
+    </tr>
+  <% end %>
+    <tr>
+      <td></td>
+      <td><b>Total: </b></td>
+      <td><%= number_to_currency total %></td>
+    </tr>
+  </table>
+
+  <p>
+    <b>Desconto:</b>
+    <%= number_to_currency @os.desconto %>
+  </p>
+
+  <p>
+    <b>Valor total:</b>
+    <%= number_to_currency @os.valor_total %>
+  </p>
+
+  <p>
+    <b>Valor restante:</b>
+    <%= number_to_currency @os.valor_restante %>
+  </p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_os_path(@os) %> |
 <%= link_to 'Back', oss_path %>

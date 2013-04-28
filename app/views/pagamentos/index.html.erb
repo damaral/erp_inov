@@ -1,9 +1,8 @@
 <h1>Listing pagamentos</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Valor</th>
-    <th>Tipo</th>
     <th>Forma de pagamento</th>
     <th></th>
     <th></th>
@@ -13,7 +12,6 @@
 <% @pagamentos.each do |pagamento| %>
   <tr>
     <td><%= pagamento.valor %></td>
-    <td><%= pagamento.tipo %></td>
     <td><%= pagamento.forma_de_pagamento %></td>
     <td><%= link_to 'Show', pagamento %></td>
     <td><%= link_to 'Edit', edit_pagamento_path(pagamento) %></td>

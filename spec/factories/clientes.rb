@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :cliente do
     nome "MyString"
-    sobrenome "MyString"
     apelido "MyString"
     endereco "MyString"
     bairro "MyString"

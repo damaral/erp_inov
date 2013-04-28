@@ -2,5 +2,16 @@ textarea
   height: 100px
 
 .item
-  background-color: #ddd
+  background-color: #e1e1e1
   margin-top: 20px
+  padding-top: 20px
+  padding-bottom: 20px
+  @include border-top-radius(5px)
+  @include border-bottom-radius(5px)
+  @include border-left-radius(5px)
+  @include border-right-radius(5px)
+
+.remover
+  float: right
+  margin-top: -30px
+  margin-right: 25px

@@ -17,11 +17,6 @@ describe Item do
     item.should_not be_valid
   end
 
-  it "Deve possuir sub_total > 0" do
-    item.sub_total = -2
-    item.should_not be_valid
-  end
-
   it "Deve possuir altura > 0" do
     item.altura = -2
     item.should_not be_valid

@@ -43,6 +43,9 @@ function adiciona_campo(link){
   num_produtos += 1;
   novo_atributo = 'os[itens_attributes]['+ num_produtos +']';
   formulario = formulario.replace(/os\[itens_attributes\]\[0\]/g, novo_atributo);
+  formulario = formulario.replace('[_destroy]" type="hidden" value="1"', '[_destroy]" type="hidden" value="false"');
+
+  
 
   $('.produtos').append(formulario);
 }

@@ -1,8 +1,10 @@
+# coding: utf-8
+
 class OssController < ApplicationController
   # GET /oss
   # GET /oss.json
   def index
-    @oss = Os.all
+    @oss = Os.where("esta_pago = ? OR estado <> ?", false, Os::ESTADO_6).order("estado DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +28,7 @@ class OssController < ApplicationController
   def new
     @os = Os.new
     @os.itens.build
+    @os.pagamentos.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,44 +44,16 @@ class OssController < ApplicationController
   # POST /oss
   # POST /oss.json
   def create
-    params[:os][:desconto].gsub!("R$ ", "")
-    params[:os][:desconto].gsub!(/\./, "")
-    params[:os][:desconto].gsub!(/,/, ".")
-    params[:os][:desconto] = params[:os][:desconto].to_f
-    puts "ITENS #{params[:os][:itens_attributes].inspect} ================================"
+    currency_to_number params[:os][:desconto]
+    currency_to_number params[:os][:pagamentos_attributes]["0"][:valor]
 
-    valor_total = 0
-
-    params[:os][:itens_attributes].each do |item|
-      puts "ITENS #{item.inspect} ================================"
-      produto = Produto.find item[1][:produto_id]
-      item[1][:altura] = produto.altura unless produto.altura.nil?
-      item[1][:comprimento] = produto.comprimento unless produto.comprimento.nil?
-
-      item[1][:altura] = item[1][:altura].to_f/100
-      item[1][:comprimento] = item[1][:comprimento].to_f/100
-
-      if produto.unidade == Produto::PECA
-        item[1][:sub_total] = item[1][:quantidade].to_i*produto.preco_unitario
-      elsif produto.unidade == Produto::METRO_COMP
-        item[1][:sub_total] = item[1][:quantidade].to_i*item[1][:comprimento].to_f*produto.preco_unitario
-      elsif produto.unidade == Produto::METRO_ALT
-        item[1][:sub_total] = item[1][:quantidade].to_i*item[1][:altura].to_f*produto.preco_unitario
-      elsif produto.unidade == Produto::PECAMETRO_QUADRADO
-        item[1][:sub_total] = item[1][:quantidade].to_i*item[1][:altura].to_f*item[1][:comprimento].to_f*produto.preco_unitario
-      end
-
-      valor_total += item[1][:sub_total]
-    end
-# ARRUMAR VALOR RESTANTE
-    params[:os][:valor_restante] = 0
-    params[:os][:valor_total] = valor_total - params[:os][:desconto]
+    params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
 
     @os = Os.new(params[:os])
 
     respond_to do |format|
       if @os.save
-        format.html { redirect_to @os, notice: 'Os was successfully created.' }
+        format.html { redirect_to @os, notice: 'Ordem de Serviço criada com sucesso.' }
         format.json { render json: @os, status: :created, location: @os }
       else
         format.html { render action: "new" }
@@ -94,7 +69,7 @@ class OssController < ApplicationController
 
     respond_to do |format|
       if @os.update_attributes(params[:os])
-        format.html { redirect_to @os, notice: 'Os was successfully updated.' }
+        format.html { redirect_to @os, notice: 'Ordem de Serviço atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -113,5 +88,13 @@ class OssController < ApplicationController
       format.html { redirect_to oss_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def currency_to_number(currency)
+    currency.gsub!("R$ ", "")
+    currency.gsub!(/\./, "")
+    currency.gsub!(/,/, ".")
+    currency = currency.to_f
   end
 end

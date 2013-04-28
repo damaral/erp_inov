@@ -5,6 +5,8 @@ class Produto < ActiveRecord::Base
 
   has_many :itens
 
+  before_create :ajusta_dimensoes
+
   PECA = "Peça"
   METRO_COMP = "Metro Comprimento"
   METRO_ALT = "Metro Altura"
@@ -24,4 +26,9 @@ class Produto < ActiveRecord::Base
     errors.add(:unidade, "Unidade inválida") unless UNIDADES.include? unidade
   end
 
+  private
+  def ajusta_dimensoes
+    self.altura = self.altura / 100 unless self.altura.nil?
+    self.comprimento = self.comprimento / 100 unless self.comprimento.nil?
+  end
 end
