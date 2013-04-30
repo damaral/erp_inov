@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="span12 thumbnail os">
+    <div class="page-header row">
+      <h3 class="span10">Ordem de Serviço: <%= @os.id %></h3>
+      <div class="span1">
+        <% if @os.estado == Os::ESTADO_1 || @os.estado == Os::ESTADO_3 %>
+          <%= link_to submeter_para_aprovacao_layout_func_os_path(@os), data: { confirm: 'Você tem certeza que deseja submeter o Layout para Aprovação?' }, :class => "btn btn-info btn-mini" do %>
+          <i class="icon-envelope icon-white"></i>
+          <%= "Submeter Layout" %>
+          <% end %>
+        <% elsif @os.estado == Os::ESTADO_4 %>
+          <%= link_to finalizar_execucao_func_os_path(@os), data: { confirm: 'Você tem certeza que deseja finalizar a execução desta O.S.?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-fire icon-white"></i>
+          <%= "Finalizar Execução" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="span6">
+        <b>Data de Criação:</b>
+        <%= @os.created_at.strftime('%d/%m/%Y') %>
+      </p>
+
+      <p class="span6">
+        <b>Previsão de entrega:</b>
+        <%= @os.previsao_entrega.strftime('%d/%m/%Y') %>
+      </p>
+    </div>
+
+    <div class="row">
+      <p class="span6">
+        <b>Estado:</b>
+        <%= Os::ESTADOS[@os.estado] %>
+      </p> 
+    </div>
+
+
+    <p>
+      <b>Arquivo:</b>
+      <%= @os.arquivo %>
+    </p>
+
+
+    <p>
+      <b>Observação:</b>
+      <%= @os.observacao %>
+    </p>
+
+    <div class="row ">
+      <div class="span12 cliente">
+        <div class="row">
+          <div class="span12">
+            <p>
+              <b>Cliente:</b>
+              <%= @os.cliente.nome %>
+            </p>  
+            <p>
+              <b>E-mail:</b>
+              <%= @os.cliente.email %>
+            </p> 
+          </div> 
+        </div>
+        <div class="row">
+          <div class="span6">
+             <p>
+              <b>Telfone:</b>
+              <%= @os.cliente.telefone %>
+            </p>
+          </div>
+          <div class="span5">
+             <p>
+              <b>Celular:</b>
+              <%= @os.cliente.celular %>
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
+    <h4>Produtos</h4>
+
+    <table class="table table-striped">
+      <tr>
+        <th>Quantidade</th>
+        <th>Produto</th>
+        <th>Altura</th>
+        <th>Comprimento</th>
+        <th>Descrição</th>
+      </tr>
+    <% @os.itens.each do |item| %>
+      <tr>
+        <td><%= item.quantidade %></td>
+        <td><%= item.produto.nome %></td>
+        <td><%= item.altura*100 %></td>
+        <td><%= item.comprimento*100 %></td>
+        <td><%= item.descricao %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
+
+<%= link_to func_oss_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

@@ -1,0 +1,37 @@
+<%= simple_form_for(@os, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :cliente, :label_method => :nome, :label => "Cliente: " %>
+    <%= f.input :previsao_entrega, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Previsão de Entrega: " %>
+    <%= f.input :aprovado_por, :collection => Os::APROVADORES, :label => "Aprovado por: ", :prompt => "Selecione" %>
+    <%= f.input :observacao, :label => "Obeservação: " %>
+    <%= f.input :desconto, :as => :string, :label => "Desconto: ", :input_html => {:value => 0, :class => "money"} %>
+    <%= f.input :arquivo, :label => "Arquivo: " %>
+    <%= f.input :estado, :collection => Os::ESTADOS.invert, :label => "Estado: ", :include_blank => false %>
+    
+    <h4>Sinal</h4>
+    <hr>
+    <div class="pagamentos">
+      <%= f.simple_fields_for :pagamentos do |p| %>
+        <%= p.input :forma_de_pagamento, :collection => Pagamento::FORMAS_PGTO, :prompt => "Selecione", :label => "Forma de Pagamento: " %>
+        <%= p.input :valor, :as => :string, :label => "Valor: ", :input_html => {:value => 0, :class => "money"} %>
+      <% end %>
+    </div>
+    
+    <h4>Produtos</h4>
+    <hr>
+    <div class="produtos">
+      <%= link_to_function "Adicionar", "adiciona_campo(this)", :class => "btn btn-primary" %>
+      <%= f.simple_fields_for :itens do |builder| %>
+        <%= render :partial => 'form_itens', :locals => {:p => builder} %>
+      <% end %>
+    </div>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Criar O.S.", :class => "btn btn-primary" %>
+    <%= link_to 'Cancelar', oss_path, :class => "btn btn-inverse" %>
+  </div>
+<% end %>

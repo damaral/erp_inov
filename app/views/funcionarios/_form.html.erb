@@ -15,8 +15,8 @@
     <%= f.input :email %>
     <%= f.input :rg %>
     <%= f.input :cargo %>
-    <%= f.input :data_admissao %>
-    <%= f.input :data_demissao %>
+    <%= f.input :data_admissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de admissão: " %>
+    <%= f.input :data_demissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de demissão: " %>
   </div>
 
   <div class="form-actions">

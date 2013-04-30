@@ -1,7 +1,34 @@
 <div class="row">
-  <div class="span12 thumbnail">
-  <div class="page-header">
-    <h3>Ordem de Serviço: <%= @os.id %></h3>
+  <div class="span12 thumbnail os">
+  <div class="page-header row">
+    <h3 class="span10">Ordem de Serviço: <%= @os.id %></h3>
+    <div class="span1">
+      <% if @os.estado == Os::ESTADO_0 %>
+        <%= link_to aprovar_execucao_os_path(@os), data: { confirm: 'Você tem certeza que deseja Aprovar a execução desta Ordem de Serviço?' }, :class => "btn btn-success btn-mini" do %>
+        <i class="icon-ok icon-white"></i>
+        <%= "Aprovar Execução" %>
+        <% end %>
+      <% elsif @os.estado == Os::ESTADO_2 %>
+        <%= link_to reprovar_layout_os_path(@os), data: { confirm: 'Você tem certeza que deseja Reprovar o Layout desta Ordem de Serviço?' }, :class => "btn btn-danger btn-mini" do %>
+        <i class="icon-thumbs-down icon-white"></i>
+        <%= "Reprovar Layout" %>
+        <% end %>
+        <%= link_to aprovar_layout_os_path(@os), data: { confirm: 'Você tem certeza que deseja Aprovar o Layout desta Ordem de Serviço?' }, :class => "btn btn-success btn-mini" do %>
+        <i class="icon-ok icon-white"></i>
+        <%= "Aprovar Layout" %>
+        <% end %>
+      <% elsif @os.estado == Os::ESTADO_5 %>
+        <%= link_to finalizar_os_path(@os), data: { confirm: 'Você tem certeza que deseja finalizar esta Ordem de Serviço?' }, :class => "btn btn-danger btn-mini" do %>
+        <i class="icon-flag icon-white"></i>
+        <%= "Finalizar O.S." %>
+        <% end %>
+      <% elsif @os.estado == Os::ESTADO_6 %>
+        <%= link_to entregar_os_path(@os), data: { confirm: 'Você tem certeza que deseja marcar esta Ordem de Serviço como entregue?' }, :class => "btn btn-info btn-mini" do %>
+        <i class="icon-share icon-white"></i>
+        <%= "Entregar O.S." %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row">
@@ -31,32 +58,39 @@
 
 
   <p>
-    <b>Observacao:</b>
+    <b>Observação:</b>
     <%= @os.observacao %>
   </p>
 
-  <div class="row">
+  <div class="row ">
     <div class="span12 cliente">
-      <p>
-        <b>Cliente:</b>
-        <%= @os.cliente.nome %>
-      </p>  
-      <p>
-        <b>E-mail:</b>
-        <%= @os.cliente.email %>
-      </p>
-    </div>
-    <div class="span6">
-       <p>
-        <b>Telfone:</b>
-        <%= @os.cliente.telefone %>
-      </p>
-    </div>
-    <div class="span5">
-       <p>
-        <b>Celular:</b>
-        <%= @os.cliente.celular %>
-      </p>
+      <div class="row">
+        <div class="span12">
+          <p>
+            <b>Cliente:</b>
+            <%= @os.cliente.nome %>
+          </p>  
+          <p>
+            <b>E-mail:</b>
+            <%= @os.cliente.email %>
+          </p> 
+        </div> 
+      </div>
+      <div class="row">
+        <div class="span6">
+           <p>
+            <b>Telfone:</b>
+            <%= @os.cliente.telefone %>
+          </p>
+        </div>
+        <div class="span5">
+           <p>
+            <b>Celular:</b>
+            <%= @os.cliente.celular %>
+          </p>
+        </div>
+      </div>
+      
     </div>
   </div>
 
@@ -139,5 +173,12 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_os_path(@os) %> |
-<%= link_to 'Back', oss_path %>
+<%= link_to edit_os_path(@os), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
+
+<%= link_to oss_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

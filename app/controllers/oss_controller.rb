@@ -90,6 +90,46 @@ class OssController < ApplicationController
     end
   end
 
+  def aprovar_execucao
+    @os = Os.find(params[:id])
+    @os.estado = Os::ESTADO_1
+    @os.save
+
+    redirect_to @os, notice: 'Aprovado a execução desta Ordem de Serviço.'
+  end
+
+  def aprovar_layout
+    @os = Os.find(params[:id])
+    @os.estado = Os::ESTADO_4
+    @os.save
+
+    redirect_to @os, notice: 'Layout Aprovado com sucesso.'
+  end
+
+  def reprovar_layout
+    @os = Os.find(params[:id])
+    @os.estado = Os::ESTADO_3
+    @os.save
+
+    redirect_to @os, notice: 'Layout Reprovado com sucesso.'
+  end
+
+  def finalizar
+    @os = Os.find(params[:id])
+    @os.estado = Os::ESTADO_6
+    @os.save
+
+    redirect_to @os, notice: 'Ordem de Serviço finalizada com sucesso.'
+  end
+
+  def entregar
+    @os = Os.find(params[:id])
+    @os.estado = Os::ESTADO_7
+    @os.save
+
+    redirect_to oss_path, notice: 'Ordem de Serviço entregue com sucesso.'
+  end
+
   private
   def currency_to_number(currency)
     currency.gsub!("R$ ", "")

@@ -12,4 +12,10 @@
   FactoryGirl.create(:cliente, :nome => nome)
 end
 
-FactoryGirl.create(:produto, :nome => "Faixa 70 cm", :unidade => Produto::METRO_COMP, :preco_unitario => 25, :custo_unitario => 10, :altura => 0.7)
+FactoryGirl.create(:produto, :nome => "Faixa 70 cm", :unidade => Produto::METRO_COMP, :preco_unitario => 25, :custo_unitario => 10, :altura => 70)
+FactoryGirl.create(:produto, :nome => "Banner 100 cm x 70 cm", :unidade => Produto::PECA, :preco_unitario => 40, :custo_unitario => 25, :altura => 100, :comprimento => 70)
+FactoryGirl.create(:produto, :nome => "Placa Imobiliária 40 cm x 50 cm", :unidade => Produto::PECA, :preco_unitario => 15, :custo_unitario => 8, :altura => 40, :comprimento => 50)
+
+["Autometal", "Flasa", "Dana Nakata", "General Motors"].each do |nome|
+  FactoryGirl.create(:empresa, :nome => nome)
+end

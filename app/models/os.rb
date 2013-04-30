@@ -20,14 +20,18 @@ class Os < ActiveRecord::Base
   ESTADO_4 = 4
   ESTADO_5 = 5
   ESTADO_6 = 6
+  ESTADO_7 = 7
+  ESTADO_8 = 8
 
   ESTADOS = {ESTADO_0 => "Aguardando aprovação ou sinal",
              ESTADO_1 => "Layout em desenvolvimento",
              ESTADO_2 => "Aguardando aprovação do Layout",
-             ESTADO_3 => "Em execução",
-             ESTADO_4 => "Em processo de Finalização",
-             ESTADO_5 => "Finalizado",
-             ESTADO_6 => "Entregue"}
+             ESTADO_3 => "Layout Reprovado",
+             ESTADO_4 => "Layout Aprovado. Em Execução",
+             ESTADO_5 => "Em processo de Finalização",
+             ESTADO_6 => "Finalizado",
+             ESTADO_7 => "Entregue",
+             ESTADO_8 => "Cancelada"}
 
   CLIENTE = "Cliente"
   GERENCIA = "Gerência"

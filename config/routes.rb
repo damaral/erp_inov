@@ -1,5 +1,13 @@
 ErpInov::Application.routes.draw do
-  resources :oss
+  resources :oss do
+    member do
+      get 'aprovar_execucao'
+      get 'aprovar_layout'
+      get 'reprovar_layout'
+      get 'finalizar'
+      get 'entregar'
+    end
+  end
 
 
   resources :pagamentos
@@ -16,6 +24,14 @@ ErpInov::Application.routes.draw do
 
   resources :clientes
 
+  namespace :func do
+    resources :oss, :only => [:index, :show] do
+      member do
+        get 'submeter_para_aprovacao_layout'
+        get 'finalizar_execucao'
+      end
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
