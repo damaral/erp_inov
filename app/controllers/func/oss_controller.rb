@@ -4,7 +4,7 @@ module Func
     # GET /oss
     # GET /oss.json
     def index
-      @oss = Os.where("estado > ? AND estado < ?", Os::ESTADO_0, Os::ESTADO_4).order("estado DESC")
+      @oss = Os.where("estado > ? AND estado < ?", Os::ESTADO_0, Os::ESTADO_4).order("estado DESC").page(params[:page]).per(NUMERO_POR_PAGINA)
 
       respond_to do |format|
         format.html # index.html.erb

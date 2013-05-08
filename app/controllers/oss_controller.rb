@@ -4,7 +4,7 @@ class OssController < ApplicationController
   # GET /oss
   # GET /oss.json
   def index
-    @oss = Os.where("esta_pago = ? OR estado <> ?", false, Os::ESTADO_6).order("estado DESC")
+    @oss = Os.where("esta_pago = ? OR estado <> ?", false, Os::ESTADO_6).order("estado DESC").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb

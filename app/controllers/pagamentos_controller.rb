@@ -2,7 +2,7 @@ class PagamentosController < ApplicationController
   # GET /pagamentos
   # GET /pagamentos.json
   def index
-    @pagamentos = Pagamento.all
+    @pagamentos = Pagamento.page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb

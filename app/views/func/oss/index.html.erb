@@ -31,7 +31,9 @@
   </tr>
 <% end %>
 </table>
-
+<div class="span12">
+    <%= paginate @oss %>
+</div>
 <br />
 
 <%= link_to 'Nova O.S.', new_os_path, :class => "btn btn-primary" %>
