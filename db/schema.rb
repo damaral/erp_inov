@@ -15,12 +15,15 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
 
   create_table "acoes", :force => true do |t|
     t.string   "acao"
+    t.text     "comentario"
     t.integer  "os_id"
     t.integer  "funcionario_id"
+    t.integer  "cliente_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
+  add_index "acoes", ["cliente_id"], :name => "index_acoes_on_cliente_id"
   add_index "acoes", ["funcionario_id"], :name => "index_acoes_on_funcionario_id"
   add_index "acoes", ["os_id"], :name => "index_acoes_on_os_id"
 

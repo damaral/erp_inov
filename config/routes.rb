@@ -6,6 +6,8 @@ ErpInov::Application.routes.draw do
       get 'reprovar_layout'
       get 'finalizar'
       get 'entregar'
+
+      post 'acao'
     end
   end
 

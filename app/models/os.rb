@@ -54,6 +54,10 @@ class Os < ActiveRecord::Base
     valor_total - valor_pago
   end
 
+  def exige_acao_da_gerencia?
+    estado == ESTADO_0 || estado == ESTADO_2 || estado == ESTADO_5 || estado == ESTADO_6
+  end
+
   private
   def verifica_se_esta_pago
     if self.valor_restante == 0

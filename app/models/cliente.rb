@@ -5,6 +5,7 @@ class Cliente < ActiveRecord::Base
 
   belongs_to :empresa
   has_many :pagamentos
+  has_many :acoes
 
   validates :nome, :presence => true, :uniqueness => true
   validates :telefone, :presence => true

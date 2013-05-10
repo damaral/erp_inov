@@ -90,6 +90,38 @@ class OssController < ApplicationController
     end
   end
 
+  def acao
+    @os = Os.find(params[:id])
+
+    Acao.create({:acao => params[:commit], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
+
+    if params[:commit] == Acao::APROVAR_EXECUCAO
+      @os.estado = Os::ESTADO_1
+      notice = 'Aprovado a execução desta Ordem de Serviço.'
+
+    elsif params[:commit] == Acao::APROVAR_LAYOUT
+      @os.estado = Os::ESTADO_4
+      notice = 'Layout Aprovado com sucesso.'
+
+    elsif params[:commit] == Acao::REPROVAR_LAYOUT
+      @os.estado = Os::ESTADO_3
+      notice = 'Layout Reprovado com sucesso.'
+
+    elsif params[:commit] == Acao::FINALIZAR_OS
+      @os.estado = Os::ESTADO_6
+      notice = 'Ordem de Serviço finalizada com sucesso.'
+
+    elsif params[:commit] == Acao::ENTREGAR_OS
+      @os.estado = Os::ESTADO_7
+      notice = 'Ordem de Serviço entregue com sucesso.'
+
+    end
+      
+    @os.save
+
+    redirect_to @os, notice: notice
+  end
+
   def aprovar_execucao
     @os = Os.find(params[:id])
     @os.estado = Os::ESTADO_1

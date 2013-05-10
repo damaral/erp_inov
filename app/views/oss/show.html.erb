@@ -170,6 +170,90 @@
     <b>Valor restante:</b>
     <%= number_to_currency @os.valor_restante %>
   </p>
+  
+  
+  
+  <h4>Ações</h4>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Agente</th>
+      <th>Ação</th>
+      <th>Comentário</th>
+      <th>Data</th>
+    </tr>
+  <% @os.acoes.each do |acao| %>
+    <tr>
+      <% unless acao.funcionario.nil? %>
+        <td><%= "Func. #{acao.funcionario.nome}" %></td>
+      <% else %>
+        <td><%= "Cliente #{acao.cliente.nome}" %></td>
+      <% end %>
+      <td><%= acao.acao %></td>
+      <td><%= acao.comentario %></td>
+      <td><%= acao.created_at.strftime('%d/%m/%Y') %></td>
+    </tr>
+  <% end %>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  <% if @os.exige_acao_da_gerencia? %>
+  
+    <% if @os.estado == Os::ESTADO_0 %>
+      <%  button_text = 'Aprovar Execução'
+          value = Acao::APROVAR_EXECUCAO
+          confirm_message = 'Você tem certeza que deseja Aprovar a execução desta Ordem de Serviço?' 
+          button_class = "btn-success btn-mini"  %>
+    <% elsif @os.estado == Os::ESTADO_2 %>
+      <%  button_text = 'Reprovar Layout'
+          value = Acao::REPROVAR_LAYOUT
+          confirm_message = 'Você tem certeza que deseja Reprovar o Layout desta Ordem de Serviço?'
+          button_class = "btn-danger btn-mini" %>
+    <% elsif @os.estado == Os::ESTADO_5 %>
+      <%  button_text = "Finalizar O.S."
+          value = Acao::FINALIZAR_OS
+          confirm_message = 'Você tem certeza que deseja finalizar esta Ordem de Serviço?'
+          button_class = "btn-danger btn-mini" %>
+    <% elsif @os.estado == Os::ESTADO_6 %>
+      <%  button_text = "Entregar O.S."
+          value = Acao::ENTREGAR_OS
+          confirm_message = 'Você tem certeza que deseja marcar esta Ordem de Serviço como entregue?' 
+          button_class = "btn btn-info btn-mini"%>
+    <% end %>
+    
+    
+    <%= simple_form_for(:acao, :url => acao_os_path(@os), :html => {:class => "form-horizontal"}) do |f| %>
+      <%= f.input :comentario, :as => :text, :required => false %>
+      <%= f.button :submit, "#{button_text}", :value => "#{value}", data: { confirm: "#{confirm_message}" }, :class => "btn #{button_class}" %>
+
+      <% if @os.estado == Os::ESTADO_2 %>
+        <%= f.button :submit, "Aprovar Layout", :value => Acao::APROVAR_LAYOUT, data: { confirm: "Você tem certeza que deseja Aprovar o Layout desta Ordem de Serviço?" }, :class => "btn btn-success btn-mini" %>
+      <% end %>
+      
+    <% end %>
+    
+  <% end %>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   </div>
 </div>
 
