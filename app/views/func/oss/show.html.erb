@@ -2,19 +2,6 @@
   <div class="span12 thumbnail os">
     <div class="page-header row">
       <h3 class="span10">Ordem de Serviço: <%= @os.id %></h3>
-      <div class="span1">
-        <% if @os.estado == Os::ESTADO_1 || @os.estado == Os::ESTADO_3 %>
-          <%= link_to submeter_para_aprovacao_layout_func_os_path(@os), data: { confirm: 'Você tem certeza que deseja submeter o Layout para Aprovação?' }, :class => "btn btn-info btn-mini" do %>
-          <i class="icon-envelope icon-white"></i>
-          <%= "Submeter Layout" %>
-          <% end %>
-        <% elsif @os.estado == Os::ESTADO_4 %>
-          <%= link_to finalizar_execucao_func_os_path(@os), data: { confirm: 'Você tem certeza que deseja finalizar a execução desta O.S.?' }, :class => "btn btn-danger btn-mini" do %>
-          <i class="icon-fire icon-white"></i>
-          <%= "Finalizar Execução" %>
-          <% end %>
-        <% end %>
-      </div>
     </div>
 
     <div class="row">
@@ -101,8 +88,62 @@
       </tr>
     <% end %>
     </table>
-  </div>
-</div>
+  
+
+
+  <h4>Ações</h4>
+
+    <table class="table table-striped">
+      <tr>
+        <th>Agente</th>
+        <th>Ação</th>
+        <th>Comentário</th>
+        <th>Data</th>
+      </tr>
+    <% @os.acoes.each do |acao| %>
+      <tr>
+        <% unless acao.funcionario.nil? %>
+          <td><%= "Func. #{acao.funcionario.nome}" %></td>
+        <% else %>
+          <td><%= "Cliente #{acao.cliente.nome}" %></td>
+        <% end %>
+        <td><%= Acao::ACOES[acao.acao] %></td>
+        <td><%= acao.comentario %></td>
+        <td><%= acao.created_at.strftime('%d/%m/%Y') %></td>
+      </tr>
+    <% end %>
+    </table>
+    
+    <% if @os.exige_acao_do_funcionario? %>
+    
+      <% if @os.estado == Os::ESTADO_1 || @os.estado == Os::ESTADO_3 %>
+        <%  value = Acao::SUBMETER_LAYOUT
+            confirm_message = 'Você tem certeza que deseja submeter o Layout para Aprovação?' 
+            button_class = "btn-info btn-mini"
+            class_icon = "icon-envelope icon-white"  %>
+      <% elsif @os.estado == Os::ESTADO_4 %>
+        <%  value = Acao::FINALIZAR_EXECUCAO
+            confirm_message = 'Você tem certeza que deseja finalizar a execução desta O.S.?'
+            button_class = "btn-danger btn-mini"
+            class_icon = "icon-fire icon-white" %>
+      <% end %>
+      
+      <%= simple_form_for(:acao, :url => acao_func_os_path(@os), :html => {:class => "form-vertical"}) do |f| %>
+         <div class="form-actions">
+            <%= f.input :acao_realizada, :as => :hidden, :input_html => { :value => value, :id => "acao_realizada" } %>
+            <%= button_tag(type: 'submit', data: { confirm: "#{confirm_message}" }, class: "btn #{button_class} span1 acao_button", onclick: "$('#acao_realizada').val(#{value});") do %>
+              <i class="<%= "#{class_icon}" %>"></i>
+              <%= Acao::ACOES[value] %>
+            <% end %>
+            
+            <%= f.input :comentario, :label => "Comentário: ", :as => :text, :required => false %>
+        </div>
+        
+      <% end %>
+      
+    <% end %>
+  </div> 
+</div> 
 
 <%= link_to func_oss_path, :class => "btn btn-inverse" do %>
   <i class=" icon-chevron-left icon-white"></i>

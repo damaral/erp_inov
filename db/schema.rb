@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130423223547) do
 
   create_table "acoes", :force => true do |t|
-    t.string   "acao"
+    t.integer  "acao"
     t.text     "comentario"
     t.integer  "os_id"
     t.integer  "funcionario_id"

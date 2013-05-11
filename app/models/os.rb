@@ -58,6 +58,10 @@ class Os < ActiveRecord::Base
     estado == ESTADO_0 || estado == ESTADO_2 || estado == ESTADO_5 || estado == ESTADO_6
   end
 
+  def exige_acao_do_funcionario?
+    estado == ESTADO_1 || estado == ESTADO_3 || estado == ESTADO_4
+  end
+
   private
   def verifica_se_esta_pago
     if self.valor_restante == 0

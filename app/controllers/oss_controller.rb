@@ -93,25 +93,25 @@ class OssController < ApplicationController
   def acao
     @os = Os.find(params[:id])
 
-    Acao.create({:acao => params[:commit], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
+    Acao.create({:acao => params[:acao][:acao_realizada], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
 
-    if params[:commit] == Acao::APROVAR_EXECUCAO
+    if params[:acao][:acao_realizada].to_i == Acao::APROVAR_EXECUCAO
       @os.estado = Os::ESTADO_1
       notice = 'Aprovado a execução desta Ordem de Serviço.'
 
-    elsif params[:commit] == Acao::APROVAR_LAYOUT
+    elsif params[:acao][:acao_realizada].to_i == Acao::APROVAR_LAYOUT
       @os.estado = Os::ESTADO_4
       notice = 'Layout Aprovado com sucesso.'
 
-    elsif params[:commit] == Acao::REPROVAR_LAYOUT
+    elsif params[:acao][:acao_realizada].to_i == Acao::REPROVAR_LAYOUT
       @os.estado = Os::ESTADO_3
       notice = 'Layout Reprovado com sucesso.'
 
-    elsif params[:commit] == Acao::FINALIZAR_OS
+    elsif params[:acao][:acao_realizada].to_i == Acao::FINALIZAR_OS
       @os.estado = Os::ESTADO_6
       notice = 'Ordem de Serviço finalizada com sucesso.'
 
-    elsif params[:commit] == Acao::ENTREGAR_OS
+    elsif params[:acao][:acao_realizada].to_i == Acao::ENTREGAR_OS
       @os.estado = Os::ESTADO_7
       notice = 'Ordem de Serviço entregue com sucesso.'
 
@@ -120,46 +120,6 @@ class OssController < ApplicationController
     @os.save
 
     redirect_to @os, notice: notice
-  end
-
-  def aprovar_execucao
-    @os = Os.find(params[:id])
-    @os.estado = Os::ESTADO_1
-    @os.save
-
-    redirect_to @os, notice: 'Aprovado a execução desta Ordem de Serviço.'
-  end
-
-  def aprovar_layout
-    @os = Os.find(params[:id])
-    @os.estado = Os::ESTADO_4
-    @os.save
-
-    redirect_to @os, notice: 'Layout Aprovado com sucesso.'
-  end
-
-  def reprovar_layout
-    @os = Os.find(params[:id])
-    @os.estado = Os::ESTADO_3
-    @os.save
-
-    redirect_to @os, notice: 'Layout Reprovado com sucesso.'
-  end
-
-  def finalizar
-    @os = Os.find(params[:id])
-    @os.estado = Os::ESTADO_6
-    @os.save
-
-    redirect_to @os, notice: 'Ordem de Serviço finalizada com sucesso.'
-  end
-
-  def entregar
-    @os = Os.find(params[:id])
-    @os.estado = Os::ESTADO_7
-    @os.save
-
-    redirect_to oss_path, notice: 'Ordem de Serviço entregue com sucesso.'
   end
 
   private

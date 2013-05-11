@@ -90,6 +90,26 @@ module Func
       end
     end
 
+    def acao
+      @os = Os.find(params[:id])
+
+      Acao.create({:acao => params[:acao][:acao_realizada], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
+
+      if params[:acao][:acao_realizada].to_i == Acao::SUBMETER_LAYOUT
+        @os.estado = Os::ESTADO_2
+        notice = 'Layout submetido para aprovação.'
+
+      elsif params[:acao][:acao_realizada].to_i == Acao::FINALIZAR_EXECUCAO
+        @os.estado = Os::ESTADO_5
+        notice = 'Ordem de Serviço Executada com sucesso.'
+
+      end
+        
+      @os.save
+
+      redirect_to func_os_path(@os), notice: notice
+    end
+
     def submeter_para_aprovacao_layout
       @os = Os.find(params[:id])
       @os.estado = Os::ESTADO_2

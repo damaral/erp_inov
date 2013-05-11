@@ -1,7 +1,7 @@
 class CreateAcoes < ActiveRecord::Migration
   def change
     create_table :acoes do |t|
-      t.string :acao
+      t.integer :acao
       t.text :comentario
 
       t.references :os

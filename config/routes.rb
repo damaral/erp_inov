@@ -1,12 +1,6 @@
 ErpInov::Application.routes.draw do
   resources :oss do
     member do
-      get 'aprovar_execucao'
-      get 'aprovar_layout'
-      get 'reprovar_layout'
-      get 'finalizar'
-      get 'entregar'
-
       post 'acao'
     end
   end
@@ -29,6 +23,8 @@ ErpInov::Application.routes.draw do
   namespace :func do
     resources :oss, :only => [:index, :show] do
       member do
+        post 'acao'
+        
         get 'submeter_para_aprovacao_layout'
         get 'finalizar_execucao'
       end
