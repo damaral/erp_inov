@@ -6,6 +6,7 @@ class CreateItens < ActiveRecord::Migration
       t.float :altura
       t.float :comprimento
       t.string :tipo
+      t.float :desconto
 
       t.references :produto
       t.references :os

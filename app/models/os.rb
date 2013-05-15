@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Os < ActiveRecord::Base
-  attr_accessible :arquivo, :data_entrega, :previsao_entrega, :desconto, :esta_pago, :estado, :observacao, :aprovado_por, :cliente_id, :itens_attributes, :pagamentos_attributes
+  attr_accessible :arquivo, :data_entrega, :previsao_entrega, :esta_pago, :estado, :observacao, :aprovado_por, :cliente_id, :itens_attributes, :pagamentos_attributes
 
   has_many :itens, :dependent => :destroy
   has_many :pagamentos
@@ -9,7 +9,7 @@ class Os < ActiveRecord::Base
   belongs_to :cliente
 
   accepts_nested_attributes_for :itens, :allow_destroy => true, :reject_if => proc { |attributes| attributes['produto_id'].blank? }
-  accepts_nested_attributes_for :pagamentos, :reject_if => proc { |attributes| attributes['valor'].blank? }
+  accepts_nested_attributes_for :pagamentos, :reject_if => proc { |attributes| attributes['valor'].to_f.zero? }
 
   after_create :verifica_se_esta_pago
 
@@ -38,12 +38,19 @@ class Os < ActiveRecord::Base
 
   APROVADORES = [CLIENTE, GERENCIA]
 
-  validates :desconto, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
   validates :cliente, :presence => true
+  validates :aprovado_por, :presence => true
+
+  def desconto_total
+    itens.inject(0) {|sum, item| sum + item.desconto}
+  end
+
+  def valor_final
+    valor_total - desconto_total
+  end
 
   def valor_total
-    total = itens.inject(0) {|sum, item| sum + item.subtotal}
-    total - desconto
+    itens.inject(0) {|sum, item| sum + item.subtotal}
   end
 
   def valor_pago
@@ -51,7 +58,7 @@ class Os < ActiveRecord::Base
   end
 
   def valor_restante
-    valor_total - valor_pago
+    valor_final - valor_pago
   end
 
   def exige_acao_da_gerencia?

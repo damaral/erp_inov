@@ -6,7 +6,7 @@ FactoryGirl.define do
     descricao "MyText"
     altura 1.5
     comprimento 1.5
+    tipo Item::IMPRESSAO
     produto
-    os
   end
 end

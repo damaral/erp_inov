@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.float    "altura"
     t.float    "comprimento"
     t.string   "tipo"
+    t.float    "desconto"
     t.integer  "produto_id"
     t.integer  "os_id"
     t.datetime "created_at",  :null => false
@@ -104,7 +105,6 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.date     "data_entrega"
     t.date     "previsao_entrega"
     t.text     "observacao"
-    t.float    "desconto"
     t.string   "arquivo"
     t.integer  "estado"
     t.string   "aprovado_por"

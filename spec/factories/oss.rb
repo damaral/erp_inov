@@ -10,5 +10,6 @@ FactoryGirl.define do
     estado "MyString"
     esta_pago false
     cliente
+    aprovado_por Os::CLIENTE
   end
 end

@@ -20,10 +20,10 @@ $(document).ready(function(){
     format: 'dd/mm/yyyy'
   });
 
-  if($(".money").length != 0){
+  /*if($(".money").length != 0){
     $(".money").val($(".money").val().replace(".", ","));
     $(".money").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});
-  }
+  }*/
 
   /*if($(".money").length != 0){
     $(".money").val($(".money").val().replace(".", ","));

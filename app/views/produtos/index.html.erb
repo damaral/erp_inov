@@ -31,8 +31,8 @@
     <td><%= produto.unidade %></td>
     <td><%= number_to_currency produto.preco_unitario %></td>
     <td><%= number_to_currency produto.custo_unitario %></td>
-    <td><%= produto.altura*100 unless produto.altura.nil?  %></td>
-    <td><%= produto.comprimento*100 unless produto.comprimento.nil? %></td>
+    <td><%= produto.altura unless produto.altura.nil?  %></td>
+    <td><%= produto.comprimento unless produto.comprimento.nil? %></td>
     <td class="botao-acao primeiro-botao">
         <%= link_to produto, :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>

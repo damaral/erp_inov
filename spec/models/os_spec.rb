@@ -26,4 +26,9 @@ describe Os do
     os.desconto = -9
     os.should_not be_valid
   end
+
+  it "Deve possuir desconto < valor_total" do
+    os.desconto = 10
+    os.should_not be_valid
+  end
 end

@@ -2037,3 +2037,441 @@ Connecting to database specified by database.yml
   [1m[35mSQL (0.2ms)[0m  INSERT INTO `oss` (`arquivo`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `prioridade`, `updated_at`, `valor_restante`, `valor_total`) VALUES ('MyString', '2013-04-25 19:20:37', '2013-04-23', 1.5, 0, 'MyString', 'MyText', 1, '2013-04-25 19:20:37', 1.5, 1.5)
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (46.3ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'erp_inov_test.oss' doesn't exist: SHOW FULL FIELDS FROM `oss`
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'erp_inov_test.oss' doesn't exist: SHOW FULL FIELDS FROM `oss`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'erp_inov_test.oss' doesn't exist: SHOW FULL FIELDS FROM `oss`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'erp_inov_test.oss' doesn't exist: SHOW FULL FIELDS FROM `oss`
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'erp_inov_test.oss' doesn't exist: SHOW FULL FIELDS FROM `oss`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:02:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:02:09')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (63.9ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:02:10', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:02:10')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (44.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:02:10', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:02:10')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (60.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:02:10', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:02:10')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (46.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:50', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:50')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (67.3ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:50', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:50')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (47.8ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:50', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:50')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (38.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:50', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:50')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (38.6ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:56', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:56')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (70.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:57', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:57')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (48.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:57', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:57')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (51.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:03:57', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:03:57')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (44.4ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:04:29', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:04:29')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 13, '2013-05-14 01:04:29', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:04:29')[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 1
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 13, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:04:29', `updated_at` = '2013-05-14 01:04:29' WHERE `oss`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (99.0ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:04:30', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:04:30')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 14, '2013-05-14 01:04:30', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:04:30')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 2
+  [1m[36mPagamento Load (0.1ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 2[0m
+  [1m[35m (0.3ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 14, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:04:30', `updated_at` = '2013-05-14 01:04:30' WHERE `oss`.`id` = 2
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (63.9ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:04:30', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:04:30')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 15, '2013-05-14 01:04:30', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:04:30')[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 3
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 3[0m
+  [1m[35m (0.4ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 15, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:04:30', `updated_at` = '2013-05-14 01:04:30' WHERE `oss`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (26.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:04:30', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:04:30')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 16, '2013-05-14 01:04:30', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:04:30')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 4
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 4[0m
+  [1m[35m (0.3ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 16, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:04:30', `updated_at` = '2013-05-14 01:04:30' WHERE `oss`.`id` = 4
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (25.6ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:06:23', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:06:23')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 17, '2013-05-14 01:06:23', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:06:23')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 5
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 5[0m
+  [1m[35m (0.4ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 17, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:06:23', `updated_at` = '2013-05-14 01:06:23' WHERE `oss`.`id` = 5
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (94.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:06:23', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:06:23')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 18, '2013-05-14 01:06:23', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:06:23')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 6
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 6[0m
+  [1m[35m (0.4ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 18, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:06:23', `updated_at` = '2013-05-14 01:06:23' WHERE `oss`.`id` = 6
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (62.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:06:23', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:06:23')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 19, '2013-05-14 01:06:23', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:06:23')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 7
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 7[0m
+  [1m[35m (0.3ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 19, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:06:23', `updated_at` = '2013-05-14 01:06:23' WHERE `oss`.`id` = 7
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (43.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:06:23', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:06:23')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 20, '2013-05-14 01:06:23', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:06:23')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 8
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 8[0m
+  [1m[35m (0.3ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 20, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:06:23', `updated_at` = '2013-05-14 01:06:23' WHERE `oss`.`id` = 8
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (42.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:06:23', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:06:23')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `oss` (`aprovado_por`, `arquivo`, `cliente_id`, `created_at`, `data_entrega`, `desconto`, `esta_pago`, `estado`, `observacao`, `previsao_entrega`, `updated_at`) VALUES ('Cliente', 'MyString', 21, '2013-05-14 01:06:23', '2013-04-23', 1.5, 0, 0, 'MyText', '2013-04-23', '2013-05-14 01:06:23')[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT `itens`.* FROM `itens` WHERE `itens`.`os_id` = 9
+  [1m[36mPagamento Load (0.4ms)[0m  [1mSELECT `pagamentos`.* FROM `pagamentos` WHERE `pagamentos`.`os_id` = 9[0m
+  [1m[35m (0.4ms)[0m  UPDATE `oss` SET `data_entrega` = '2013-04-23', `previsao_entrega` = '2013-04-23', `observacao` = 'MyText', `desconto` = 1.5, `arquivo` = 'MyString', `estado` = 0, `esta_pago` = 0, `cliente_id` = 21, `aprovado_por` = 'Cliente', `created_at` = '2013-05-14 01:06:23', `updated_at` = '2013-05-14 01:06:23' WHERE `oss`.`id` = 9
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (43.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:08:21', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:08:21')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (129.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:08:21', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:08:21')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (55.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:08:21', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:08:21')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (135.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:08:21', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:08:21')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (46.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:08:21', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:08:21')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (35.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:09:08', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:09:08')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (84.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:09:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:09:09')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (68.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:09:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:09:09')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (69.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:09:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:09:09')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (37.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:09:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:09:09')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (46.7ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-05-14 01:20:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `tipo`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 'MyText', NULL, 1, 1, 'Impressão Digital', '2013-05-14 01:20:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (128.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-05-14 01:20:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `tipo`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 'MyText', NULL, 2, 1, 'Impressão Digital', '2013-05-14 01:20:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (59.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-05-14 01:20:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `tipo`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 'MyText', NULL, 3, 1, 'Impressão Digital', '2013-05-14 01:20:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (59.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-05-14 01:20:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `tipo`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 'MyText', NULL, 4, 1, 'Impressão Digital', '2013-05-14 01:20:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (35.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `produtos` (`altura`, `comprimento`, `created_at`, `custo_unitario`, `descricao`, `nome`, `preco_unitario`, `unidade`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 1.5, 'MyText', 'MyString', 1.5, 'Peça', '2013-05-14 01:20:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `itens` (`altura`, `comprimento`, `created_at`, `descricao`, `os_id`, `produto_id`, `quantidade`, `tipo`, `updated_at`) VALUES (0.015, 0.015, '2013-05-14 01:20:14', 'MyText', NULL, 5, 1, 'Impressão Digital', '2013-05-14 01:20:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (46.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:32:37', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:32:37')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (109.3ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:32:37', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:32:37')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (59.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:32:38', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:32:38')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (26.8ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:32:38', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:32:38')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (26.8ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:32:38', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:32:38')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (27.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:33:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:33:09')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (81.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:33:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:33:09')
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (49.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:33:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:33:09')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (48.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:33:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:33:09')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (55.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCliente Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `clientes` WHERE `clientes`.`nome` = BINARY 'MyString' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `clientes` (`apelido`, `bairro`, `celular`, `cep`, `cidade`, `complemento`, `cpf`, `created_at`, `email`, `empresa_id`, `endereco`, `estado`, `nome`, `observacao`, `rg`, `telefone`, `updated_at`) VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-05-14 01:33:09', 'email@email.com', NULL, 'MyString', 'MyString', 'MyString', 'MyText', 'MyString', 'MyString', '2013-05-14 01:33:09')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (61.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK

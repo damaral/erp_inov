@@ -31,9 +31,4 @@ describe Item do
     item.produto = nil
     item.should_not be_valid
   end
-
-  it "Deve possuir uma os" do
-    item.os = nil
-    item.should_not be_valid
-  end
 end
