@@ -116,22 +116,40 @@
   <table class="table table-striped">
     <tr>
       <th>Data</th>
+      <th>Data Prevista</th>
       <th>Forma de Pagamento</th>
       <th>Valor</th>
+      <th>Pagamento</th>
+      <th>Ação</th>
     </tr>
-  <% total = 0 %>
   <% @os.pagamentos.each do |pagamento| %>
     <tr>
       <td><%= pagamento.created_at.strftime('%d/%m/%Y') %></td>
+      <td><%= pagamento.data_prevista.strftime('%d/%m/%Y') %></td>
       <td><%= pagamento.forma_de_pagamento %></td>
       <td><%= number_to_currency pagamento.valor %></td>
-      <% total += pagamento.valor %>
+      <% if pagamento.esta_pago %>
+        <td>
+          <span class="label label-success">OK</span>
+        </td>
+        <td></td>
+      <% else %>
+        <td>
+          <span class="label label-warning">Pendente</span>
+        </td>
+        <td>
+          <%= link_to "Confirmar", confirmar_pagamento_path(pagamento), data: { confirm: "Você tem certeza que deseja confirmar este pagamento?" }, class: "btn btn-inverse btn-mini" %>
+        </td>
+      <% end %>
     </tr>
   <% end %>
     <tr>
       <td></td>
+      <td></td>
       <td><b>Total: </b></td>
-      <td><%= number_to_currency total %></td>
+      <td><%= number_to_currency @os.valor_total_pagamentos %></td>
+      <td><%= number_to_currency @os.valor_pago %></td>
+      <td></td>
     </tr>
   </table>
 

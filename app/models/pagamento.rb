@@ -8,6 +8,7 @@ class Pagamento < ActiveRecord::Base
 
   before_save :verifica_esta_pago
   before_create :verifica_esta_pago
+  before_validation :valida_valor, :unless => :persisted?
   after_save :atualiza_esta_pago_os
   after_create :atualiza_esta_pago_os
   after_destroy :atualiza_esta_pago_os
@@ -25,6 +26,7 @@ class Pagamento < ActiveRecord::Base
                  BOLETO]
 
   validates :valor, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
+  validates :data_prevista, :presence => true
 
   def valor_pago
     esta_pago ? valor : 0
@@ -37,5 +39,9 @@ class Pagamento < ActiveRecord::Base
 
   def atualiza_esta_pago_os
     self.os.atualiza_esta_pago
+  end
+
+  def valida_valor
+    errors.add(:valor, "O valor superior ao restante (R$ #{self.os.valor_restante_pagamentos})") unless self.os.valor_restante_pagamentos >= self.valor
   end
 end

@@ -80,4 +80,12 @@ class PagamentosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def confirmar
+    @pagamento = Pagamento.find(params[:id])
+    @pagamento.esta_pago = true
+    @pagamento.save
+
+    redirect_to os_path(@pagamento.os)
+  end
 end

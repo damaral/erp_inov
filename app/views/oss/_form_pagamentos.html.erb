@@ -1,0 +1,8 @@
+<div class="pagamento">
+  <%= p.input :forma_de_pagamento, :collection => Pagamento::FORMAS_PGTO, :include_blank => false, :label => "Forma de Pagamento: " %>
+  <%= p.input :valor, :as => :string, :label => "Valor: ", :input_html => {:class => "money"} %>
+  <%= p.input :data_prevista, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data Prevista: " %>
+  <%= p.input :esta_pago, :as => :boolean, :label => "Está pago?" %>
+  <%= p.input :_destroy, :as => :hidden %>
+  <%= link_to_function "Remover", "remove_pagamento(this)", :class => "btn btn-danger remover" %>
+</div>

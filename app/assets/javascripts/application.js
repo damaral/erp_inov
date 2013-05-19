@@ -16,9 +16,7 @@
 //= require_tree
 
 $(document).ready(function(){
-  $('.datepicker').datepicker({
-    format: 'dd/mm/yyyy'
-  });
+  datepicker_format();
 
   /*if($(".money").length != 0){
     $(".money").val($(".money").val().replace(".", ","));
@@ -31,14 +29,40 @@ $(document).ready(function(){
   }*/
 });
 
-function remove_campo(link){
+function datepicker_format(){
+  $('.datepicker').datepicker({
+    format: 'dd/mm/yyyy'
+  });
+}
+
+function remove_pagamento(link){
+  $(link).parent(".pagamento").find(".hidden input").val("1");
+  $(link).parent(".pagamento").hide();
+}
+
+var num_pagamentos = 1000;
+
+function adiciona_pagamento(link){
+  formulario = '<div class="pagamento">' + $(".pagamento").first().html() + '</div>';
+  num_pagamentos += 1;
+  novo_atributo = 'os[pagamentos_attributes]['+ num_pagamentos +']';
+  formulario = formulario.replace(/os\[pagamentos_attributes\]\[0\]/g, novo_atributo);
+  formulario = formulario.replace('[_destroy]" type="hidden" value="1"', '[_destroy]" type="hidden" value="false"');
+
+  
+
+  $('.pagamentos').append(formulario);
+  datepicker_format();
+}
+
+function remove_item(link){
   $(link).parent(".item").find(".hidden input").val("1");
   $(link).parent(".item").hide();
 }
 
-var num_produtos = 0;
+var num_produtos = 1000;
 
-function adiciona_campo(link){
+function adiciona_item(link){
   formulario = '<div class="item">' + $(".item").first().html() + '</div>';
   num_produtos += 1;
   novo_atributo = 'os[itens_attributes]['+ num_produtos +']';

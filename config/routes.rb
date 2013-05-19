@@ -6,7 +6,11 @@ ErpInov::Application.routes.draw do
   end
 
 
-  resources :pagamentos
+  resources :pagamentos do
+    member do
+      get 'confirmar'
+    end
+  end
 
 
   resources :produtos

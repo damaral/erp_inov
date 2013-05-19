@@ -27,8 +27,8 @@
   <tr>
     <td><%= os.id %></td>
     <td><%= os.cliente.nome %></td>
-    <td><%= os.previsao_entrega.strftime('%d/%m/%Y') %></td>
-    <td><%= number_to_currency os.valor_total %></td>
+    <td><%= os.previsao_entrega %></td>
+    <td><%= number_to_currency os.valor_final %></td>
     <td><%= Os::ESTADOS[os.estado] %></td>
     <td><% if os.esta_pago %>
           <span class="label label-success">OK</span>
