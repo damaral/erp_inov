@@ -1,10 +1,16 @@
 # coding: utf-8
 
 class Pagamento < ActiveRecord::Base
-  attr_accessible :forma_de_pagamento, :valor, :cliente_id, :os_id
+  attr_accessible :forma_de_pagamento, :valor, :esta_pago, :data_prevista, :cliente_id, :os_id
 
   belongs_to :cliente
   belongs_to :os
+
+  before_save :verifica_esta_pago
+  before_create :verifica_esta_pago
+  after_save :atualiza_esta_pago_os
+  after_create :atualiza_esta_pago_os
+  after_destroy :atualiza_esta_pago_os
 
   DINHEIRO = "Dinheiro"
   CHEQUE = "Cheque"
@@ -20,4 +26,16 @@ class Pagamento < ActiveRecord::Base
 
   validates :valor, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
 
+  def valor_pago
+    esta_pago ? valor : 0
+  end
+
+  private
+  def verifica_esta_pago
+    self.esta_pago = true if self.forma_de_pagamento == DINHEIRO
+  end
+
+  def atualiza_esta_pago_os
+    self.os.atualiza_esta_pago
+  end
 end

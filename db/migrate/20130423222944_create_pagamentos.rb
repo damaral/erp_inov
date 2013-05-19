@@ -3,6 +3,8 @@ class CreatePagamentos < ActiveRecord::Migration
     create_table :pagamentos do |t|
       t.float :valor
       t.string :forma_de_pagamento
+      t.date :data_prevista
+      t.boolean :esta_pago
 
       t.references :cliente
       t.references :os

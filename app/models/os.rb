@@ -9,7 +9,7 @@ class Os < ActiveRecord::Base
   belongs_to :cliente
 
   accepts_nested_attributes_for :itens, :allow_destroy => true, :reject_if => proc { |attributes| attributes['produto_id'].blank? }
-  accepts_nested_attributes_for :pagamentos, :reject_if => proc { |attributes| attributes['valor'].to_f.zero? }
+  accepts_nested_attributes_for :pagamentos, :reject_if => proc { |attributes| attributes['valor'].to_f.zero? || attributes['valor'].blank? }
 
   after_create :verifica_se_esta_pago
 
@@ -54,7 +54,7 @@ class Os < ActiveRecord::Base
   end
 
   def valor_pago
-    pagamentos.inject(0) {|sum, pagamento| sum + pagamento.valor}
+    pagamentos.inject(0) {|sum, pagamento| sum + pagamento.valor_pago}
   end
 
   def valor_restante
@@ -67,6 +67,11 @@ class Os < ActiveRecord::Base
 
   def exige_acao_do_funcionario?
     estado == ESTADO_1 || estado == ESTADO_3 || estado == ESTADO_4
+  end
+
+  def atualiza_esta_pago
+    self.esta_pago = valor_restante.zero?
+    self.save
   end
 
   private

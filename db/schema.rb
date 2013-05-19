@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
   create_table "pagamentos", :force => true do |t|
     t.float    "valor"
     t.string   "forma_de_pagamento"
+    t.date     "data_prevista"
+    t.boolean  "esta_pago"
     t.integer  "cliente_id"
     t.integer  "os_id"
     t.datetime "created_at",         :null => false

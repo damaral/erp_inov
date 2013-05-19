@@ -6,7 +6,11 @@ class Item < ActiveRecord::Base
   belongs_to :produto
   belongs_to :os
 
+  before_save :ajusta_dimensoes
   before_create :ajusta_dimensoes
+  after_save :atualiza_esta_pago_os
+  after_create :atualiza_esta_pago_os
+  after_destroy :atualiza_esta_pago_os
 
   RECORTE = "Recorte"
   IMPRESSAO = "Impressão Digital"
@@ -53,10 +57,11 @@ class Item < ActiveRecord::Base
 
   private
   def ajusta_dimensoes
-    #self.altura = self.altura / 100
-    #self.comprimento = self.comprimento / 100
-
     self.altura = self.produto.altura if self.produto.unidade == Produto::PECA || self.produto.unidade == Produto::METRO_COMP
     self.comprimento = self.produto.comprimento if self.produto.unidade == Produto::PECA || self.produto.unidade == Produto::METRO_ALT
+  end
+
+  def atualiza_esta_pago_os
+    self.os.atualiza_esta_pago
   end
 end

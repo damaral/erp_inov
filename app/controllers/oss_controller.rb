@@ -39,6 +39,10 @@ class OssController < ApplicationController
   # GET /oss/1/edit
   def edit
     @os = Os.find(params[:id])
+
+    if @os.pagamentos.blank?
+      @os.pagamentos.build
+    end
   end
 
   # POST /oss
