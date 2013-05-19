@@ -8,7 +8,7 @@ class Pagamento < ActiveRecord::Base
 
   before_save :verifica_esta_pago
   before_create :verifica_esta_pago
-  before_validation :valida_valor, :unless => :persisted?
+  #before_validation :valida_valor, :unless => :persisted?
   after_save :atualiza_esta_pago_os
   after_create :atualiza_esta_pago_os
   after_destroy :atualiza_esta_pago_os
@@ -42,6 +42,7 @@ class Pagamento < ActiveRecord::Base
   end
 
   def valida_valor
-    errors.add(:valor, "O valor superior ao restante (R$ #{self.os.valor_restante_pagamentos})") unless self.os.valor_restante_pagamentos >= self.valor
+    os_pagamento = Os.find self.os_id
+    errors.add(:valor, "O valor superior ao restante (R$ #{self.os.valor_restante_pagamentos})") unless os_pagamento.valor_restante_pagamentos >= self.valor
   end
 end

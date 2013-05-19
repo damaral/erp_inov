@@ -1,25 +1,26 @@
-<%= simple_form_for(@funcionario) do |f| %>
+<%= simple_form_for(@funcionario, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nome %>
-    <%= f.input :sobrenome %>
-    <%= f.input :endereco %>
-    <%= f.input :bairro %>
-    <%= f.input :complemento %>
-    <%= f.input :cep %>
-    <%= f.input :cidade %>
-    <%= f.input :estado %>
-    <%= f.input :telefone %>
-    <%= f.input :celular %>
-    <%= f.input :email %>
-    <%= f.input :rg %>
-    <%= f.input :cargo %>
+    <%= f.input :nome, :label => "Nome: " %>
+    <%= f.input :sobrenome, :label => "Sobrenome: " %>
+    <%= f.input :endereco, :label => "Endereço: " %>
+    <%= f.input :bairro, :label => "Bairro: " %>
+    <%= f.input :complemento, :label => "Complemento: " %>
+    <%= f.input :cep, :label => "CEP: " %>
+    <%= f.input :cidade, :label => "Cidade: " %>
+    <%= f.input :estado, :label => "Estado: " %>
+    <%= f.input :telefone, :label => "Telefone: " %>
+    <%= f.input :celular, :label => "Celular: " %>
+    <%= f.input :email, :label => "E-mail: " %>
+    <%= f.input :rg, :label => "RG: " %>
+    <%= f.input :cargo, :label => "Cargo: " %>
     <%= f.input :data_admissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de admissão: " %>
     <%= f.input :data_demissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de demissão: " %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => "btn btn-primary" %>
+    <%= link_to 'Cancelar', funcionarios_path, :class => "btn btn-inverse" %>
   </div>
 <% end %>

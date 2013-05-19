@@ -1,17 +1,18 @@
-<%= simple_form_for(@produto) do |f| %>
+<%= simple_form_for(@produto, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nome %>
-    <%= f.input :descricao %>
-    <%= f.input :unidade, :collection => Produto::UNIDADES, :prompt => "Selecione" %>
-    <%= f.input :preco_unitario %>
-    <%= f.input :custo_unitario %>
-    <%= f.input :altura %>
-    <%= f.input :comprimento %>
+    <%= f.input :nome, :label => "Nome: " %>
+    <%= f.input :descricao, :label => "Descrição: " %>
+    <%= f.input :unidade, :collection => Produto::UNIDADES, :prompt => "Selecione", :label => "Unidade: " %>
+    <%= f.input :preco_unitario, :label => "Preço Unitário: " %>
+    <%= f.input :custo_unitario, :label => "Custo Unitário: " %>
+    <%= f.input :altura, :label => "Altura: " %>
+    <%= f.input :comprimento, :label => "Comprimento: " %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => "btn btn-primary" %>
+    <%= link_to 'Cancelar', produtos_path, :class => "btn btn-inverse" %>
   </div>
 <% end %>

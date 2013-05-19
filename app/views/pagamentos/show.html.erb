@@ -1,15 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Cliente</h3>
+  </div>
+  <p>
+    <b>Valor:</b>
+    <%= @pagamento.valor %>
+  </p>
 
-<p>
-  <b>Valor:</b>
-  <%= @pagamento.valor %>
-</p>
+  <p>
+    <b>Forma de pagamento:</b>
+    <%= @pagamento.forma_de_pagamento %>
+  </p>
 
-<p>
-  <b>Forma de pagamento:</b>
-  <%= @pagamento.forma_de_pagamento %>
-</p>
+</div>
 
+<%= link_to edit_pagamento_path(@pagamento), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
 
-<%= link_to 'Edit', edit_pagamento_path(@pagamento) %> |
-<%= link_to 'Back', pagamentos_path %>
+<%= link_to pagamentos_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

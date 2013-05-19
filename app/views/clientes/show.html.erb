@@ -1,73 +1,84 @@
-<p>
-  <b>Nome:</b>
-  <%= @cliente.nome %>
-</p>
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Cliente</h3>
+  </div>
+  <p>
+    <b>Nome:</b>
+    <%= @cliente.nome %>
+  </p>
 
-<p>
-  <b>Apelido:</b>
-  <%= @cliente.apelido %>
-</p>
+  <p>
+    <b>Apelido:</b>
+    <%= @cliente.apelido %>
+  </p>
 
-<p>
-  <b>Endereco:</b>
-  <%= @cliente.endereco %>
-</p>
+  <p>
+    <b>Endereço:</b>
+    <%= @cliente.endereco %>
+  </p>
 
-<p>
-  <b>Bairro:</b>
-  <%= @cliente.bairro %>
-</p>
+  <p>
+    <b>Bairro:</b>
+    <%= @cliente.bairro %>
+  </p>
 
-<p>
-  <b>Complemento:</b>
-  <%= @cliente.complemento %>
-</p>
+  <p>
+    <b>Complemento:</b>
+    <%= @cliente.complemento %>
+  </p>
 
-<p>
-  <b>Cep:</b>
-  <%= @cliente.cep %>
-</p>
+  <p>
+    <b>CEP:</b>
+    <%= @cliente.cep %>
+  </p>
 
-<p>
-  <b>Cidade:</b>
-  <%= @cliente.cidade %>
-</p>
+  <p>
+    <b>Cidade:</b>
+    <%= @cliente.cidade %>
+  </p>
 
-<p>
-  <b>Estado:</b>
-  <%= @cliente.estado %>
-</p>
+  <p>
+    <b>Estado:</b>
+    <%= @cliente.estado %>
+  </p>
 
-<p>
-  <b>Telefone:</b>
-  <%= @cliente.telefone %>
-</p>
+  <p>
+    <b>Telefone:</b>
+    <%= @cliente.telefone %>
+  </p>
 
-<p>
-  <b>Celular:</b>
-  <%= @cliente.celular %>
-</p>
+  <p>
+    <b>Celular:</b>
+    <%= @cliente.celular %>
+  </p>
 
-<p>
-  <b>Email:</b>
-  <%= @cliente.email %>
-</p>
+  <p>
+    <b>E-mail:</b>
+    <%= @cliente.email %>
+  </p>
 
-<p>
-  <b>Cpf:</b>
-  <%= @cliente.cpf %>
-</p>
+  <p>
+    <b>CPF:</b>
+    <%= @cliente.cpf %>
+  </p>
 
-<p>
-  <b>Rg:</b>
-  <%= @cliente.rg %>
-</p>
+  <p>
+    <b>RG:</b>
+    <%= @cliente.rg %>
+  </p>
 
-<p>
-  <b>Observacao:</b>
-  <%= @cliente.observacao %>
-</p>
+  <p>
+    <b>Observação:</b>
+    <%= @cliente.observacao %>
+  </p>
+</div>
 
+<%= link_to edit_cliente_path(@cliente), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
 
-<%= link_to 'Editar', edit_cliente_path(@cliente), :class => "btn btn-info" %>
-<%= link_to 'Cancelar', clientes_path, :class => "btn btn-inverse" %>
+<%= link_to clientes_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

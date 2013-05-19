@@ -1,60 +1,70 @@
-<p id="notice"><%= notice %></p>
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Empresa</h3>
+  </div>
+  <p>
+    <b>Nome:</b>
+    <%= @empresa.nome %>
+  </p>
 
-<p>
-  <b>Nome:</b>
-  <%= @empresa.nome %>
-</p>
+  <p>
+    <b>Nome fantasia:</b>
+    <%= @empresa.nome_fantasia %>
+  </p>
 
-<p>
-  <b>Nome fantasia:</b>
-  <%= @empresa.nome_fantasia %>
-</p>
+  <p>
+    <b>Cnpj:</b>
+    <%= @empresa.cnpj %>
+  </p>
 
-<p>
-  <b>Cnpj:</b>
-  <%= @empresa.cnpj %>
-</p>
+  <p>
+    <b>Endereco:</b>
+    <%= @empresa.endereco %>
+  </p>
 
-<p>
-  <b>Endereco:</b>
-  <%= @empresa.endereco %>
-</p>
+  <p>
+    <b>Bairro:</b>
+    <%= @empresa.bairro %>
+  </p>
 
-<p>
-  <b>Bairro:</b>
-  <%= @empresa.bairro %>
-</p>
+  <p>
+    <b>Complemento:</b>
+    <%= @empresa.complemento %>
+  </p>
 
-<p>
-  <b>Complemento:</b>
-  <%= @empresa.complemento %>
-</p>
+  <p>
+    <b>Cep:</b>
+    <%= @empresa.cep %>
+  </p>
 
-<p>
-  <b>Cep:</b>
-  <%= @empresa.cep %>
-</p>
+  <p>
+    <b>Cidade:</b>
+    <%= @empresa.cidade %>
+  </p>
 
-<p>
-  <b>Cidade:</b>
-  <%= @empresa.cidade %>
-</p>
+  <p>
+    <b>Estado:</b>
+    <%= @empresa.estado %>
+  </p>
 
-<p>
-  <b>Estado:</b>
-  <%= @empresa.estado %>
-</p>
+  <p>
+    <b>Telefone:</b>
+    <%= @empresa.telefone %>
+  </p>
 
-<p>
-  <b>Telefone:</b>
-  <%= @empresa.telefone %>
-</p>
+  <p>
+    <b>Observacao:</b>
+    <%= @empresa.observacao %>
+  </p>
+  
+</div>
 
-<p>
-  <b>Observacao:</b>
-  <%= @empresa.observacao %>
-</p>
+<%= link_to edit_empresa_path(@empresa), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
 
-
-<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
-<%= link_to 'Back', empresas_path %>
+<%= link_to empresas_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

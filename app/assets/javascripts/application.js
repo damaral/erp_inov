@@ -18,6 +18,14 @@
 $(document).ready(function(){
   datepicker_format();
 
+  /*$('.simple_form').on('click', '.money', function(){
+    $(this).val($(this).val().replace("R$ ", ""));
+    $(this).val($(this).val().replace(".", ","));
+    $(this).val($(this).val().replace(",", "."));
+
+    $(this).maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});
+  });
+
   /*if($(".money").length != 0){
     $(".money").val($(".money").val().replace(".", ","));
     $(".money").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});

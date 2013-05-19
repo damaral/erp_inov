@@ -31,7 +31,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Criar O.S.", :class => "btn btn-primary" %>
+    <%= f.button :submit, "Criar O.S.", :class => "btn btn-primary" if params[:action] == "new" || params[:action] == "create" %>
+    <%= f.button :submit, "Atualizar O.S.", :class => "btn btn-primary" if params[:action] == "edit" %>
     <%= link_to 'Cancelar', oss_path, :class => "btn btn-inverse" %>
   </div>
 <% end %>

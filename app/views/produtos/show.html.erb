@@ -1,40 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Cliente</h3>
+  </div>
+  <p>
+    <b>Nome:</b>
+    <%= @produto.nome %>
+  </p>
 
-<p>
-  <b>Nome:</b>
-  <%= @produto.nome %>
-</p>
+  <p>
+    <b>Descrição:</b>
+    <%= @produto.descricao %>
+  </p>
 
-<p>
-  <b>Descricao:</b>
-  <%= @produto.descricao %>
-</p>
+  <p>
+    <b>Unidade:</b>
+    <%= @produto.unidade %>
+  </p>
 
-<p>
-  <b>Unidade:</b>
-  <%= @produto.unidade %>
-</p>
+  <p>
+    <b>Preco unitário:</b>
+    <%= @produto.preco_unitario %>
+  </p>
 
-<p>
-  <b>Preco unitario:</b>
-  <%= @produto.preco_unitario %>
-</p>
+  <p>
+    <b>Custo unitário:</b>
+    <%= @produto.custo_unitario %>
+  </p>
 
-<p>
-  <b>Custo unitario:</b>
-  <%= @produto.custo_unitario %>
-</p>
+  <p>
+    <b>Altura:</b>
+    <%= @produto.altura %>
+  </p>
 
-<p>
-  <b>Altura:</b>
-  <%= @produto.altura %>
-</p>
+  <p>
+    <b>Comprimento:</b>
+    <%= @produto.comprimento %>
+  </p>
 
-<p>
-  <b>Comprimento:</b>
-  <%= @produto.comprimento %>
-</p>
+</div>
 
+<%= link_to edit_produto_path(@produto), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
 
-<%= link_to 'Edit', edit_produto_path(@produto) %> |
-<%= link_to 'Back', produtos_path %>
+<%= link_to produtos_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

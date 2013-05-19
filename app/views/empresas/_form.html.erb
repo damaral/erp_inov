@@ -1,21 +1,22 @@
-<%= simple_form_for(@empresa) do |f| %>
+<%= simple_form_for(@empresa, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nome %>
-    <%= f.input :nome_fantasia %>
-    <%= f.input :cnpj %>
-    <%= f.input :endereco %>
-    <%= f.input :bairro %>
-    <%= f.input :complemento %>
-    <%= f.input :cep %>
-    <%= f.input :cidade %>
-    <%= f.input :estado %>
-    <%= f.input :telefone %>
-    <%= f.input :observacao %>
+    <%= f.input :nome, :label => "Nome: " %>
+    <%= f.input :nome_fantasia, :label => "Nome Fantasia: " %>
+    <%= f.input :cnpj, :label => "CNPJ: " %>
+    <%= f.input :endereco, :label => "Nome: " %>
+    <%= f.input :bairro, :label => "Bairro: " %>
+    <%= f.input :complemento, :label => "Complemento: " %>
+    <%= f.input :cep, :label => "CEP: " %>
+    <%= f.input :cidade, :label => "Cidade: " %>
+    <%= f.input :estado, :label => "Estado: " %>
+    <%= f.input :telefone, :label => "Telefone: " %>
+    <%= f.input :observacao, :label => "Observação: " %>
   </div>
-
+  
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => "btn btn-primary" %>
+    <%= link_to 'Cancelar', empresas_path, :class => "btn btn-inverse" %>
   </div>
 <% end %>
