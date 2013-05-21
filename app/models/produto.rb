@@ -1,11 +1,9 @@
 # coding: utf-8
 
 class Produto < ActiveRecord::Base
-  attr_accessible :altura, :comprimento, :custo_unitario, :descricao, :nome, :preco_unitario, :unidade
+  attr_accessible :altura, :comprimento, :custo_unitario, :descricao, :nome, :preco_unitario, :unidade, :ativo
 
-  has_many :itens
-
-  #before_create :ajusta_dimensoes
+  has_many :itens, :dependent => :destroy
 
   PECA = "Peça"
   METRO_COMP = "Metro Comprimento"
@@ -25,10 +23,4 @@ class Produto < ActiveRecord::Base
   def valida_unidade
     errors.add(:unidade, "Unidade inválida") unless UNIDADES.include? unidade
   end
-
-  #private
-  #def ajusta_dimensoes
-  #  self.altura = self.altura / 100 unless self.altura.nil?
-  #  self.comprimento = self.comprimento / 100 unless self.comprimento.nil?
-  #end
 end

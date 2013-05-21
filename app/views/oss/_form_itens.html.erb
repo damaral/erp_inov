@@ -1,5 +1,5 @@
 <div class="item">
-  <%= p.association :produto, :label_method => :nome, :label => "Produto: ", :prompt => "Selecione" %>
+  <%= p.association :produto, :label_method => :nome, :collection => Produto.find_all_by_ativo(true), :label => "Produto: ", :prompt => "Selecione" %>
   <%= p.input :tipo, :collection => Item::TIPOS, :label => "Tipo: ", :include_blank => false %>
   <%= p.input :quantidade, :label => "Quantidade: " %>
   <%= p.input :altura, :as => :string, :label => "Altura: ", :hint => "Em centimetros" %>

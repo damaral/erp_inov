@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.float    "custo_unitario"
     t.float    "altura"
     t.float    "comprimento"
+    t.boolean  "ativo"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

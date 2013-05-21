@@ -5,10 +5,11 @@
     <%= f.input :nome, :label => "Nome: " %>
     <%= f.input :descricao, :label => "Descrição: " %>
     <%= f.input :unidade, :collection => Produto::UNIDADES, :prompt => "Selecione", :label => "Unidade: " %>
-    <%= f.input :preco_unitario, :label => "Preço Unitário: " %>
-    <%= f.input :custo_unitario, :label => "Custo Unitário: " %>
+    <%= f.input :preco_unitario, :as => :string, :label => "Preço Unitário: " %>
+    <%= f.input :custo_unitario, :as => :string, :label => "Custo Unitário: " %>
     <%= f.input :altura, :label => "Altura: " %>
     <%= f.input :comprimento, :label => "Comprimento: " %>
+    <%= f.input :ativo, :as => :boolean, :label => "Ativo?: " %>
   </div>
 
   <div class="form-actions">

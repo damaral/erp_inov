@@ -8,6 +8,7 @@ class CreateProdutos < ActiveRecord::Migration
       t.float :custo_unitario
       t.float :altura
       t.float :comprimento
+      t.boolean :ativo
 
       t.timestamps
     end

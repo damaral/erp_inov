@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :pagamento do
-    valor 1.5
-    tipo "MyString"
-    forma_de_pagamento "MyString"
+    valor 10
+    forma_de_pagamento Pagamento::DINHEIRO
+    esta_pago true
+    data_prevista Date.today
   end
 end

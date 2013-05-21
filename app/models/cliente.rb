@@ -4,8 +4,9 @@ class Cliente < ActiveRecord::Base
   attr_accessible :apelido, :bairro, :celular, :cep, :cidade, :complemento, :cpf, :email, :endereco, :estado, :nome, :observacao, :rg, :telefone, :empresa_id
 
   belongs_to :empresa
-  has_many :pagamentos
-  has_many :acoes
+  has_many :pagamentos, :dependent => :destroy
+  has_many :acoes, :dependent => :destroy
+  has_many :oss, :dependent => :destroy
 
   validates :nome, :presence => true, :uniqueness => true
   validates :telefone, :presence => true

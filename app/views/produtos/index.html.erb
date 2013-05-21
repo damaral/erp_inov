@@ -19,6 +19,7 @@
     <th>Custo unitário</th>
     <th>Altura</th>
     <th>Comp.</th>
+    <th>Ativo</th>
     <th></th>
     <th class="sem-borda-esquerda">Ações</th>
     <th class="sem-borda-esquerda"></th>
@@ -33,6 +34,11 @@
     <td><%= number_to_currency produto.custo_unitario %></td>
     <td><%= produto.altura unless produto.altura.nil?  %></td>
     <td><%= produto.comprimento unless produto.comprimento.nil? %></td>
+    <td><% if produto.ativo %>
+          <span class="label label-success">Sim</span>
+          <% else %>
+          <span class="label label-important">Não</span>
+          <% end %></td>
     <td class="botao-acao primeiro-botao">
         <%= link_to produto, :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>

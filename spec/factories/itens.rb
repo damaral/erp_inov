@@ -7,6 +7,7 @@ FactoryGirl.define do
     altura 1.5
     comprimento 1.5
     tipo Item::IMPRESSAO
+    desconto 0
     produto
   end
 end

@@ -9,5 +9,6 @@ FactoryGirl.define do
     custo_unitario 1.5
     altura 1.5
     comprimento 1.5
+    ativo true
   end
 end

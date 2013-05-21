@@ -4,8 +4,8 @@ class Os < ActiveRecord::Base
   attr_accessible :arquivo, :data_entrega, :previsao_entrega, :esta_pago, :estado, :observacao, :aprovado_por, :cliente_id, :itens_attributes, :pagamentos_attributes
 
   has_many :itens, :dependent => :destroy
-  has_many :pagamentos
-  has_many :acoes
+  has_many :pagamentos, :dependent => :destroy
+  has_many :acoes, :dependent => :destroy
   belongs_to :cliente
 
   accepts_nested_attributes_for :itens, :allow_destroy => true, :reject_if => proc { |attributes| attributes['produto_id'].blank? }

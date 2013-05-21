@@ -6,8 +6,7 @@
     <th>Cliente</th>
     <th>Previsão entrega</th>
     <th>Estado</th>
-    <th>Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ação</th>
   </tr>
 
 <% @oss.each do |os| %>
@@ -20,12 +19,6 @@
         <%= link_to func_os_path(os), :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>
         <%= "Mostrar" %>
-        <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to edit_os_path(os), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
         <% end %>
     </td>
   </tr>

@@ -3,7 +3,7 @@
 class Funcionario < ActiveRecord::Base
   attr_accessible :bairro, :cargo, :celular, :cep, :cidade, :complemento, :data_admissao, :data_demissao, :email, :endereco, :estado, :nome, :rg, :sobrenome, :telefone
 
-  has_many :acoes
+  has_many :acoes, :dependent => :destroy
 
   validates :nome, :presence => true
   validates :sobrenome, :presence => true

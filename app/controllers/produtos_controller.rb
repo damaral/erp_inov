@@ -40,6 +40,9 @@ class ProdutosController < ApplicationController
   # POST /produtos
   # POST /produtos.json
   def create
+    currency_to_number params[:produto][:preco_unitario]
+    currency_to_number params[:produto][:custo_unitario]
+
     @produto = Produto.new(params[:produto])
 
     respond_to do |format|
@@ -56,6 +59,9 @@ class ProdutosController < ApplicationController
   # PUT /produtos/1
   # PUT /produtos/1.json
   def update
+    currency_to_number params[:produto][:preco_unitario]
+    currency_to_number params[:produto][:custo_unitario]
+
     @produto = Produto.find(params[:id])
 
     respond_to do |format|
@@ -79,5 +85,13 @@ class ProdutosController < ApplicationController
       format.html { redirect_to produtos_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def currency_to_number(currency)
+    currency.gsub!("R$ ", "")
+    currency.gsub!(/\./, "")
+    currency.gsub!(/,/, ".")
+    currency = currency.to_f
   end
 end
