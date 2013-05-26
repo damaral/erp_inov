@@ -1,8 +1,10 @@
 class ClientesController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.page(params[:page]).per(NUMERO_POR_PAGINA)
+    @clientes = Cliente.order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +81,14 @@ class ClientesController < ApplicationController
       format.html { redirect_to clientes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def sort_column
+    Cliente.column_names.include?(params[:sort]) ? params[:sort] : "nome"
+  end
+
+  def sort_direction
+    ["ASC", "DESC"].include?(params[:direction]) ? params[:direction] : "ASC"
   end
 end

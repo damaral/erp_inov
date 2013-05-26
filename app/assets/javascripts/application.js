@@ -81,3 +81,8 @@ function adiciona_item(link){
 
   $('.produtos').append(formulario);
 }
+
+function vizualizar(id){
+  $("#canvas-img img").hide();
+  $("#" + id).fadeIn(100);
+}

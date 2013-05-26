@@ -171,6 +171,63 @@
   </div>
   
   
+  <div class="span12 os thumbnail">
+    <div class="page-header">
+      <h4>Anexos</h4>
+    </div>
+
+    <table class="table table-striped">
+      <tr>
+        <th>Miniatura</th>
+        <th>Tipo</th>
+        <th>Ações</th>
+        <th></th>
+      </tr>
+      <% unless @os.rascunho.nil? %>
+        <tr>
+          <td><%= image_tag @os.rascunho.url(:thumb), :class => "img-ronded" %></td>
+          <td>Rascunho</td>
+          <td>
+            <%= link_to "javascript:void(0)", :class => "btn btn-primary btn-mini", :onclick => "vizualizar('rascunho-img')" do %>
+              <i class="icon-search icon-white"></i>
+              <%= "Vizualizar" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "#{@os.rascunho.url}", :download => "rascunho", :class => "btn btn-inverse btn-mini" do %>
+              <i class="icon-download-alt icon-white"></i>
+              <%= "Download" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      
+      <% unless @os.layout.nil? %>
+        <tr>
+          <td><%= image_tag @os.layout.url(:thumb), :class => "img-ronded" %></td>
+          <td>Layout</td>
+          <td>
+            <%= link_to "javascript:void(0)", :class => "btn btn-primary btn-mini", :onclick => "vizualizar('layout-img')" do %>
+              <i class="icon-search icon-white"></i>
+              <%= "Vizualizar" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "#{@os.layout.url}", :download => "layout", :class => "btn btn-inverse btn-mini" do %>
+              <i class="icon-download-alt icon-white"></i>
+              <%= "Download" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <div id="canvas-img">
+      <%= image_tag @os.rascunho.url(:medium), :id => "rascunho-img", :style => "display:none;" %>
+      <%= image_tag @os.layout.url(:medium), :id => "layout-img", :style => "display:none;" %>
+    </div>
+  </div>
+  
+  
   
   <div class="span12 os thumbnail">
     <div class="page-header">
@@ -258,3 +315,8 @@
   <i class=" icon-chevron-left icon-white"></i>
   <%= "Voltar" %>
 <% end %>
+
+<%= image_tag @os.rascunho.url(:thumb), :class => "img-polaroid" %>
+<%= image_tag @os.rascunho.url(:medium) %>
+<%= image_tag @os.rascunho.url %>
+<%= image_tag @os.layout.url %>

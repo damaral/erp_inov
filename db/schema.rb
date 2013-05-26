@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423223547) do
+ActiveRecord::Schema.define(:version => 20130521023756) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -110,8 +110,16 @@ ActiveRecord::Schema.define(:version => 20130423223547) do
     t.string   "aprovado_por"
     t.boolean  "esta_pago"
     t.integer  "cliente_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "layout_file_name"
+    t.string   "layout_content_type"
+    t.integer  "layout_file_size"
+    t.datetime "layout_updated_at"
+    t.string   "rascunho_file_name"
+    t.string   "rascunho_content_type"
+    t.integer  "rascunho_file_size"
+    t.datetime "rascunho_updated_at"
   end
 
   add_index "oss", ["cliente_id"], :name => "index_oss_on_cliente_id"

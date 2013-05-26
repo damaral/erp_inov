@@ -12,11 +12,11 @@
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th>Código</th>
-    <th>Cliente</th>
-    <th>Previsão entrega</th>
+    <th><%= sortable "id", "Código" %></th>
+    <th><%= sortable "cliente_id", "Cliente" %></th>
+    <th><%= sortable "previsao_entrega", "Previsão entrega" %></th>
     <th>Valor total</th>
-    <th>Estado</th>
+    <th><%= sortable "estado" %></th>
     <th>Pagamento</th>
     <th></th>
     <th class="sem-borda-esquerda">Ações</th>

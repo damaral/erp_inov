@@ -1,7 +1,9 @@
-<%= simple_form_for(@os, :html => {:class => "form-horizontal"}) do |f| %>
+<%= simple_form_for(@os, :html => {:class => "form-horizontal", :multipart => true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.file_field :rascunho %>
+    <%= f.file_field :layout %>
     <%= f.association :cliente, :label_method => :nome, :label => "Cliente: " %>
     <% @os.previsao_entrega = Date.today + 2 if @os.previsao_entrega.nil? %>
     <%= f.input :previsao_entrega, :as => :string, :input_html => {:value => @os.previsao_entrega.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Previsão de Entrega: " %>
