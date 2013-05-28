@@ -3,6 +3,7 @@
 class Os < ActiveRecord::Base
   attr_accessible :arquivo, :data_entrega, :previsao_entrega, :esta_pago, :estado, :observacao, :aprovado_por, :cliente_id, :itens_attributes, :pagamentos_attributes, :layout, :rascunho
 
+  has_attached_file :arquivo
   has_attached_file :layout, :styles => { :medium => "940x940>", :thumb => "100x100>" }
   has_attached_file :rascunho, :styles => { :medium => "940x940>", :thumb => "100x100>" }
 
@@ -40,6 +41,10 @@ class Os < ActiveRecord::Base
   GERENCIA = "Gerência"
 
   APROVADORES = [CLIENTE, GERENCIA]
+
+  EXTENSIONS = {"image/png" => "png",
+                "image/jpeg" => "jpg",
+                "application/vnd.oasis.opendocument.presentation" => "odp"}
 
   validates :cliente, :presence => true
   validates :aprovado_por, :presence => true

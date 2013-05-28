@@ -28,13 +28,6 @@
     </p> 
   </div>
 
-
-  <p>
-    <b>Arquivo:</b>
-    <%= @os.arquivo %>
-  </p>
-
-
   <p>
     <b>Observação:</b>
     <%= @os.observacao %>
@@ -180,13 +173,17 @@
       <tr>
         <th>Miniatura</th>
         <th>Tipo</th>
+        <th>Extenção</th>
+        <th>Tamanho</th>
         <th>Ações</th>
         <th></th>
       </tr>
-      <% unless @os.rascunho.nil? %>
+      <% unless @os.rascunho.blank? %>
         <tr>
           <td><%= image_tag @os.rascunho.url(:thumb), :class => "img-ronded" %></td>
           <td>Rascunho</td>
+          <td><%= Os::EXTENSIONS[@os.rascunho.content_type] %></td>
+          <td><%= "#{(@os.rascunho.size.to_f/1024).round 2} kB" %></td>
           <td>
             <%= link_to "javascript:void(0)", :class => "btn btn-primary btn-mini", :onclick => "vizualizar('rascunho-img')" do %>
               <i class="icon-search icon-white"></i>
@@ -202,10 +199,12 @@
         </tr>
       <% end %>
       
-      <% unless @os.layout.nil? %>
+      <% unless @os.layout.blank? %>
         <tr>
           <td><%= image_tag @os.layout.url(:thumb), :class => "img-ronded" %></td>
           <td>Layout</td>
+          <td><%= Os::EXTENSIONS[@os.layout.content_type] %></td>
+          <td><%= "#{(@os.layout.size.to_f/1024).round 2} kB" %></td>
           <td>
             <%= link_to "javascript:void(0)", :class => "btn btn-primary btn-mini", :onclick => "vizualizar('layout-img')" do %>
               <i class="icon-search icon-white"></i>
@@ -214,6 +213,23 @@
           </td>
           <td>
             <%= link_to "#{@os.layout.url}", :download => "layout", :class => "btn btn-inverse btn-mini" do %>
+              <i class="icon-download-alt icon-white"></i>
+              <%= "Download" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      
+      <% unless @os.arquivo.blank? %>
+        <tr>
+          <td><%= image_tag image_path('page.png') %></td>
+          <td>Arquivo</td>
+          <td><%= Os::EXTENSIONS[@os.arquivo.content_type] %></td>
+          <td><%= "#{(@os.arquivo.size.to_f/1024).round 2} kB" %></td>
+          <td>
+          </td>
+          <td>
+            <%= link_to "#{@os.arquivo.url}", :download => "arquivo", :class => "btn btn-inverse btn-mini" do %>
               <i class="icon-download-alt icon-white"></i>
               <%= "Download" %>
             <% end %>
@@ -315,8 +331,3 @@
   <i class=" icon-chevron-left icon-white"></i>
   <%= "Voltar" %>
 <% end %>
-
-<%= image_tag @os.rascunho.url(:thumb), :class => "img-polaroid" %>
-<%= image_tag @os.rascunho.url(:medium) %>
-<%= image_tag @os.rascunho.url %>
-<%= image_tag @os.layout.url %>

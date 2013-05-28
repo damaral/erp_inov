@@ -2,16 +2,35 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.file_field :rascunho %>
-    <%= f.file_field :layout %>
     <%= f.association :cliente, :label_method => :nome, :label => "Cliente: " %>
     <% @os.previsao_entrega = Date.today + 2 if @os.previsao_entrega.nil? %>
     <%= f.input :previsao_entrega, :as => :string, :input_html => {:value => @os.previsao_entrega.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Previsão de Entrega: " %>
     <%= f.input :aprovado_por, :collection => Os::APROVADORES, :label => "Aprovado por: ", :prompt => "Selecione" %>
     <%= f.input :observacao, :label => "Obeservação: " %>
-    <%= f.input :arquivo, :label => "Arquivo: " %>
     <%= f.input :estado, :collection => Os::ESTADOS.invert, :label => "Estado: ", :include_blank => false %>
     
+    <div class="control-group select required os_rascunho">
+      <label class="select required control-label" for="os_rascunho">Rascunho:</label>
+        <div class="controls">
+        <%= f.file_field :rascunho, :title => "Anexar arquivo" %>      
+        </div>
+    </div>
+    
+    <div class="control-group select required os_layout">
+      <label class="select required control-label" for="os_layout">Layout:</label>
+        <div class="controls">
+        <%= f.file_field :layout, :title => "Anexar arquivo" %>
+        </div>
+    </div>
+    
+    <div class="control-group select required os_layout">
+      <label class="select required control-label" for="os_layout">Arquivo:</label>
+        <div class="controls">
+        <%= f.file_field :arquivo, :title => "Anexar arquivo" %>
+        </div>
+    </div>
+    
+    <br><br><br>
     <h4>Sinal e Pagamentos</h4>
     <hr>
     <div class="pagamentos">

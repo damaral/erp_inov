@@ -4,7 +4,6 @@ class CreateOss < ActiveRecord::Migration
       t.date :data_entrega
       t.date :previsao_entrega
       t.text :observacao
-      t.string :arquivo
       t.integer :estado
       t.string :aprovado_por
       t.boolean :esta_pago
