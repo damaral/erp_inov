@@ -35,6 +35,8 @@ gem 'factory_girl_rails'
 
 gem "paperclip", "~> 3.0"
 
+gem "has_scope"
+
 
 
 # To use ActiveModel has_secure_password

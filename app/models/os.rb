@@ -17,6 +17,11 @@ class Os < ActiveRecord::Base
 
   after_create :verifica_se_esta_pago
 
+  scope :by_id, -> id { where(:id => id) }
+  scope :by_cliente, -> cliente { joins(:cliente).where("clientes.nome like '%#{cliente}%'") }
+  scope :by_previsao_entrega, -> previsao_entrega { where(:previsao_entrega => Time.parse(previsao_entrega).strftime("%Y-%m-%d")) }
+  scope :by_esta_pago, -> esta_pago { where(:esta_pago => esta_pago) }
+
   ESTADO_0 = 0
   ESTADO_1 = 1
   ESTADO_2 = 2

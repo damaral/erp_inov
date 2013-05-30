@@ -2,10 +2,16 @@
 
 class OssController < ApplicationController
   helper_method :sort_column, :sort_direction
+
+  has_scope :by_id
+  has_scope :by_cliente
+  has_scope :by_previsao_entrega
+  has_scope :by_esta_pago
   # GET /oss
   # GET /oss.json
   def index
-    @oss = Os.where("esta_pago = ? OR estado <> ?", false, Os::ESTADO_6).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
+    puts "PARAMS - #{params}"
+    @oss = apply_scopes(Os).where("oss.esta_pago = ? OR oss.estado <> ?", false, Os::ESTADO_6).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb

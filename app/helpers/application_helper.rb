@@ -8,7 +8,12 @@ module ApplicationHelper
     end
       
     direction = column == sort_column && sort_direction == "ASC" ? "DESC" : "ASC"
-    link_to :sort => column, :direction => direction do
+    params_new = params.clone
+    params_new.delete(:sort)
+    params_new.delete(:direction)
+    params_new.delete(:action)
+    params_new.delete(:controller)
+    link_to :sort => column, :direction => direction, :params => params_new do
       "#{title} <i class='#{icon_class}'></i>".html_safe
     end
   end
