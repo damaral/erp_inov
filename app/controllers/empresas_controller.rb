@@ -1,8 +1,13 @@
 class EmpresasController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
+  has_scope :by_nome
+  has_scope :by_nome_fantasia
+
   # GET /empresas
   # GET /empresas.json
   def index
-    @empresas = Empresa.page(params[:page]).per(NUMERO_POR_PAGINA)
+    @empresas = apply_scopes(Empresa).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +84,14 @@ class EmpresasController < ApplicationController
       format.html { redirect_to empresas_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def sort_column
+    Empresa.column_names.include?(params[:sort]) ? params[:sort] : "nome"
+  end
+
+  def sort_direction
+    ["ASC", "DESC"].include?(params[:direction]) ? params[:direction] : "ASC"
   end
 end

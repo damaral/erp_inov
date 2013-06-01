@@ -1,11 +1,29 @@
-<h1>Ordens de Serviço</h1>
+<div class="row">
+    <div class="span10">
+        <h1>Ordens de Serviço</h1>        
+    </div>
+    <div class="span2">
+        
+    </div>
+</div>
+
+<%= simple_form_for("", :html => {:method => "get", :class => "form-inline form-filtro", :multipart => true}) do |f| %>
+    <%= f.input :by_id, :label => "Código: ", :input_html => {:class => "span1"}, :required => false, :wrapper_html => {:class => "span1"} %>
+    <%= f.input :by_cliente, :label => "Cliente: ", :required => false, :wrapper_html => {:class => "span3"} %>
+    <%= f.input :by_previsao_entrega, :label => "Previsão de Entrega: ", :input_html => {:class => "datepicker span2"}, :required => false, :wrapper_html => {:class => "span2"} %>
+    <% exibicao_hash = {"Em aberto" => Os::ESTADO_5, "Todas" => (Os::ESTADO_8 + 1)} %>
+    <% exibicao_hash = {"Todas" => (Os::ESTADO_8 + 1), "Em aberto" => Os::ESTADO_5} if !params[:exibicao].nil? && params[:exibicao].to_i == (Os::ESTADO_8 + 1) %>
+    <%= f.input :exibicao, :label => "Exibição: ", :collection => exibicao_hash, :required => false, :wrapper_html => {:class => "span2"}, :input_html => {:class => "span2"}, :include_blank => false %>
+    <%= f.button :submit, "Filtrar", :class => "btn submit" %>
+    <div style="clear:both;"></div>
+<% end %>
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th>Código</th>
+    <th><%= sortable "id", "Código" %></th>
     <th>Cliente</th>
-    <th>Previsão entrega</th>
-    <th>Estado</th>
+    <th><%= sortable "previsao_entrega", "Previsão entrega" %></th>
+    <th><%= sortable "estado" %></th>
     <th>Ação</th>
   </tr>
 

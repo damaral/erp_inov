@@ -28,9 +28,7 @@ ErpInov::Application.routes.draw do
     resources :oss, :only => [:index, :show] do
       member do
         post 'acao'
-        
-        get 'submeter_para_aprovacao_layout'
-        get 'finalizar_execucao'
+        post 'anexar'
       end
     end
   end

@@ -8,6 +8,10 @@ class Cliente < ActiveRecord::Base
   has_many :acoes, :dependent => :destroy
   has_many :oss, :dependent => :destroy
 
+  scope :by_nome, -> nome { where("nome like '%#{nome}%'") }
+  scope :by_apelido, -> apelido { where("apelido like '%#{apelido}%'") }
+  scope :by_email, -> email { where("email like '%#{email}%'") }
+
   validates :nome, :presence => true, :uniqueness => true
   validates :telefone, :presence => true
   validates_format_of :email, :with => /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, :message => "Formato inválido", :if => :email_not_blank?

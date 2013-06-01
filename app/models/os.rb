@@ -21,6 +21,16 @@ class Os < ActiveRecord::Base
   scope :by_cliente, -> cliente { joins(:cliente).where("clientes.nome like '%#{cliente}%'") }
   scope :by_previsao_entrega, -> previsao_entrega { where(:previsao_entrega => Time.parse(previsao_entrega).strftime("%Y-%m-%d")) }
   scope :by_esta_pago, -> esta_pago { where(:esta_pago => esta_pago) }
+  #scope :exibicao, -> exibicao { exibicao == ESTADO_7 ? where("oss.esta_pago = ? OR oss.estado < ?", false, exibicao) : where("oss.estado < #{exibicao}") }
+  scope :exibicao, -> exibicao do 
+    if exibicao.to_i == ESTADO_7
+      where("oss.esta_pago = ? OR oss.estado < ?", false, exibicao)
+    elsif exibicao.to_i == ESTADO_5
+      where("oss.estado > ? AND oss.estado < ?", ESTADO_0, ESTADO_5)
+    else
+      where("oss.estado < #{exibicao}")
+    end
+  end
 
   ESTADO_0 = 0
   ESTADO_1 = 1

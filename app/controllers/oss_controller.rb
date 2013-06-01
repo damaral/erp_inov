@@ -7,11 +7,12 @@ class OssController < ApplicationController
   has_scope :by_cliente
   has_scope :by_previsao_entrega
   has_scope :by_esta_pago
+  has_scope :exibicao, :default => Os::ESTADO_7
+
   # GET /oss
   # GET /oss.json
   def index
-    puts "PARAMS - #{params}"
-    @oss = apply_scopes(Os).where("oss.esta_pago = ? OR oss.estado <> ?", false, Os::ESTADO_6).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
+    @oss = apply_scopes(Os).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -151,8 +152,8 @@ class OssController < ApplicationController
 
   private
   def currency_to_number(currency)
-    currency.gsub!("R$ ", "")
-    currency.gsub!(/\./, "")
+    currency.gsub!("R$", "")
+    currency.strip!
     currency.gsub!(/,/, ".")
     currency = currency.to_f
   end

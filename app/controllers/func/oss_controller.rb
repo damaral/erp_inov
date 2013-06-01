@@ -1,11 +1,18 @@
 # coding: utf-8
 module Func
   class OssController < ApplicationController
+    helper_method :sort_column, :sort_direction
+
+    has_scope :by_id
+    has_scope :by_cliente
+    has_scope :by_previsao_entrega
+    has_scope :exibicao, :default => Os::ESTADO_5
+
     # GET /oss
     # GET /oss.json
     def index
-      @oss = Os.where("estado > ? AND estado < ?", Os::ESTADO_0, Os::ESTADO_4).order("estado DESC").page(params[:page]).per(NUMERO_POR_PAGINA)
-
+      @oss = apply_scopes(Os).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
+      
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @oss }
@@ -110,22 +117,17 @@ module Func
       redirect_to func_os_path(@os), notice: notice
     end
 
-    def submeter_para_aprovacao_layout
+    def anexar
       @os = Os.find(params[:id])
-      @os.estado = Os::ESTADO_2
-      @os.save
 
-      redirect_to func_os_path(@os), notice: 'Layout submetido para aprovação.'
+      unless params[:anexar].nil?
+        @os.layout = params[:anexar][:layout] unless params[:anexar][:layout].nil?
+        @os.arquivo = params[:anexar][:arquivo] unless params[:anexar][:arquivo].nil?
+        @os.save  
+      end
+      
+      redirect_to func_os_path(@os), notice: 'Anexos enviados com sucesso.'
     end
-
-    def finalizar_execucao
-      @os = Os.find(params[:id])
-      @os.estado = Os::ESTADO_5
-      @os.save
-
-      redirect_to func_oss_path, notice: 'Ordem de Serviço Executada com sucesso.'
-    end
-
 
     private
     def currency_to_number(currency)
@@ -133,6 +135,14 @@ module Func
       currency.gsub!(/\./, "")
       currency.gsub!(/,/, ".")
       currency = currency.to_f
+    end
+
+    def sort_column
+      Os.column_names.include?(params[:sort]) ? params[:sort] : "estado"
+    end
+
+    def sort_direction
+      ["ASC", "DESC"].include?(params[:direction]) ? params[:direction] : "DESC"
     end
   end
 end

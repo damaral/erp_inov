@@ -1,10 +1,14 @@
 class ClientesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
+  has_scope :by_nome
+  has_scope :by_apelido
+  has_scope :by_email
+
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
+    @clientes = apply_scopes(Cliente).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb

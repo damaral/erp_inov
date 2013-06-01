@@ -10,6 +10,14 @@
     </div>
 </div>
 
+<%= simple_form_for("", :html => {:method => "get", :class => "form-inline form-filtro", :multipart => true}) do |f| %>
+    <%= f.input :by_nome, :label => "Nome: ", :input_html => {:class => "span3"}, :required => false, :wrapper_html => {:class => "span3"} %>
+    <%= f.input :by_apelido, :label => "Apelido: ", :required => false, :wrapper_html => {:class => "span3"}, :input_html => {:class => "span3"}, %>
+    <%= f.input :by_email, :as => :string, :label => "E-mail: ", :input_html => {:class => "span3"}, :required => false, :wrapper_html => {:class => "span3"} %>
+    <%= f.button :submit, "Filtrar", :class => "btn submit" %>
+    <div style="clear:both;"></div>
+<% end %>
+
 <table class="table table-striped table-bordered">
   <tr>
     <th><%= sortable "nome" %></th>
