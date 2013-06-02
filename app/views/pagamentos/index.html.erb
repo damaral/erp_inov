@@ -12,8 +12,12 @@
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th>Valor</th>
+    <th>Código O.S.</th>
+    <th>Cliente</th>
+    <th>Data Prevista</th>
     <th>Forma de pagamento</th>
+    <th>Valor</th>
+    <th>Pagamento</th>
     <th></th>
     <th class="sem-borda-esquerda">Ações</th>
     <th class="sem-borda-esquerda"></th>
@@ -21,8 +25,16 @@
 
 <% @pagamentos.each do |pagamento| %>
   <tr>
-    <td><%= pagamento.valor %></td>
+    <td><%= pagamento.os_id %></td>
+    <td><%= pagamento.cliente.nome %></td>
+    <td><%=pagamento.data_prevista.strftime("%d/%m/%Y") %></td>
     <td><%= pagamento.forma_de_pagamento %></td>
+    <td><%= number_to_currency pagamento.valor %></td>
+    <td><% if pagamento.esta_pago %>
+          <span class="label label-success">OK</span>
+          <% else %>
+          <span class="label label-warning">Pendente</span>
+          <% end %></td>
     <td class="botao-acao primeiro-botao">
         <%= link_to pagamento, :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>

@@ -3,15 +3,34 @@
     <h3 class="span12">Pagamento</h3>
   </div>
   <p>
-    <b>Valor:</b>
-    <%= @pagamento.valor %>
+    <b>Código O.S.:</b>
+    <%= @pagamento.os_id %>
   </p>
-
+  
+  <p>
+    <b>Cliente:</b>
+    <%= @pagamento.cliente.nome %>
+  </p>
+  
+  <p>
+    <b>Data prevista:</b>
+    <%= @pagamento.data_prevista.strftime("%d/%m/%Y") %>
+  </p>
+  
   <p>
     <b>Forma de pagamento:</b>
     <%= @pagamento.forma_de_pagamento %>
   </p>
-
+  
+  <p>
+    <b>Valor:</b>
+    <%= number_to_currency @pagamento.valor %>
+  </p>
+  
+  <p>
+    <b>Pagamento:</b>
+    <%= @pagamento.esta_pago ? "OK" : "Pendente" %>
+  </p>
 </div>
 
 <%= link_to edit_pagamento_path(@pagamento), :class => "btn btn-info" do %>

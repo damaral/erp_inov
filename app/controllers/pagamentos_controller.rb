@@ -24,7 +24,9 @@ class PagamentosController < ApplicationController
   # GET /pagamentos/new
   # GET /pagamentos/new.json
   def new
+    puts params
     @pagamento = Pagamento.new
+    @pagamento.os_id = params[:os_id] unless params[:os_id].nil?
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +42,14 @@ class PagamentosController < ApplicationController
   # POST /pagamentos
   # POST /pagamentos.json
   def create
+    currency_to_number params[:pagamento][:valor]
+
     @pagamento = Pagamento.new(params[:pagamento])
 
     respond_to do |format|
       if @pagamento.save
-        format.html { redirect_to @pagamento, notice: 'Pagamento criado com sucesso.' }
+        #format.html { redirect_to @pagamento, notice: 'Pagamento criado com sucesso.' }
+        format.html { redirect_to @pagamento.os, notice: 'Pagamento criado com sucesso.' }
         format.json { render json: @pagamento, status: :created, location: @pagamento }
       else
         format.html { render action: "new" }
@@ -56,11 +61,14 @@ class PagamentosController < ApplicationController
   # PUT /pagamentos/1
   # PUT /pagamentos/1.json
   def update
+    currency_to_number params[:pagamento][:valor]
+
     @pagamento = Pagamento.find(params[:id])
 
     respond_to do |format|
       if @pagamento.update_attributes(params[:pagamento])
-        format.html { redirect_to @pagamento, notice: 'Pagamento atualizado com sucesso.' }
+        #format.html { redirect_to @pagamento, notice: 'Pagamento atualizado com sucesso.' }
+        format.html { redirect_to @pagamento.os, notice: 'Pagamento atualizado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,10 +81,12 @@ class PagamentosController < ApplicationController
   # DELETE /pagamentos/1.json
   def destroy
     @pagamento = Pagamento.find(params[:id])
+    os = @pagamento.os
     @pagamento.destroy
 
     respond_to do |format|
-      format.html { redirect_to pagamentos_url }
+      #format.html { redirect_to pagamentos_url }
+      format.html { redirect_to os }
       format.json { head :no_content }
     end
   end
@@ -87,5 +97,13 @@ class PagamentosController < ApplicationController
     @pagamento.save
 
     redirect_to os_path(@pagamento.os)
+  end
+
+  private
+  def currency_to_number(currency)
+    currency.gsub!("R$", "")
+    currency.strip!
+    currency.gsub!(/,/, ".")
+    currency = currency.to_f
   end
 end

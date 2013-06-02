@@ -104,7 +104,15 @@
     </tr>
   </table>
 
-  <h4>Pagamentos</h4>
+  <div class="row">
+    <h4 class="span3">Pagamentos</h4>
+    <div class="span2 offset7">
+      <%= link_to new_os_pagamento_path(@os), :class => "btn btn-mini btn-primary", :style => "float: right" do %>
+        <i class="icon-plus icon-white"></i>
+        <b><%= "Pagamento" %></b>
+      <% end %>
+    </div>
+  </div>
 
   <table class="table table-striped">
     <tr>
@@ -113,7 +121,9 @@
       <th>Forma de Pagamento</th>
       <th>Valor</th>
       <th>Pagamento</th>
-      <th>Ação</th>
+      <th></th>
+      <th>Ações</th>
+      <th></th>
     </tr>
   <% @os.pagamentos.each do |pagamento| %>
     <tr>
@@ -126,12 +136,39 @@
           <span class="label label-success">OK</span>
         </td>
         <td></td>
+        <td style="width: 60px;">
+          <%= link_to edit_os_pagamento_path(@os, pagamento), :class => "btn btn-info btn-mini" do %>
+            <i class="icon-pencil icon-white"></i>
+            <%= "Editar" %>
+          <% end %>
+        </td>
+        <td style="width: 62px;">
+          <%= link_to pagamento, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Pagamento?' }, :class => "btn btn-danger btn-mini" do %>
+            <i class="icon-trash icon-white"></i>
+            <%= "Excluir" %>
+          <% end %>
+        </td>
       <% else %>
         <td>
           <span class="label label-warning">Pendente</span>
         </td>
-        <td>
-          <%= link_to "Confirmar", confirmar_pagamento_path(pagamento), data: { confirm: "Você tem certeza que deseja confirmar este pagamento?" }, class: "btn btn-inverse btn-mini" %>
+        <td style="width: 80px;">
+          <%= link_to confirmar_pagamento_path(pagamento), data: { confirm: "Você tem certeza que deseja confirmar este pagamento?" }, class: "btn btn-inverse btn-mini" do %>
+            <i class="icon-ok icon-white"></i>
+            <%= "Confirmar" %>
+          <% end %>
+        </td>
+        <td style="width: 60px;">
+          <%= link_to edit_os_pagamento_path(@os, pagamento), :class => "btn btn-info btn-mini" do %>
+            <i class="icon-pencil icon-white"></i>
+            <%= "Editar" %>
+          <% end %>
+        </td>
+        <td style="width: 62px;">
+          <%= link_to pagamento, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Pagamento?' }, :class => "btn btn-danger btn-mini" do %>
+            <i class="icon-trash icon-white"></i>
+            <%= "Excluir" %>
+          <% end %>
         </td>
       <% end %>
     </tr>
@@ -142,6 +179,8 @@
       <td><b>Total: </b></td>
       <td><%= number_to_currency @os.valor_total_pagamentos %></td>
       <td><%= number_to_currency @os.valor_pago %></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
   </table>
@@ -205,13 +244,13 @@
           <td>Layout</td>
           <td><%= Os::EXTENSIONS[@os.layout.content_type] %></td>
           <td><%= "#{(@os.layout.size.to_f/1024).round 2} kB" %></td>
-          <td>
+          <td style="width: 76px;">
             <%= link_to "javascript:void(0)", :class => "btn btn-primary btn-mini", :onclick => "vizualizar('layout-img')" do %>
               <i class="icon-search icon-white"></i>
               <%= "Vizualizar" %>
             <% end %>
           </td>
-          <td>
+          <td style="width: 80px;">
             <%= link_to "#{@os.layout.url}", :download => "layout", :class => "btn btn-inverse btn-mini" do %>
               <i class="icon-download-alt icon-white"></i>
               <%= "Download" %>

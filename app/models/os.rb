@@ -4,8 +4,8 @@ class Os < ActiveRecord::Base
   attr_accessible :arquivo, :data_entrega, :previsao_entrega, :esta_pago, :estado, :observacao, :aprovado_por, :cliente_id, :itens_attributes, :pagamentos_attributes, :layout, :rascunho
 
   has_attached_file :arquivo
-  has_attached_file :layout, :styles => { :medium => "940x940>", :thumb => "100x100>" }
-  has_attached_file :rascunho, :styles => { :medium => "940x940>", :thumb => "100x100>" }
+  has_attached_file :layout, :styles => { :medium => "940x940>", :thumb => "64x64>" }
+  has_attached_file :rascunho, :styles => { :medium => "940x940>", :thumb => "64x64>" }
 
   has_many :itens, :dependent => :destroy
   has_many :pagamentos, :dependent => :destroy
@@ -21,7 +21,6 @@ class Os < ActiveRecord::Base
   scope :by_cliente, -> cliente { joins(:cliente).where("clientes.nome like '%#{cliente}%'") }
   scope :by_previsao_entrega, -> previsao_entrega { where(:previsao_entrega => Time.parse(previsao_entrega).strftime("%Y-%m-%d")) }
   scope :by_esta_pago, -> esta_pago { where(:esta_pago => esta_pago) }
-  #scope :exibicao, -> exibicao { exibicao == ESTADO_7 ? where("oss.esta_pago = ? OR oss.estado < ?", false, exibicao) : where("oss.estado < #{exibicao}") }
   scope :exibicao, -> exibicao do 
     if exibicao.to_i == ESTADO_7
       where("oss.esta_pago = ? OR oss.estado < ?", false, exibicao)

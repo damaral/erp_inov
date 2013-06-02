@@ -56,16 +56,16 @@ class OssController < ApplicationController
   # POST /oss
   # POST /oss.json
   def create
-    params[:os][:pagamentos_attributes].each do |pagamento|
-      currency_to_number pagamento[1]["valor"]
-      puts "VALOR = #{pagamento[1]["valor"]}"
-    end
+    #params[:os][:pagamentos_attributes].each do |pagamento|
+    #  currency_to_number pagamento[1]["valor"]
+    #  puts "VALOR = #{pagamento[1]["valor"]}"
+    #end
 
     params[:os][:itens_attributes].each do |item|
       currency_to_number item[1]["desconto"]
     end
 
-    params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
+    #params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
 
     @os = Os.new(params[:os])
 
@@ -83,15 +83,15 @@ class OssController < ApplicationController
   # PUT /oss/1
   # PUT /oss/1.json
   def update
-    params[:os][:pagamentos_attributes].each do |pagamento|
-      currency_to_number pagamento[1]["valor"]
-    end
+    #params[:os][:pagamentos_attributes].each do |pagamento|
+    #  currency_to_number pagamento[1]["valor"]
+    #end
 
     params[:os][:itens_attributes].each do |item|
       currency_to_number item[1]["desconto"]
     end
     
-    params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
+    #params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
     
     @os = Os.find(params[:id])
 

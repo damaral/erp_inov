@@ -1,5 +1,7 @@
 ErpInov::Application.routes.draw do
   resources :oss do
+    resources :pagamentos
+    
     member do
       post 'acao'
     end
