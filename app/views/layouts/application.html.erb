@@ -10,7 +10,9 @@
 <% nome_controller = params[:controller].gsub(/[^a-z0-9]/i, "-") %>
 <body class="<%= "#{nome_controller}-controller" %>">
   
-  <%= render "layouts/menu" %>
+  <% unless nome_controller == "devise-sessions" %>
+    <%= render "layouts/menu" %>
+  <% end %>
   
   <% nome_action = params[:action].gsub(/[^a-z0-9]/i, "-") %>
   <div class="<%= "#{nome_action}-action" %> container" style="padding-top: 60px; padding-bottom: 60px;">

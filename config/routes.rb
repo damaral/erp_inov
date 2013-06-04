@@ -1,4 +1,6 @@
 ErpInov::Application.routes.draw do
+  devise_for :funcionarios
+
   resources :oss do
     resources :pagamentos
     

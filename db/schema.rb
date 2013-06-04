@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526214659) do
+ActiveRecord::Schema.define(:version => 20130603012351) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -76,14 +76,26 @@ ActiveRecord::Schema.define(:version => 20130526214659) do
     t.string   "estado"
     t.string   "telefone"
     t.string   "celular"
-    t.string   "email"
     t.string   "rg"
     t.string   "cargo"
     t.date     "data_admissao"
     t.date     "data_demissao"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "funcionarios", ["email"], :name => "index_funcionarios_on_email", :unique => true
+  add_index "funcionarios", ["reset_password_token"], :name => "index_funcionarios_on_reset_password_token", :unique => true
 
   create_table "itens", :force => true do |t|
     t.integer  "quantidade"

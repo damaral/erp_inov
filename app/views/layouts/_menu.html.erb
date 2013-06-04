@@ -39,7 +39,7 @@
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
               <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><%= link_to (raw "<i class='icon-share-alt'></i> Sair"), destroy_funcionario_session_path, :method => :delete %></li>
             </ul>
           </li>
         </ul>

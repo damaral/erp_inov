@@ -11,7 +11,6 @@ class CreateFuncionarios < ActiveRecord::Migration
       t.string :estado
       t.string :telefone
       t.string :celular
-      t.string :email
       t.string :rg
       t.string :cargo
       t.date :data_admissao

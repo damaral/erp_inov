@@ -1,0 +1,13 @@
+<div class="sign-in box span6 offset3">
+  <h2>Logos Inov</h2>
+  <hr />
+  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email, :required => false, :autofocus => true %>
+      <%= f.input :password, :required => false, :label => "Senha" %>
+      <%= f.input :remember_me, :as => :boolean, :label => "Lembrar senha", :wrapper => false if devise_mapping.rememberable? %>
+      <%= f.button :submit, "Entrar", :class => "btn-primary", :style => "float:right;" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

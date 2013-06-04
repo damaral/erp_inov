@@ -1,6 +1,8 @@
 # coding: utf-8
 
 class OssController < ApplicationController
+  before_filter :authenticate_funcionario!
+
   helper_method :sort_column, :sort_direction
 
   has_scope :by_id

@@ -29,6 +29,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'devise'
+
 gem 'kaminari'
 
 gem 'factory_girl_rails'

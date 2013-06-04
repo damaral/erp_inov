@@ -83,3 +83,5 @@ end
 Os.all.each do |os|
   os.atualiza_esta_pago
 end
+
+FactoryGirl.create(:funcionario, :nome => "Solange Amaral de Sousa", :email => "logos.inov@hotmail.com", :password => "inov1234")

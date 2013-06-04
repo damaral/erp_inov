@@ -1,4 +1,5 @@
 class PagamentosController < ApplicationController
+  before_filter :authenticate_funcionario!
   # GET /pagamentos
   # GET /pagamentos.json
   def index

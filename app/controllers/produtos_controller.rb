@@ -1,4 +1,5 @@
 class ProdutosController < ApplicationController
+  before_filter :authenticate_funcionario!
   # GET /produtos
   # GET /produtos.json
   def index
