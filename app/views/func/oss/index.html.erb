@@ -32,7 +32,12 @@
     <td><%= os.id %></td>
     <td><%= os.cliente.nome %></td>
     <td><%= os.previsao_entrega.strftime('%d/%m/%Y') %></td>
-    <td><%= Os::ESTADOS[os.estado] %></td>
+    <td>
+        <% if os.exige_acao_do_funcionario? %>
+            <span class="badge badge-info">!</span>
+        <% end %>
+        <%= Os::ESTADOS[os.estado] %>
+    </td>
     <td class="botao-acao primeiro-botao">
         <%= link_to func_os_path(os), :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>

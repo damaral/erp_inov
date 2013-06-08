@@ -2,6 +2,9 @@
 
 class OssController < ApplicationController
   before_filter :authenticate_funcionario!
+  before_filter :verifica_role
+
+  load_and_authorize_resource
 
   helper_method :sort_column, :sort_direction
 
@@ -166,5 +169,11 @@ class OssController < ApplicationController
 
   def sort_direction
     ["ASC", "DESC"].include?(params[:direction]) ? params[:direction] : "DESC"
+  end
+
+  def verifica_role
+    if current_funcionario.has_role? :singmaker
+      redirect_to func_oss_path
+    end
   end
 end

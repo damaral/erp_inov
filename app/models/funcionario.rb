@@ -1,6 +1,7 @@
 # coding: utf-8
 
 class Funcionario < ActiveRecord::Base
+  include RoleModel
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :registerable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,6 +10,11 @@ class Funcionario < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :bairro, :cargo, :celular, :cep, :cidade, :complemento, :data_admissao, :data_demissao, :endereco, :estado, :nome, :rg, :sobrenome, :telefone
+  attr_accessible :roles_mask
+
+  roles_attribute :roles_mask
+
+  roles :administrador, :gerente, :atendente, :singmaker
 
   has_many :acoes, :dependent => :destroy
 
@@ -16,9 +22,6 @@ class Funcionario < ActiveRecord::Base
   validates :sobrenome, :presence => true
   validates :telefone, :presence => true
   validates :data_admissao, :presence => true
-  #validates_format_of :email, :with => /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, :message => "Formato inválido", :if => :email_not_blank?
+  validates :roles_mask, :presence => true
 
-  #def email_not_blank?
-  #  !email.blank?
-  #end
 end

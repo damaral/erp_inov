@@ -22,10 +22,12 @@
     <%= @produto.preco_unitario %>
   </p>
 
-  <p>
-    <b>Custo unitário:</b>
-    <%= @produto.custo_unitario %>
-  </p>
+  <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) %>
+    <p>
+      <b>Custo unitário:</b>
+      <%= @produto.custo_unitario %>
+    </p>
+  <% end %>
 
   <p>
     <b>Altura:</b>

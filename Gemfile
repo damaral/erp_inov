@@ -39,6 +39,10 @@ gem "paperclip", "~> 3.0"
 
 gem "has_scope"
 
+gem "role_model"
+
+gem "cancan"
+
 
 
 # To use ActiveModel has_secure_password

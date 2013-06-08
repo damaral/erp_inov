@@ -1,6 +1,8 @@
 class ClientesController < ApplicationController
   before_filter :authenticate_funcionario!
   
+  load_and_authorize_resource
+
   helper_method :sort_column, :sort_direction
 
   has_scope :by_nome

@@ -2,12 +2,14 @@
     <div class="span10">
         <h1>Funcionários</h1>
     </div>
-    <div class="span2">
-        <%= link_to new_funcionario_path, :class => "btn btn-primary btn-novo" do %>
-            <i class="icon-plus icon-white"></i>
-            <b><%= "Funcionário" %></b>
-        <% end %>
-    </div>
+    <% if can? :create, Funcionario %>
+      <div class="span2">
+          <%= link_to new_funcionario_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "Funcionário" %></b>
+          <% end %>
+      </div>
+    <% end %> 
 </div>
 
 <table class="table table-striped table-bordered">
@@ -17,9 +19,13 @@
     <th>Celular</th>
     <th>E-mail</th>
     <th>Cargo</th>
-    <th></th>
-    <th class="sem-borda-esquerda">Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ações</th>
+    <% if can? :update, Funcionario %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Funcionario %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
   </tr>
 
 <% @funcionarios.each do |funcionario| %>
@@ -30,23 +36,29 @@
     <td><%= funcionario.email %></td>
     <td><%= funcionario.cargo %></td>
     <td class="botao-acao primeiro-botao">
-        <%= link_to funcionario, :class => "btn btn-mini" do %>
+      <%= link_to funcionario, :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>
         <%= "Mostrar" %>
-        <% end %>
+      <% end %>
     </td>
-    <td class="botao-acao sem-borda-esquerda">
+    
+    <% if can? :update, Funcionario %>
+      <td class="botao-acao sem-borda-esquerda">
         <%= link_to edit_funcionario_path(funcionario), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
         <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Funcionario %>
+      <td class="botao-acao sem-borda-esquerda">
         <%= link_to funcionario, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Funcionario?' }, :class => "btn btn-danger btn-mini" do %>
-        <i class="icon-trash icon-white"></i>
-        <%= "Excluir" %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
         <% end %>
-    </td>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

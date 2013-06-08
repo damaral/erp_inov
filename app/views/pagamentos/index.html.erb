@@ -2,12 +2,14 @@
     <div class="span10">
         <h1>Pagamentos</h1>
     </div>
-    <div class="span2">
-        <%= link_to new_pagamento_path, :class => "btn btn-primary btn-novo" do %>
-            <i class="icon-plus icon-white"></i>
-            <b><%= "Pagamento" %></b>
-        <% end %>
-    </div>
+    <% if can? :create, Pagamento %>
+      <div class="span2">
+          <%= link_to new_pagamento_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "Pagamento" %></b>
+          <% end %>
+      </div>
+    <% end %>
 </div>
 
 <table class="table table-striped table-bordered">
@@ -18,9 +20,13 @@
     <th>Forma de pagamento</th>
     <th>Valor</th>
     <th>Pagamento</th>
-    <th></th>
-    <th class="sem-borda-esquerda">Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ações</th>
+    <% if can? :update, Pagamento %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Pagamento %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
   </tr>
 
 <% @pagamentos.each do |pagamento| %>
@@ -41,18 +47,24 @@
         <%= "Mostrar" %>
         <% end %>
     </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to edit_pagamento_path(pagamento), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
-        <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to pagamento, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Pagamento?' }, :class => "btn btn-danger btn-mini" do %>
-        <i class="icon-trash icon-white"></i>
-        <%= "Excluir" %>
-        <% end %>
-    </td>
+    
+    <% if can? :update, Pagamento %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to edit_pagamento_path(pagamento), :class => "btn btn-info btn-mini" do %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
+          <% end %>
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Pagamento %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to pagamento, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Pagamento?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
+          <% end %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

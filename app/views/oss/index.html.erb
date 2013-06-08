@@ -2,12 +2,14 @@
     <div class="span10">
         <h1>Ordens de Serviço</h1>        
     </div>
-    <div class="span2">
-        <%= link_to new_os_path, :class => "btn btn-primary btn-novo" do %>
-            <i class="icon-plus icon-white"></i>
-            <b><%= "O.S." %></b>
-        <% end %>
-    </div>
+    <% if can? :create, Os %>
+      <div class="span2">
+          <%= link_to new_os_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "O.S." %></b>
+          <% end %>
+      </div>
+    <% end %>
 </div>
 
 <%= simple_form_for("", :html => {:method => "get", :class => "form-inline form-filtro", :multipart => true}) do |f| %>
@@ -30,9 +32,13 @@
     <th>Valor total</th>
     <th><%= sortable "estado" %></th>
     <th>Pagamento</th>
-    <th></th>
-    <th class="sem-borda-esquerda">Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ações</th>
+    <% if can? :update, Os %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Os %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
   </tr>
 
 <% @oss.each do |os| %>
@@ -41,7 +47,12 @@
     <td><%= os.cliente.nome %></td>
     <td><%= os.previsao_entrega %></td>
     <td><%= number_to_currency os.valor_final %></td>
-    <td><%= Os::ESTADOS[os.estado] %></td>
+    <td>
+        <% if os.exige_acao_da_gerencia? %>
+            <span class="badge badge-info">!</span>
+        <% end %>
+        <%= Os::ESTADOS[os.estado] %>
+    </td>
     <td><% if os.esta_pago %>
           <span class="label label-success">OK</span>
           <% else %>
@@ -53,18 +64,24 @@
         <%= "Mostrar" %>
         <% end %>
     </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to edit_os_path(os), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
-        <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to os, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esta O.S.?' }, :class => "btn btn-danger btn-mini" do %>
-        <i class="icon-trash icon-white"></i>
-        <%= "Excluir" %>
-        <% end %>
-    </td>
+    
+    <% if can? :update, Os %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to edit_os_path(os), :class => "btn btn-info btn-mini" do %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
+          <% end %>
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Os %>  
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to os, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esta O.S.?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
+          <% end %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

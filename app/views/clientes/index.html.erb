@@ -2,12 +2,14 @@
     <div class="span10">
         <h1>Clientes</h1>
     </div>
-    <div class="span2">
-        <%= link_to new_cliente_path, :class => "btn btn-primary btn-novo" do %>
-            <i class="icon-plus icon-white"></i>
-            <b><%= "Cliente" %></b>
-        <% end %>
-    </div>
+    <% if can? :create, Cliente %>
+      <div class="span2">
+          <%= link_to new_cliente_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "Cliente" %></b>
+          <% end %>
+      </div>
+    <% end %>
 </div>
 
 <%= simple_form_for("", :html => {:method => "get", :class => "form-inline form-filtro", :multipart => true}) do |f| %>
@@ -26,9 +28,13 @@
     <th>Celular</th>
     <th><%= sortable "email", "E-mail" %></th>
     <th>Observação</th>
-    <th></th>
-    <th class="sem-borda-esquerda">Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ações</th>
+    <% if can? :update, Cliente %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Cliente %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
   </tr>
 
 <% @clientes.each do |cliente| %>
@@ -45,18 +51,24 @@
         <%= "Mostrar" %>
         <% end %>
     </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to edit_cliente_path(cliente), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
-        <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to cliente, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Cliente?' }, :class => "btn btn-danger btn-mini" do %>
-        <i class="icon-trash icon-white"></i>
-        <%= "Excluir" %>
-        <% end %>
-    </td>
+    
+    <% if can? :update, Cliente %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to edit_cliente_path(cliente), :class => "btn btn-info btn-mini" do %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
+          <% end %>
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Cliente %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to cliente, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este Cliente?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
+          <% end %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603012351) do
+ActiveRecord::Schema.define(:version => 20130605023049) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20130603012351) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "roles_mask"
   end
 
   add_index "funcionarios", ["email"], :name => "index_funcionarios_on_email", :unique => true

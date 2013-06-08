@@ -105,6 +105,14 @@ class Os < ActiveRecord::Base
     self.save
   end
 
+  def self.alguma_os_exige_acao_da_gerencia?
+    !self.where("estado in (#{ESTADO_0}, #{ESTADO_2}, #{ESTADO_5}, #{ESTADO_6})").count.zero?
+  end
+
+  def self.alguma_os_exige_acao_do_funcionario?
+    !self.where("estado in (#{ESTADO_1}, #{ESTADO_3}, #{ESTADO_4})").count.zero?
+  end
+
   private
   def verifica_se_esta_pago
     if self.valor_restante == 0

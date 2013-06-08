@@ -2,12 +2,14 @@
     <div class="span10">
         <h1>Produtos</h1>
     </div>
-    <div class="span2">
-        <%= link_to new_produto_path, :class => "btn btn-primary btn-novo" do %>
-            <i class="icon-plus icon-white"></i>
-            <b><%= "Produto" %></b>
-        <% end %>
-    </div>
+    <% if can? :create, Produto %>
+      <div class="span2">
+          <%= link_to new_produto_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "Produto" %></b>
+          <% end %>
+      </div>
+    <% end %>
 </div>
 
 <table class="table table-striped table-bordered">
@@ -16,13 +18,19 @@
     <th>Descrição</th>
     <th>Unidade</th>
     <th>Preco unitário</th>
-    <th>Custo unitário</th>
+    <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) %>
+      <th>Custo unitário</th>
+    <% end %>
     <th>Altura</th>
     <th>Comp.</th>
     <th>Ativo</th>
-    <th></th>
-    <th class="sem-borda-esquerda">Ações</th>
-    <th class="sem-borda-esquerda"></th>
+    <th>Ações</th>
+    <% if can? :update, Produto %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Produto %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
   </tr>
 
 <% @produtos.each do |produto| %>
@@ -31,7 +39,9 @@
     <td><%= produto.descricao %></td>
     <td><%= produto.unidade %></td>
     <td><%= number_to_currency produto.preco_unitario %></td>
-    <td><%= number_to_currency produto.custo_unitario %></td>
+    <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) %>
+      <td><%= number_to_currency produto.custo_unitario %></td>
+    <% end %>
     <td><%= produto.altura unless produto.altura.nil?  %></td>
     <td><%= produto.comprimento unless produto.comprimento.nil? %></td>
     <td><% if produto.ativo %>
@@ -45,18 +55,24 @@
         <%= "Mostrar" %>
         <% end %>
     </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to edit_produto_path(produto), :class => "btn btn-info btn-mini" do %>
-        <i class="icon-pencil icon-white"></i>
-        <%= "Editar" %>
-        <% end %>
-    </td>
-    <td class="botao-acao sem-borda-esquerda">
-        <%= link_to produto, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este produto?' }, :class => "btn btn-danger btn-mini" do %>
-        <i class="icon-trash icon-white"></i>
-        <%= "Excluir" %>
-        <% end %>
-    </td>
+    
+    <% if can? :update, Produto %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to edit_produto_path(produto), :class => "btn btn-info btn-mini" do %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
+          <% end %>
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Produto %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to produto, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir este produto?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
+          <% end %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>
