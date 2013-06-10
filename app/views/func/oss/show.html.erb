@@ -191,17 +191,19 @@
         <th>Ação</th>
         <th>Comentário</th>
         <th>Data</th>
+        <th>Horário</th>
       </tr>
     <% @os.acoes.each do |acao| %>
       <tr>
         <% unless acao.funcionario.nil? %>
-          <td><%= "Func. #{acao.funcionario.nome}" %></td>
+          <td><%= "#{acao.funcionario.nome}" %></td>
         <% else %>
           <td><%= "Cliente #{acao.cliente.nome}" %></td>
         <% end %>
         <td><%= Acao::ACOES[acao.acao] %></td>
         <td><%= acao.comentario %></td>
         <td><%= acao.created_at.strftime('%d/%m/%Y') %></td>
+        <td><%= acao.created_at.strftime('%k:%Mh') %></td>
       </tr>
     <% end %>
     </table>

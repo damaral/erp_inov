@@ -295,66 +295,73 @@
         <th>Ação</th>
         <th>Comentário</th>
         <th>Data</th>
+        <th>Horário</th>
       </tr>
     <% @os.acoes.each do |acao| %>
       <tr>
         <% unless acao.funcionario.nil? %>
-          <td><%= "Func. #{acao.funcionario.nome}" %></td>
+          <td><%= "#{acao.funcionario.nome}" %></td>
         <% else %>
           <td><%= "Cliente #{acao.cliente.nome}" %></td>
         <% end %>
         <td><%= Acao::ACOES[acao.acao] %></td>
         <td><%= acao.comentario %></td>
         <td><%= acao.created_at.strftime('%d/%m/%Y') %></td>
+        <td><%= acao.created_at.strftime('%k:%Mh') %></td>
       </tr>
     <% end %>
     </table>
     
     <% if @os.exige_acao_da_gerencia? %>
-    
-      <% if @os.estado == Os::ESTADO_0 %>
-        <%  value = Acao::APROVAR_EXECUCAO
-            confirm_message = 'Você tem certeza que deseja Aprovar a execução desta Ordem de Serviço?' 
-            button_class = "btn-success btn-mini"
-            class_icon = "icon-ok icon-white"  %>
-      <% elsif @os.estado == Os::ESTADO_2 %>
-        <%  value = Acao::REPROVAR_LAYOUT
-            confirm_message = 'Você tem certeza que deseja Reprovar o Layout desta Ordem de Serviço?'
-            button_class = "btn-danger btn-mini"
-            class_icon = "icon-thumbs-down icon-white" %>
-      <% elsif @os.estado == Os::ESTADO_5 %>
-        <%  value = Acao::FINALIZAR_OS
-            confirm_message = 'Você tem certeza que deseja finalizar esta Ordem de Serviço?'
-            button_class = "btn-danger btn-mini"
-            class_icon = "icon-flag icon-white" %>
-      <% elsif @os.estado == Os::ESTADO_6 %>
-        <%  value = Acao::ENTREGAR_OS
-            confirm_message = 'Você tem certeza que deseja marcar esta Ordem de Serviço como entregue?' 
-            button_class = "btn btn-info btn-mini"
-            class_icon = "icon-share icon-white" %>
-      <% end %>
-      
-      
-      <%= simple_form_for(:acao, :url => acao_os_path(@os), :html => {:class => "form-vertical"}) do |f| %>
-         <div class="form-actions">
-            <%= f.input :acao_realizada, :as => :hidden, :input_html => { :value => value, :id => "acao_realizada" } %>
-            <%= button_tag(type: 'submit', data: { confirm: "#{confirm_message}" }, class: "btn #{button_class} span1 acao_button", onclick: "$('#acao_realizada').val(#{value});") do %>
-              <i class="<%= "#{class_icon}" %>"></i>
-              <%= Acao::ACOES[value] %>
-            <% end %>
-
-            <% if @os.estado == Os::ESTADO_2 %>
-              <%= button_tag(type: 'submit', data: { confirm: "Você tem certeza que deseja Aprovar o Layout desta Ordem de Serviço?" }, class: "btn btn-success btn-mini span1 acao_button", onclick: "$('#acao_realizada').val(#{Acao::APROVAR_LAYOUT});") do %>
-                <i class="icon-ok icon-white"></i>
-                <%= Acao::ACOES[Acao::APROVAR_LAYOUT] %>
-              <% end %>
-            <% end %>
-            
-            <%= f.input :comentario, :label => "Comentário: ", :as => :text, :required => false %>
-        </div>
+      <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) %>
+        <% if @os.estado == Os::ESTADO_0 %>
+          <%  value = Acao::APROVAR_EXECUCAO
+              confirm_message = 'Você tem certeza que deseja Aprovar a execução desta Ordem de Serviço?' 
+              button_class = "btn-success btn-mini"
+              class_icon = "icon-ok icon-white"  %>
+        <% elsif @os.estado == Os::ESTADO_2 %>
+          <%  value = Acao::REPROVAR_LAYOUT
+              confirm_message = 'Você tem certeza que deseja Reprovar o Layout desta Ordem de Serviço?'
+              button_class = "btn-danger btn-mini"
+              class_icon = "icon-thumbs-down icon-white" %>
+        <% elsif @os.estado == Os::ESTADO_5 %>
+          <%  value = Acao::FINALIZAR_OS
+              confirm_message = 'Você tem certeza que deseja finalizar esta Ordem de Serviço?'
+              button_class = "btn-danger btn-mini"
+              class_icon = "icon-flag icon-white" %>
+        <% elsif @os.estado == Os::ESTADO_6 %>
+          <%  value = Acao::ENTREGAR_OS
+              confirm_message = 'Você tem certeza que deseja marcar esta Ordem de Serviço como entregue?' 
+              button_class = "btn btn-info btn-mini"
+              class_icon = "icon-share icon-white" %>
+        <% end %>
         
+        
+        <%= simple_form_for(:acao, :url => acao_os_path(@os), :html => {:class => "form-vertical"}) do |f| %>
+           <div class="form-actions">
+              <%= f.input :acao_realizada, :as => :hidden, :input_html => { :value => value, :id => "acao_realizada" } %>
+              <%= button_tag(type: 'submit', data: { confirm: "#{confirm_message}" }, class: "btn #{button_class} span1 acao_button", onclick: "$('#acao_realizada').val(#{value});") do %>
+                <i class="<%= "#{class_icon}" %>"></i>
+                <%= Acao::ACOES[value] %>
+              <% end %>
+
+              <% if @os.estado == Os::ESTADO_2 %>
+                <%= button_tag(type: 'submit', data: { confirm: "Você tem certeza que deseja Aprovar o Layout desta Ordem de Serviço?" }, class: "btn btn-success btn-mini span1 acao_button", onclick: "$('#acao_realizada').val(#{Acao::APROVAR_LAYOUT});") do %>
+                  <i class="icon-ok icon-white"></i>
+                  <%= Acao::ACOES[Acao::APROVAR_LAYOUT] %>
+                <% end %>
+              <% end %>
+              
+              <%= f.input :comentario, :label => "Comentário: ", :as => :text, :required => false %>
+          </div>
+          
+        <% end %>
+      <% else %>
+        <div class="alert alert-info" style="width: 890px;">
+          <span class="badge badge-info">!</span>
+          <strong>Atenção!</strong> Esta Ordem de Serviço está esperando uma ação da gerencia.
+        </div>
       <% end %>
-      
     <% end %>
   </div>
   

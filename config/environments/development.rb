@@ -36,4 +36,6 @@ ErpInov::Application.configure do
   config.assets.debug = true
 
   Paperclip.options[:command_path] = "/usr/bin/convert"
+
+  config.time_zone = 'Brasilia'
 end

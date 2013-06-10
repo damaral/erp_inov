@@ -13,7 +13,7 @@
     <%= f.input :telefone, :label => "Telefone: " %>
     <%= f.input :celular, :label => "Celular: " %>
     <%= f.input :email, :label => "E-mail: ", :required => true %>
-    <%= f.input :password, :label => "Senha: ", :required => true if current_funcionario.has_role? :administrador || @funcionario.id == current_funcionario.id %>
+    <%= f.input :password, :label => "Senha: ", :required => true if ((current_funcionario.has_role? :administrador) || (@funcionario.id == current_funcionario.id)) %>
     <%= f.input :rg, :label => "RG: " %>
     <%= f.input :cargo, :label => "Cargo: " %>
     
@@ -23,12 +23,13 @@
     <% roles = {"Singmaker" => 8} if current_funcionario.has_role? :singmaker %>
     <%= f.input :roles_mask, as: :radio_buttons, :collection => roles, :label => "Papel: " %>
     
-    <%= f.input :data_admissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de admissão: " %>
-    <%= f.input :data_demissao, :as => :string, :input_html => {:value => Date.today.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Data de demissão: " %>
+    <%= f.input :data_admissao, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data de admissão: " %>
+    <%= f.input :data_demissao, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data de demissão: " %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Criar Funcionário", :class => "btn btn-primary" %>
+    <%= f.button :submit, "Criar Funcionário", :class => "btn btn-primary" if params[:action] == "new" || params[:action] == "create" %>
+    <%= f.button :submit, "Atualizar Funcionário", :class => "btn btn-primary" if params[:action] == "edit" || params[:action] == "update" %>
     <%= link_to 'Cancelar', funcionarios_path, :class => "btn btn-inverse" %>
   </div>
 <% end %>

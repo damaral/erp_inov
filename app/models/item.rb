@@ -24,6 +24,7 @@ class Item < ActiveRecord::Base
   validates :comprimento, :presence => true, :numericality => {:greater_than => 0}
   validates :quantidade, :presence => true, :numericality => {:greater_than => 0}
   validates :produto, :presence => true
+  validates :tipo, :presence => true
   validates :desconto, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
   #validates :os, :presence => true
 

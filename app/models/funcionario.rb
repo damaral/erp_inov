@@ -16,6 +16,13 @@ class Funcionario < ActiveRecord::Base
 
   roles :administrador, :gerente, :atendente, :singmaker
 
+  ROLES = {
+    :administrador => "Adminstrador",
+    :gerente => "Gerente",
+    :atendente => "Atendente",
+    :singmaker => "Singmaker"
+  }
+
   has_many :acoes, :dependent => :destroy
 
   validates :nome, :presence => true

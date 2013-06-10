@@ -14,6 +14,7 @@ class Acao < ActiveRecord::Base
   ENTREGAR_OS = 4
   SUBMETER_LAYOUT = 5
   FINALIZAR_EXECUCAO = 6
+  CRIAR_OS = 7
 
   ACOES = {
     APROVAR_EXECUCAO => "Aprovar Execução",
@@ -22,6 +23,7 @@ class Acao < ActiveRecord::Base
     FINALIZAR_OS => "Finalizar O.S.",
     ENTREGAR_OS => "Entregar O.S.",
     SUBMETER_LAYOUT => "Submeter Layout",
-    FINALIZAR_EXECUCAO => "Finalizar Execução"
+    FINALIZAR_EXECUCAO => "Finalizar Execução",
+    CRIAR_OS => "Criar O.S."
   }
 end

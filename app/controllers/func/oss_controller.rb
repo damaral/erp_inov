@@ -104,7 +104,7 @@ module Func
     def acao
       @os = Os.find(params[:id])
 
-      Acao.create({:acao => params[:acao][:acao_realizada], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
+      Acao.create({:acao => params[:acao][:acao_realizada], :funcionario_id => current_funcionario.id, :comentario => params[:acao][:comentario], :os_id => @os.id})
 
       if params[:acao][:acao_realizada].to_i == Acao::SUBMETER_LAYOUT
         @os.estado = Os::ESTADO_2
@@ -135,8 +135,8 @@ module Func
 
     private
     def currency_to_number(currency)
-      currency.gsub!("R$ ", "")
-      currency.gsub!(/\./, "")
+      currency.gsub!("R$", "")
+      currency.strip!
       currency.gsub!(/,/, ".")
       currency = currency.to_f
     end

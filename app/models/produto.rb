@@ -6,8 +6,8 @@ class Produto < ActiveRecord::Base
   has_many :itens, :dependent => :destroy
 
   PECA = "Peça"
-  METRO_COMP = "Metro Comprimento"
-  METRO_ALT = "Metro Altura"
+  METRO_COMP = "Metro Linear (Comprimento)"
+  METRO_ALT = "Metro Linear (Altura)"
   METRO_QUADRADO = "Metro Quadrado"
 
   UNIDADES = [PECA,

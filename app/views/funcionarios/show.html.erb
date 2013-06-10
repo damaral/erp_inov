@@ -68,6 +68,11 @@
   </p>
 
   <p>
+    <b>Papel:</b>
+    <%= Funcionario::ROLES[@funcionario.role_symbols[0]] %>
+  </p>
+
+  <p>
     <b>Data admissão:</b>
     <%= @funcionario.data_admissao %>
   </p>

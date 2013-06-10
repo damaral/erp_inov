@@ -34,7 +34,7 @@
     <td><%= os.previsao_entrega.strftime('%d/%m/%Y') %></td>
     <td>
         <% if os.exige_acao_do_funcionario? %>
-            <span class="badge badge-info">!</span>
+            <span class="badge badge-info" title="Aguardando Ação">!</span>
         <% end %>
         <%= Os::ESTADOS[os.estado] %>
     </td>

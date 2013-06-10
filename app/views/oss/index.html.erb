@@ -49,7 +49,7 @@
     <td><%= number_to_currency os.valor_final %></td>
     <td>
         <% if os.exige_acao_da_gerencia? %>
-            <span class="badge badge-info">!</span>
+            <span class="badge badge-info" title="Aguardando Ação">!</span>
         <% end %>
         <%= Os::ESTADOS[os.estado] %>
     </td>

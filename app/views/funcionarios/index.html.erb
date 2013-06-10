@@ -19,6 +19,7 @@
     <th>Celular</th>
     <th>E-mail</th>
     <th>Cargo</th>
+    <th>Papel</th>
     <th>Ações</th>
     <% if can? :update, Funcionario %>
       <th class="sem-borda-esquerda"></th>
@@ -35,6 +36,7 @@
     <td><%= funcionario.celular %></td>
     <td><%= funcionario.email %></td>
     <td><%= funcionario.cargo %></td>
+    <td><%= Funcionario::ROLES[funcionario.role_symbols[0]] %></td>
     <td class="botao-acao primeiro-botao">
       <%= link_to funcionario, :class => "btn btn-mini" do %>
         <i class="icon-eye-open"></i>

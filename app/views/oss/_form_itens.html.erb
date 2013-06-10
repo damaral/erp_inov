@@ -1,4 +1,5 @@
 <div class="item">
+  <%= link_to_function "Remover", "remove_item(this)", :class => "btn btn-danger remover" %>
   <%= p.association :produto, :label_method => :nome, :collection => Produto.find_all_by_ativo(true), :label => "Produto: ", :prompt => "Selecione" %>
   <%= p.input :tipo, :collection => Item::TIPOS, :label => "Tipo: ", :include_blank => false %>
   <%= p.input :quantidade, :label => "Quantidade: " %>
@@ -7,5 +8,4 @@
   <%= p.input :descricao, :label => "Descrição: " %>
   <%= p.input :desconto, :as => :string, :label => "Desconto: ", :input_html => {:class => "money"} %>
   <%= p.input :_destroy, :as => :hidden %>
-  <%= link_to_function "Remover", "remove_item(this)", :class => "btn btn-danger remover" %>
 </div>

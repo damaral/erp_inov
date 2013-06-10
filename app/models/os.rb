@@ -13,7 +13,7 @@ class Os < ActiveRecord::Base
   belongs_to :cliente
 
   accepts_nested_attributes_for :itens, :allow_destroy => true, :reject_if => proc { |attributes| attributes['produto_id'].blank? }
-  accepts_nested_attributes_for :pagamentos, :allow_destroy => true, :reject_if => proc { |attributes| attributes['valor'].to_f.zero? || attributes['valor'].blank? }
+  #accepts_nested_attributes_for :pagamentos, :allow_destroy => true, :reject_if => proc { |attributes| attributes['valor'].to_f.zero? || attributes['valor'].blank? }
 
   after_create :verifica_se_esta_pago
 
@@ -62,6 +62,7 @@ class Os < ActiveRecord::Base
 
   validates :cliente, :presence => true
   validates :aprovado_por, :presence => true
+  validates :itens, :presence => true
 
   def desconto_total
     itens.inject(0) {|sum, item| sum + item.desconto}

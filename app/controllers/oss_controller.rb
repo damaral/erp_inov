@@ -53,9 +53,9 @@ class OssController < ApplicationController
   def edit
     @os = Os.find(params[:id])
 
-    if @os.pagamentos.blank?
-      @os.pagamentos.build
-    end
+    #if @os.pagamentos.blank?
+    #  @os.pagamentos.build
+    #end
   end
 
   # POST /oss
@@ -76,9 +76,20 @@ class OssController < ApplicationController
 
     respond_to do |format|
       if @os.save
+        Acao.create({:acao => Acao::CRIAR_OS, :funcionario_id => current_funcionario.id, :comentario => "Criação da Ordem de Serviço", :os_id => @os.id})
+
         format.html { redirect_to @os, notice: 'Ordem de Serviço criada com sucesso.' }
         format.json { render json: @os, status: :created, location: @os }
       else
+        if @os.itens.blank?
+          @os.itens.build
+          @os.itens[0].errors.add(:altura, "Não pode ficar em branco")
+          @os.itens[0].errors.add(:comprimento, "Não pode ficar em branco")
+          @os.itens[0].errors.add(:desconto, "Não pode ficar em branco")
+          @os.itens[0].errors.add(:quantidade, "Não pode ficar em branco")
+          @os.itens[0].errors.add(:tipo, "Não pode ficar em branco")
+          @os.itens[0].errors.add(:produto_id, "Não pode ficar em branco")          
+        end
         format.html { render action: "new" }
         format.json { render json: @os.errors, status: :unprocessable_entity }
       end
@@ -126,7 +137,7 @@ class OssController < ApplicationController
   def acao
     @os = Os.find(params[:id])
 
-    Acao.create({:acao => params[:acao][:acao_realizada], :cliente_id => 1, :comentario => params[:acao][:comentario], :os_id => @os.id})
+    Acao.create({:acao => params[:acao][:acao_realizada], :funcionario_id => current_funcionario.id, :comentario => params[:acao][:comentario], :os_id => @os.id})
 
     if params[:acao][:acao_realizada].to_i == Acao::APROVAR_EXECUCAO
       @os.estado = Os::ESTADO_1
@@ -145,6 +156,7 @@ class OssController < ApplicationController
       notice = 'Ordem de Serviço finalizada com sucesso.'
 
     elsif params[:acao][:acao_realizada].to_i == Acao::ENTREGAR_OS
+      @os.data_entrega = Date.today
       @os.estado = Os::ESTADO_7
       notice = 'Ordem de Serviço entregue com sucesso.'
 

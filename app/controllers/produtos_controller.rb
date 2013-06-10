@@ -93,8 +93,8 @@ class ProdutosController < ApplicationController
 
   private
   def currency_to_number(currency)
-    currency.gsub!("R$ ", "")
-    currency.gsub!(/\./, "")
+    currency.gsub!("R$", "")
+    currency.strip!
     currency.gsub!(/,/, ".")
     currency = currency.to_f
   end
