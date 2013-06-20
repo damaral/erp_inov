@@ -7,6 +7,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+=begin
 
 ["Daniel Amaral de Sousa", 
  "João Perreira dos Santos", 
@@ -1112,5 +1113,5 @@ end
 Os.all.each do |os|
   os.atualiza_esta_pago
 end
-
+=end
 FactoryGirl.create(:funcionario, :nome => "Solange Amaral de Sousa", :email => "logos.inov@hotmail.com", :password => "inov1234", :roles_mask => 1)
