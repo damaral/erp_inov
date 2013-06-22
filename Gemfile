@@ -37,6 +37,8 @@ gem 'factory_girl_rails'
 
 gem "paperclip", "~> 3.0"
 
+gem 'aws-sdk'
+
 gem "has_scope"
 
 gem "role_model"
