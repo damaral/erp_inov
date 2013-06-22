@@ -184,7 +184,7 @@ class OssController < ApplicationController
   end
 
   def verifica_role
-    if current_funcionario.has_role? :singmaker
+    if current_funcionario.has_role? :signmaker
       redirect_to func_oss_path
     end
   end

@@ -17,10 +17,10 @@
     <%= f.input :rg, :label => "RG: " %>
     <%= f.input :cargo, :label => "Cargo: " %>
     
-    <% roles = {"Administrador" => 1, "Gerente" => 2, "Atendente" => 4, "Singmaker" => 8} if current_funcionario.has_role? :administrador %>
-    <% roles = {"Gerente" => 2, "Atendente" => 4, "Singmaker" => 8} if current_funcionario.has_role? :gerente %>
+    <% roles = {"Administrador" => 1, "Gerente" => 2, "Atendente" => 4, "Signmaker" => 8} if current_funcionario.has_role? :administrador %>
+    <% roles = {"Gerente" => 2, "Atendente" => 4, "Signmaker" => 8} if current_funcionario.has_role? :gerente %>
     <% roles = {"Atendente" => 4} if current_funcionario.has_role? :atendente %>
-    <% roles = {"Singmaker" => 8} if current_funcionario.has_role? :singmaker %>
+    <% roles = {"Signmaker" => 8} if current_funcionario.has_role? :signmaker %>
     <%= f.input :roles_mask, as: :radio_buttons, :collection => roles, :label => "Papel: " %>
     
     <%= f.input :data_admissao, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data de admissão: " %>

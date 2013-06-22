@@ -21,7 +21,7 @@ class Ability
       cannot [:destroy, :update], Acao
       cannot [:create, :destroy, :update], Produto
       cannot :acao, Os
-    elsif funcionario.has_role? :singmaker
+    elsif funcionario.has_role? :signmaker
       can [:acao, :anexar], Os
       can :read, :all
       cannot :read, Pagamento

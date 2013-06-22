@@ -7,6 +7,7 @@ class CreateItens < ActiveRecord::Migration
       t.float :comprimento
       t.string :tipo
       t.float :desconto
+      t.float :valor_unitario
 
       t.references :produto
       t.references :os

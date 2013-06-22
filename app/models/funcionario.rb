@@ -14,13 +14,13 @@ class Funcionario < ActiveRecord::Base
 
   roles_attribute :roles_mask
 
-  roles :administrador, :gerente, :atendente, :singmaker
+  roles :administrador, :gerente, :atendente, :signmaker
 
   ROLES = {
     :administrador => "Adminstrador",
     :gerente => "Gerente",
     :atendente => "Atendente",
-    :singmaker => "Singmaker"
+    :signmaker => "Signmaker"
   }
 
   has_many :acoes, :dependent => :destroy

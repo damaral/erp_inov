@@ -105,10 +105,11 @@ ActiveRecord::Schema.define(:version => 20130605023049) do
     t.float    "comprimento"
     t.string   "tipo"
     t.float    "desconto"
+    t.float    "valor_unitario"
     t.integer  "produto_id"
     t.integer  "os_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "itens", ["os_id"], :name => "index_itens_on_os_id"
