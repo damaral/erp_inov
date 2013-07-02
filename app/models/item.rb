@@ -80,7 +80,7 @@ class Item < ActiveRecord::Base
       self.valor_unitario = (comprimento/100)*self.produto.preco_unitario
     elsif self.produto.unidade == Produto::METRO_ALT
       self.valor_unitario = (altura/100)*self.produto.preco_unitario
-    elsif self.produto.unidade == Produto::PECAMETRO_QUADRADO
+    elsif self.produto.unidade == Produto::METRO_QUADRADO
       self.valor_unitario = (altura/100)*(comprimento/100)*self.produto.preco_unitario
     end
   end
