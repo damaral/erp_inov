@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605023049) do
+ActiveRecord::Schema.define(:version => 20130703020915) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20130605023049) do
     t.integer  "os_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.float    "acrescimo"
   end
 
   add_index "itens", ["os_id"], :name => "index_itens_on_os_id"

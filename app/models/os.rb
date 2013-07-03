@@ -68,6 +68,10 @@ class Os < ActiveRecord::Base
     itens.inject(0) {|sum, item| sum + item.desconto}
   end
 
+  def acrescimo_total
+    itens.inject(0) {|sum, item| sum + item.acrescimo}
+  end
+
   def valor_final
     valor_total - desconto_total
   end

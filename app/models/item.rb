@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Item < ActiveRecord::Base
-  attr_accessible :altura, :comprimento, :desconto, :descricao, :quantidade, :tipo, :produto_id, :os_id, :valor_unitario
+  attr_accessible :altura, :comprimento, :desconto, :descricao, :quantidade, :tipo, :produto_id, :os_id, :valor_unitario, :acrescimo
 
   belongs_to :produto
   belongs_to :os
@@ -27,6 +27,7 @@ class Item < ActiveRecord::Base
   validates :produto, :presence => true
   validates :tipo, :presence => true
   validates :desconto, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
+  validates :acrescimo, :presence => true, :numericality => {:greater_than_or_equal_to => 0}
   #validates :os, :presence => true
 
   
@@ -59,7 +60,7 @@ class Item < ActiveRecord::Base
   #end
 
   def subtotal
-    valor_unitario*quantidade
+    valor_unitario*quantidade + acrescimo
   end
   
 

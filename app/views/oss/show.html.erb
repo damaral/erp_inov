@@ -76,6 +76,7 @@
       <th>Comp.</th>
       <th>Descrição</th>
       <th>Valor Unitário</th>
+      <th>Acréscimo</th>
       <th>Desconto</th>
       <th>Subtotal</th>
     </tr>
@@ -87,6 +88,7 @@
       <td><%= item.comprimento %></td>
       <td><%= item.descricao %></td>
       <td><%= number_to_currency item.valor_unitario %></td>
+      <td><%= number_to_currency item.acrescimo %></td>
       <td><%= number_to_currency item.desconto %></td>
       <td><%= number_to_currency item.subtotal_com_desconto %></td>
     </tr>
@@ -99,6 +101,7 @@
       <td></td>
       <td></td>
       <td><b>Total: </b></td>
+      <td><%= number_to_currency @os.acrescimo_total %></td>
       <td><%= number_to_currency @os.desconto_total %></td>
       <td><%= number_to_currency @os.valor_final %></td>
     </tr>
