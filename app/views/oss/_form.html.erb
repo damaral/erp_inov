@@ -7,7 +7,8 @@
     <%= f.input :previsao_entrega, :as => :string, :input_html => {:value => @os.previsao_entrega.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Previsão de Entrega: " %>
     <%= f.input :aprovado_por, :collection => Os::APROVADORES, :label => "Aprovado por: ", :prompt => "Selecione" %>
     <%= f.input :observacao, :label => "Obeservação: " %>
-    <%= f.input :estado, :collection => Os::ESTADOS.invert, :label => "Estado: ", :include_blank => false %>
+    <% disabled = !(current_funcionario.has_role? :administrador) %>
+    <%= f.input :estado, :collection => Os::ESTADOS.invert, :label => "Estado: ", :include_blank => false, :disabled => disabled %>
     
     <div class="control-group select required os_rascunho">
       <label class="select required control-label" for="os_rascunho">Rascunho:</label>
@@ -29,17 +30,7 @@
         <%= f.file_field :arquivo, :title => "Anexar arquivo" %>
         </div>
     </div>
-    <!--
-    <br><br><br>
-    <h4>Sinal e Pagamentos</h4>
-    <hr>
-    <div class="pagamentos">
-      <%= link_to_function "Adicionar", "adiciona_pagamento(this)", :class => "btn btn-primary" %>
-      <%= f.simple_fields_for :pagamentos do |builder| %>
-        <%= render :partial => 'form_pagamentos', :locals => {:p => builder} %>
-      <% end %>
-    </div>
-    -->
+
     <h4>Produtos</h4>
     <hr>
     <div class="produtos">

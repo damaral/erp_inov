@@ -68,6 +68,7 @@ class OssController < ApplicationController
 
     params[:os][:itens_attributes].each do |item|
       currency_to_number item[1]["desconto"]
+      currency_to_number item[1]["acrescimo"]
     end
 
     #params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]
@@ -105,6 +106,7 @@ class OssController < ApplicationController
 
     params[:os][:itens_attributes].each do |item|
       currency_to_number item[1]["desconto"]
+      currency_to_number item[1]["acrescimo"]
     end
     
     #params[:os][:pagamentos_attributes]["0"][:cliente_id] = params[:os][:cliente_id]

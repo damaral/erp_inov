@@ -316,7 +316,7 @@
     </table>
     
     <% if @os.exige_acao_da_gerencia? %>
-      <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) %>
+      <% if (current_funcionario.has_role? :administrador) || (current_funcionario.has_role? :gerente) || ((current_funcionario.has_role? :atendente) && (@os.estado == Os::ESTADO_5 || @os.estado == Os::ESTADO_6)) %>
         <% if @os.estado == Os::ESTADO_0 %>
           <%  value = Acao::APROVAR_EXECUCAO
               confirm_message = 'Você tem certeza que deseja Aprovar a execução desta Ordem de Serviço?' 

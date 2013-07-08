@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703020915) do
+ActiveRecord::Schema.define(:version => 20130708221530) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -104,13 +104,13 @@ ActiveRecord::Schema.define(:version => 20130703020915) do
     t.float    "altura"
     t.float    "comprimento"
     t.string   "tipo"
-    t.float    "desconto"
+    t.float    "desconto",       :default => 0.0
     t.float    "valor_unitario"
     t.integer  "produto_id"
     t.integer  "os_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.float    "acrescimo"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.float    "acrescimo",      :default => 0.0
   end
 
   add_index "itens", ["os_id"], :name => "index_itens_on_os_id"
@@ -120,12 +120,12 @@ ActiveRecord::Schema.define(:version => 20130703020915) do
     t.date     "data_entrega"
     t.date     "previsao_entrega"
     t.text     "observacao"
-    t.integer  "estado"
+    t.integer  "estado",                :default => 0
     t.string   "aprovado_por"
     t.boolean  "esta_pago"
     t.integer  "cliente_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "layout_file_name"
     t.string   "layout_content_type"
     t.integer  "layout_file_size"

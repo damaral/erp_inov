@@ -20,7 +20,7 @@ class Ability
       cannot :destroy, Empresa
       cannot [:destroy, :update], Acao
       cannot [:create, :destroy, :update], Produto
-      cannot :acao, Os
+      #cannot :acao, Os
     elsif funcionario.has_role? :signmaker
       can [:acao, :anexar], Os
       can :read, :all
