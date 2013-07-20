@@ -1,13 +1,14 @@
 # coding: utf-8
 
 class Item < ActiveRecord::Base
-  attr_accessible :altura, :comprimento, :desconto, :descricao, :quantidade, :tipo, :produto_id, :os_id, :valor_unitario, :acrescimo
+  attr_accessible :altura, :comprimento, :desconto, :descricao, :quantidade, :tipo, :produto_id, :os_id, :valor_unitario, :acrescimo, :custo_unitario
 
   belongs_to :produto
   belongs_to :os
 
   before_save :ajusta_dimensoes
   before_save :set_valor_unitario
+  before_save :set_custo_unitario
   before_create :ajusta_dimensoes
   after_save :atualiza_esta_pago_os
   after_create :atualiza_esta_pago_os
@@ -83,6 +84,18 @@ class Item < ActiveRecord::Base
       self.valor_unitario = (altura/100)*self.produto.preco_unitario
     elsif self.produto.unidade == Produto::METRO_QUADRADO
       self.valor_unitario = (altura/100)*(comprimento/100)*self.produto.preco_unitario
+    end
+  end
+
+  def set_custo_unitario
+    if self.produto.unidade == Produto::PECA
+      self.custo_unitario = self.produto.custo_unitario
+    elsif self.produto.unidade == Produto::METRO_COMP
+      self.custo_unitario = (comprimento/100)*self.produto.custo_unitario
+    elsif self.produto.unidade == Produto::METRO_ALT
+      self.custo_unitario = (altura/100)*self.produto.custo_unitario
+    elsif self.produto.unidade == Produto::METRO_QUADRADO
+      self.custo_unitario = (altura/100)*(comprimento/100)*self.produto.custo_unitario
     end
   end
 end
