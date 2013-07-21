@@ -1,5 +1,5 @@
 # coding: utf-8
-
+#financeiro
 class Item < ActiveRecord::Base
   attr_accessible :altura, :comprimento, :desconto, :descricao, :quantidade, :tipo, :produto_id, :os_id, :valor_unitario, :acrescimo, :custo_unitario
 
