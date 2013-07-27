@@ -24,6 +24,7 @@ class Funcionario < ActiveRecord::Base
   }
 
   has_many :acoes, :dependent => :destroy
+  has_many :faturas, :dependent => :destroy
 
   validates :nome, :presence => true
   validates :sobrenome, :presence => true
