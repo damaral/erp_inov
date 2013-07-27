@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Pagamento < ActiveRecord::Base
-  attr_accessible :forma_de_pagamento, :valor, :esta_pago, :data_prevista, :cliente_id, :os_id
+  attr_accessible :forma_de_pagamento, :valor, :esta_pago, :data_prevista, :data_realizada, :cliente_id, :os_id
 
   belongs_to :cliente
   belongs_to :os
@@ -9,6 +9,7 @@ class Pagamento < ActiveRecord::Base
   before_save :link_cliente
   before_save :verifica_esta_pago
   before_create :verifica_esta_pago
+  before_save :set_data_realizada
   before_validation :valida_valor
   after_save :atualiza_esta_pago_os
   after_create :atualiza_esta_pago_os
@@ -54,5 +55,13 @@ class Pagamento < ActiveRecord::Base
     elsif self.persisted? && !((os_pagamento.valor_restante_pagamentos + (Pagamento.find self.id).valor) >= self.valor)
       errors.add(:valor, "O valor deve ser inferior ou igual ao restante (R$ #{(os_pagamento.valor_restante_pagamentos + (Pagamento.find self.id).valor).round 2})")
     end
+  end
+
+  def set_data_realizada
+    if self.data_realizada.nil? && self.esta_pago
+      self.data_realizada = Date.today
+    elsif !self.esta_pago
+      self.data_realizada = nil
+    end 
   end
 end
