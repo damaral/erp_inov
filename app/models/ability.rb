@@ -18,6 +18,7 @@ class Ability
       cannot [:create, :update, :destroy], Funcionario
       cannot :destroy, Cliente
       cannot :destroy, Empresa
+      cannot :destroy, Fornecedor
       cannot [:destroy, :update], Acao
       cannot [:create, :destroy, :update], Produto
       #cannot :acao, Os
@@ -25,6 +26,7 @@ class Ability
       can [:acao, :anexar], Os
       can :read, :all
       cannot :read, Pagamento
+      cannot :read, Fatura
     end
     #
     # The first argument to `can` is the action you are giving the user 

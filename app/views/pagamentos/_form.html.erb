@@ -6,6 +6,7 @@
     <%= f.input :forma_de_pagamento, :collection => Pagamento::FORMAS_PGTO, :include_blank => false, :label => "Forma de Pagamento: " %>
     <%= f.input :valor, :as => :string, :label => "Valor: ", :input_html => {:class => "money"} %>
     <%= f.input :data_prevista, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data Prevista: " %>
+    <%= f.input :data_realizada, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data Realizada: " %>
     <%= f.input :esta_pago, :as => :boolean, :label => "Está pago?" %>
   </div>
 

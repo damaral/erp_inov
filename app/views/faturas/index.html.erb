@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="span10">
+        <h1>Faturas</h1>
+    </div>
+    <% if can? :create, Fatura %>
+      <div class="span2">
+          <%= link_to new_fatura_path, :class => "btn btn-primary btn-novo" do %>
+              <i class="icon-plus icon-white"></i>
+              <b><%= "Fatura" %></b>
+          <% end %>
+      </div>
+    <% end %>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Data Prevista</th>
+    <th>Data Realizada</th>
+    <th>Destinatário</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+    <th>Multa</th>
+    <th>Pagamento</th>
+    <th>Ações</th>
+    <% if can? :update, Fatura %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+    <% if can? :destroy, Fatura %>
+      <th class="sem-borda-esquerda"></th>
+    <% end %>
+  </tr>
+
+<% @faturas.each do |fatura| %>
+  <tr>
+    <td><%= fatura.data_prevista %></td>
+    <td><%= fatura.data_realizada %></td>
+    <% unless fatura.fornecedor.nil? %>
+      <td><%= fatura.fornecedor.nome %></td>
+    <% else %>
+      <td><%= fatura.funcionario.nome %></td>
+    <% end %>
+    <td><%= fatura.descricao %></td>
+    <td><%= number_to_currency fatura.valor %></td>
+    <td><%= number_to_currency fatura.multa %></td>
+    <td><% if fatura.esta_pago %>
+          <span class="label label-success">OK</span>
+          <% else %>
+          <span class="label label-warning">Pendente</span>
+          <% end %></td>
+
+    <td class="botao-acao primeiro-botao">
+        <%= link_to fatura, :class => "btn btn-mini" do %>
+        <i class="icon-eye-open"></i>
+        <%= "Mostrar" %>
+        <% end %>
+    </td>
+    
+    <% if can? :update, Fatura %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to edit_fatura_path(fatura), :class => "btn btn-info btn-mini" do %>
+          <i class="icon-pencil icon-white"></i>
+          <%= "Editar" %>
+          <% end %>
+      </td>
+    <% end %>
+    
+    <% if can? :destroy, Fatura %>
+      <td class="botao-acao sem-borda-esquerda">
+          <%= link_to fatura, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esta Fatura?' }, :class => "btn btn-danger btn-mini" do %>
+          <i class="icon-trash icon-white"></i>
+          <%= "Excluir" %>
+          <% end %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<div class="span12">
+    <%= paginate @faturas %>
+</div>

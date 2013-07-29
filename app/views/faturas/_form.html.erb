@@ -1,0 +1,20 @@
+<%= simple_form_for(@fatura, :html => {:class => "form-horizontal", :multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :data_prevista, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data Prevista: " %>
+    <%= f.input :data_realizada, :as => :string, :input_html => {:class =>"datepicker"}, :label => "Data Realizada: " %>
+    <%= f.association :funcionario, :label_method => :nome, :label => "Funcionário: " %>
+    <%= f.association :fornecedor, :label_method => :nome, :label => "Fornecedor: " %>
+    <%= f.input :descricao, :label => "Descrição: " %>
+    <%= f.input :valor, :as => :string, :label => "Valor: ", :input_html => {:class => "money"} %>
+    <%= f.input :multa, :as => :string, :label => "Multa: ", :input_html => {:class => "money"} %>
+    <%= f.input :esta_pago, :label => "Está Pago?: " %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Criar Fatura", :class => "btn btn-primary" if params[:action] == "new" || params[:action] == "create" %>
+    <%= f.button :submit, "Atualizar Fatura", :class => "btn btn-primary" if params[:action] == "edit" || params[:action] == "update" %>
+    <%= link_to 'Cancelar', faturas_path, :class => "btn btn-inverse" %>
+  </div>
+<% end %>

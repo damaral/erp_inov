@@ -1,0 +1,69 @@
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Fornecedor</h3>
+  </div>
+  <p>
+    <b>Nome:</b>
+    <%= @fornecedor.nome %>
+  </p>
+
+  <p>
+    <b>CNPJ:</b>
+    <%= @fornecedor.cnpj %>
+  </p>
+
+  <p>
+    <b>Endereco:</b>
+    <%= @fornecedor.endereco %>
+  </p>
+
+  <p>
+    <b>Bairro:</b>
+    <%= @fornecedor.bairro %>
+  </p>
+
+  <p>
+    <b>Complemento:</b>
+    <%= @fornecedor.complemento %>
+  </p>
+
+  <p>
+    <b>CEP:</b>
+    <%= @fornecedor.cep %>
+  </p>
+
+  <p>
+    <b>Cidade:</b>
+    <%= @fornecedor.cidade %>
+  </p>
+
+  <p>
+    <b>Estado:</b>
+    <%= @fornecedor.estado %>
+  </p>
+
+  <p>
+    <b>Telefone:</b>
+    <%= @fornecedor.telefone %>
+  </p>
+
+  <p>
+    <b>Observação:</b>
+    <%= @fornecedor.observacao %>
+  </p>
+
+  <p>
+    <b>Tipo:</b>
+    <%= Fornecedor::TIPOS[@fornecedor.tipo] %>
+  </p>
+</div>
+
+<%= link_to edit_fornecedor_path(@fornecedor), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
+
+<%= link_to fornecedores_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

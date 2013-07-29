@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720222142) do
+ActiveRecord::Schema.define(:version => 20130727041741) do
 
   create_table "acoes", :force => true do |t|
     t.integer  "acao"
@@ -63,6 +63,38 @@ ActiveRecord::Schema.define(:version => 20130720222142) do
     t.text     "observacao"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "faturas", :force => true do |t|
+    t.date     "data_prevista"
+    t.text     "descricao"
+    t.float    "valor"
+    t.float    "multa",          :default => 0.0
+    t.boolean  "esta_pago"
+    t.integer  "funcionario_id"
+    t.integer  "fornecedor_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.date     "data_realizada"
+  end
+
+  add_index "faturas", ["fornecedor_id"], :name => "index_faturas_on_fornecedor_id"
+  add_index "faturas", ["funcionario_id"], :name => "index_faturas_on_funcionario_id"
+
+  create_table "fornecedores", :force => true do |t|
+    t.string   "nome"
+    t.string   "cnpj"
+    t.string   "endereco"
+    t.string   "bairro"
+    t.string   "complemento"
+    t.string   "cep"
+    t.string   "cidade"
+    t.string   "estado"
+    t.string   "telefone"
+    t.string   "observacao"
+    t.integer  "tipo"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "funcionarios", :force => true do |t|
@@ -152,6 +184,7 @@ ActiveRecord::Schema.define(:version => 20130720222142) do
     t.integer  "os_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.date     "data_realizada"
   end
 
   add_index "pagamentos", ["cliente_id"], :name => "index_pagamentos_on_cliente_id"

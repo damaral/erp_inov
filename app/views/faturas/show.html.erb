@@ -1,0 +1,53 @@
+<div class="thumbnail box">
+  <div class="page-header row">
+    <h3 class="span12">Fatura</h3>
+  </div>
+  <p>
+    <b>Data Prevista:</b>
+    <%= @fatura.data_prevista %>
+  </p>
+
+  <p>
+    <b>Data Realizada:</b>
+    <%= @fatura.data_realizada %>
+  </p>
+
+  <p>
+    <b>Destinatário:</b>
+    <% unless @fatura.fornecedor.nil? %>
+      <td><%= @fatura.fornecedor.nome %></td>
+    <% else %>
+      <td><%= @fatura.funcionario.nome %></td>
+    <% end %>
+  </p>
+
+  <p>
+    <b>Descrição:</b>
+    <%= @fatura.descricao %>
+  </p>
+
+  <p>
+    <b>Valor:</b>
+    <%= number_to_currency @fatura.valor %>
+  </p>
+
+  <p>
+    <b>Multa:</b>
+    <%= number_to_currency @fatura.multa %>
+  </p>
+
+  <p>
+    <b>Está Pago?:</b>
+    <%= @fatura.esta_pago ? "OK" : "Pendente" %>
+  </p>
+</div>
+
+<%= link_to edit_fatura_path(@fatura), :class => "btn btn-info" do %>
+  <i class="icon-pencil icon-white"></i>
+  <%= "Editar" %>
+<% end %>
+
+<%= link_to faturas_path, :class => "btn btn-inverse" do %>
+  <i class=" icon-chevron-left icon-white"></i>
+  <%= "Voltar" %>
+<% end %>

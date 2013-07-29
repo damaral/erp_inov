@@ -1,0 +1,23 @@
+<%= simple_form_for(@fornecedor, :html => {:class => "form-horizontal", :multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome, :label => "Nome: " %>
+    <%= f.input :cnpj, :label => "CNPJ: " %>
+    <%= f.input :endereco, :label => "Endereço: " %>
+    <%= f.input :bairro, :label => "Bairro: " %>
+    <%= f.input :complemento, :label => "Complemento: " %>
+    <%= f.input :cep, :label => "CEP: " %>
+    <%= f.input :cidade, :label => "Cidade: " %>
+    <%= f.input :estado, :label => "Estado: " %>
+    <%= f.input :telefone, :label => "Telefone: " %>
+    <%= f.input :observacao, :label => "Observação: " %>
+    <%= f.input :tipo, :label => "Tipo: ", :collection => Fornecedor::TIPOS.invert %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Criar Fornecedor", :class => "btn btn-primary" if params[:action] == "new" || params[:action] == "create" %>
+    <%= f.button :submit, "Atualizar Fornecedor", :class => "btn btn-primary" if params[:action] == "edit" || params[:action] == "update" %>
+    <%= link_to 'Cancelar', fornecedores_path, :class => "btn btn-inverse" %>
+  </div>
+<% end %>

@@ -1,4 +1,10 @@
 ErpInov::Application.routes.draw do
+  resources :faturas
+
+
+  resources :fornecedores
+
+
   devise_for :funcionarios
 
   resources :oss do

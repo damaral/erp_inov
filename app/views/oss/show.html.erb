@@ -119,8 +119,8 @@
 
   <table class="table table-striped">
     <tr>
-      <th>Data</th>
       <th>Data Prevista</th>
+      <th>Data Realizada</th>
       <th>Forma de Pagamento</th>
       <th>Valor</th>
       <th>Pagamento</th>
@@ -130,8 +130,8 @@
     </tr>
   <% @os.pagamentos.each do |pagamento| %>
     <tr>
-      <td><%= pagamento.created_at.strftime('%d/%m/%Y') %></td>
       <td><%= pagamento.data_prevista.strftime('%d/%m/%Y') %></td>
+      <td><%= pagamento.data_realizada.strftime('%d/%m/%Y') unless pagamento.data_realizada.nil? %></td>
       <td><%= pagamento.forma_de_pagamento %></td>
       <td><%= number_to_currency pagamento.valor %></td>
       <% if pagamento.esta_pago %>

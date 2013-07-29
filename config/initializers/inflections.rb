@@ -20,4 +20,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'item', 'itens'
   inflect.irregular 'os', 'oss'
   inflect.irregular 'preco', 'precos'
+  inflect.irregular 'fornecedor', 'fornecedores'
 end

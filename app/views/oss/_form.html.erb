@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.association :cliente, :label_method => :nome, :label => "Cliente: " %>
-    <% @os.previsao_entrega = Date.today + 2 if @os.previsao_entrega.nil? %>
+    <% @os.previsao_entrega = Date.today + 1 if @os.previsao_entrega.nil? %>
     <%= f.input :previsao_entrega, :as => :string, :input_html => {:value => @os.previsao_entrega.strftime('%d/%m/%Y'), :class =>"datepicker"}, :label => "Previsão de Entrega: " %>
     <%= f.input :aprovado_por, :collection => Os::APROVADORES, :label => "Aprovado por: ", :prompt => "Selecione" %>
     <%= f.input :observacao, :label => "Obeservação: " %>
