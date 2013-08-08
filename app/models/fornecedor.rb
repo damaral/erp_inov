@@ -12,8 +12,10 @@ class Fornecedor < ActiveRecord::Base
   GOVERNO = 0
   FINANCEIRO = 1
   SERVICOS = 2
+  MATERIA_PRIMA = 3
 
   TIPOS = {GOVERNO => "Governo",
 	  			 FINANCEIRO => "Financeiro",
-	  			 SERVICOS => "Serviços"}
+	  			 SERVICOS => "Serviços",
+           MATERIA_PRIMA => "Matéria Prima"}
 end
