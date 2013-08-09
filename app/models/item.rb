@@ -83,7 +83,7 @@ class Item < ActiveRecord::Base
     elsif self.produto.unidade == Produto::METRO_ALT
       self.valor_unitario = (altura/100)*self.produto.preco_unitario
     elsif self.produto.unidade == Produto::METRO_QUADRADO
-      self.valor_unitario = (altura/100)*(comprimento/100)*self.produto.preco_unitario
+      self.valor_unitario = ((altura/100)*(comprimento/100)*self.produto.preco_unitario).round 2
     end
   end
 
@@ -95,7 +95,7 @@ class Item < ActiveRecord::Base
     elsif self.produto.unidade == Produto::METRO_ALT
       self.custo_unitario = (altura/100)*self.produto.custo_unitario
     elsif self.produto.unidade == Produto::METRO_QUADRADO
-      self.custo_unitario = (altura/100)*(comprimento/100)*self.produto.custo_unitario
+      self.custo_unitario = ((altura/100)*(comprimento/100)*self.produto.custo_unitario).round 2
     end
   end
 end
