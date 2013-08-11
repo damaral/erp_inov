@@ -2,11 +2,21 @@ class FaturasController < ApplicationController
   before_filter :authenticate_funcionario!
   
   load_and_authorize_resource
-  
+
+  helper_method :sort_column, :sort_direction
+
+  has_scope :by_data_prevista
+  has_scope :by_data_realizada
+  has_scope :by_funcionario_id
+  has_scope :by_fornecedor_id
+  has_scope :by_esta_pago
+  has_scope :by_month
+  has_scope :by_year
+
   # GET /faturas
   # GET /faturas.json
   def index
-    @faturas = Fatura.page(params[:page]).per(NUMERO_POR_PAGINA)
+    @faturas = apply_scopes(Fatura).order("#{sort_column} #{sort_direction}").page(params[:page]).per(NUMERO_POR_PAGINA)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -97,5 +107,13 @@ class FaturasController < ApplicationController
     currency.strip!
     currency.gsub!(/,/, ".")
     currency = currency.to_f
+  end
+
+  def sort_column
+    Fatura.column_names.include?(params[:sort]) ? params[:sort] : "data_prevista"
+  end
+
+  def sort_direction
+    ["ASC", "DESC"].include?(params[:direction]) ? params[:direction] : "ASC"
   end
 end

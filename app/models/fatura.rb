@@ -13,6 +13,13 @@ class Fatura < ActiveRecord::Base
   validates :data_prevista, :presence => true
   validate :valida_destinatario
 
+  scope :by_data_prevista, -> data_prevista { where(:data_prevista => Time.parse(data_prevista).strftime("%Y-%m-%d")) }
+  scope :by_funcionario_id, -> funcionario_id { where(:funcionario_id => funcionario_id) }
+  scope :by_fornecedor_id, -> fornecedor_id { where(:fornecedor_id => fornecedor_id) }
+  scope :by_esta_pago, -> esta_pago { where(:esta_pago => esta_pago) }
+  scope :by_month, -> month { where("month(data_prevista) = ?", month) }
+  scope :by_year, -> year { where("year(data_prevista) = ?", year) }
+
   def valida_destinatario
   	if funcionario_id.nil? && fornecedor_id.nil?
   		errors.add(:funcionario, "O funcionário ou o fornecedor deve ser preenchido")
