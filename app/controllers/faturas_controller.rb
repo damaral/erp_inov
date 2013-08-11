@@ -9,7 +9,7 @@ class FaturasController < ApplicationController
   has_scope :by_data_realizada
   has_scope :by_funcionario_id
   has_scope :by_fornecedor_id
-  has_scope :by_esta_pago
+  has_scope :by_esta_pago, :default => 0
   has_scope :by_month
   has_scope :by_year
 
